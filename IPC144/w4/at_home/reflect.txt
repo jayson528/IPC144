@@ -1,0 +1,7 @@
+1:we wwant the array to hold 10 elements because thats the max number of days that we want the user to enter for tracking temperture. the user is allowed to 
+pick between 1 and 10 days so we must alwasy have a max number of array elemts allowed in order to store all they temperture values.
+
+2:matching arrays could be used for multiple reasons, for example we could use an 2 arrays with 5 elements each or store 2 students/employees information. for example we
+could use the index 3 of the array to store the students names, then if we wanted we could call on both arrays to display the 3 index and we could get both students names. the disadvantage of using matching arrays would be if we deleted 1 index from only one array, that would cause the arrays to not be matching anymore, and if we call the   same function to display the index, it will show one students name and some other information from the other sutdent.
+
+3:i did not find this workshop too dificult, the array portion of the assignment was easy, and once was able to nest loops inside eachother i was okay.

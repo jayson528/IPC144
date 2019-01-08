@@ -1,0 +1,15 @@
+jayson sherry 
+141056176
+jsherry1@myseneca.ca
+IPC144
+at_home reflect
+
+
+
+1)
+the 3 differant iteration constructs are "while", "do while" and "for".
+
+2)
+the differance between the "while" and "do while" loop, is that the do while will perform a function then check to see if the condition is still true or not. the while loop on the other hand will check to see if a condition is true or not before performing the function. the do while loop is usefull when you need to perform a function atleast one time before checking a condition.
+
+3)a conditional expression means an expression that will only be exeicuted once a condition is met. the computer will first check to see if the condition is true, if condition is true then the expression will be executed, if the condition is false then the expression will be skipped and will go on to the next line of code.

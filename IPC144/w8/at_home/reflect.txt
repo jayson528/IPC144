@@ -1,0 +1,8 @@
+1)there is multiple way of adding information to the data field, some are more efficent than others. 
+i belive if we write a differant program where we incorperate a switch statement, we can allow the user to add in which ever feilds they like, instead of having to go through entire
+program. for example, you can give the user an option to add contact name, then using a switch statment, the user can choose to just enter 
+the the phone number instead of having to input the contacts address and such.
+
+2)when using a string in C, we must always add  one extra space for the null terminator.
+for example, if we have a string that needs to hold up to 10 characters, we must make the char array
+11 in order for the program to be able to fit in a null terminator so it knows when the string ends.

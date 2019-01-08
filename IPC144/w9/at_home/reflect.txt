@@ -1,0 +1,6 @@
+1)i belive in this assignment we made structs inside other structs because if we ever want toexpand our code we could easily just change the struct without having to and change every instance of it. for example we could just add another structure inside the contact structure to add salary or whatever wee need.
+
+2)the hardest part for me was calling the functions in my main functions using pointers and 
+addresses.
+
+3)milestone 4 took me about 6-7 hours because i coild not figure out how to call my funstions inside my main function. the rest of the milestone was easy. 

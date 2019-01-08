@@ -1,0 +1,10 @@
+
+In line number 11 of your output:
+The output should be:
+Please enter 'N' > N
+But your output is: 
+Please enter 'N' > 
+                   ^
+-------------------|
+Professor's character ASCII code: hex(4e), dec(78)
+un-matched character ASCII code: hex(d), dec(13)

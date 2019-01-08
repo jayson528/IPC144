@@ -1,0 +1,995 @@
+Script started on Tue 06 Feb 2018 12:04:59 PM EST
+jsherry1@matrix:~/IPC144/w3/in_lab> ws
+---=== IPC Temperature Analyzer ===---
+
+Enter the high value for day 1:8
+
+Enter the low value for day 1:-2
+
+Enter the high value for day 2:41
+
+Enter the low value for day 2:-4
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low
+
+Enter the high value for day 2:9
+
+Enter the low value for day 2:-4
+
+Enter the high value for day 3:5
+
+Enter the low value for day 3:11
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low
+
+Enter the high value for day 3:11
+
+Enter the low value for day 3:5
+
+The average (mean) temperature was:  13.33
+jsherry1@matrix:~/IPC144/w3/in_lab> ls
+[0m[00merror.txt[0m  [00moutput.txt[0m  [00mtemps.c[0m  [00;32mw3[0m  [00;32mws[0m
+jsherry1@matrix:~/IPC144/w3/in_lab> vi temps.c 
+[?1049h[?1h=[1;16r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[16;1H"temps.c" 38L, 871C[>c[1;1H[34m//jayson sherry
+//141056176
+//jsherry1@myseneca.ca
+//IPC144 
+//workshop 3, in lab[m
+
+[35m#include[m[31m<stdio.h>[m
+[35m#define NUMS [m[31m3[m
+
+[32mint[m main([32mvoid[m){
+[32mint[m i;
+[32mint[m high=[31m0[m,low=[31m0[m;
+[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;
+[32mfloat[m averageTemps;[16;131H5,20[10CTop[5;20H[?12l[?25h[?25l[16;131H6,0-1[6;1H[?12l[?25h[?25l[16;131H7,1  [7;1H[?12l[?25h[?25l[16;131H8[8;1H[?12l[?25h[?25l[16;131H9,0-1[9;1H[?12l[?25h[?25l[16;131H10,1 [10;1H[?12l[?25h[?25l[16;132H1[11;1H[?12l[?25h[?25l[16;132H2[12;1H[?12l[?25h[?25l[16;132H3[13;1H[?12l[?25h[?25l[16;132H4[14;1H[?12l[?25h[?25l[16;132H5,0-1[15;1H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;1Hprintf([31m"---=== IPC Temperature Analyzer ===---[m[35m\n[m[31m"[m);[16;1H[K[16;131H16,1[11C4%[15;1H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[16;131H[K[16;131H17,1-8[9C8%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[16;131H[K[16;131H18,1-8[8C13%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;17H [38;5;130mdo[m{[16;131H[K[16;131H19,1-8[8C17%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m:"[m,i+[31m1[m);[16;131H[K[16;131H20,1-8[8C21%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[16;131H[K[16;131H21,1-8[8C26%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m:"[m,i+[31m1[m);[16;131H[K[16;131H22,1-8[8C30%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[16;131H[K[16;131H23,1-8[8C34%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[16;131H[K[16;131H24,1-8[8C39%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low[m[35m\n[m[31m"[m);[16;131H[K[16;131H25,1-8[8C43%[15;8H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H totalHigh = totalHigh  + high;[16;131H[K[16;131H26,1-8[8C47%[15;8H[?12l[?25h[?25l[16;134H2-16[15;16H[?12l[?25h[?25l
+[1m-- INSERT --[m[16;131H[K[16;131H26,2-9[8C47%[15;9H[?12l[?25h[?25l[16;134H3-17[15;17H[?12l[?25h[?25l[16;134H4-18[15;18H[?12l[?25h[?25l[16;134H5-25[15;25H[?12l[?25h[?25l[16;134H6-26[15;26H[?12l[?25h[?25l[16;134H7-27[15;27H[?12l[?25h[?25l[16;134H8-28[15;28H[?12l[?25h[?25l[16;134H9-29[15;29H[?12l[?25h[?25l[16;134H10-30[15;30H[?12l[?25h[?25l[16;135H1-31[15;31H[?12l[?25h[?25l[16;135H5-35[15;35H[?12l[?25h[?25l[16;135H6-36[15;36H[?12l[?25h[?25l[16;135H7-37[15;37H[?12l[?25h[?25l[16;135H8-38[15;38H[?12l[?25h[?25l[16;132H5,17[14;38H[?12l[?25h[?25l[16;135H8-39[14;39H[?12l[?25h[?25l[16;135H9-40[14;40H[?12l[?25h[?25l[16;134H20-41[14;41H[?12l[?25h[?25l[16;135H1-42[14;42H[?12l[?25h[?25l[16;135H2-43[14;43H[?12l[?25h[?25l[16;135H3-44[14;44H[?12l[?25h[?25l[16;135H4-45[14;45H[?12l[?25h[?25l[16;135H5-46[14;46H[?12l[?25h[?25l[16;135H6-47[14;47H[?12l[?25h[?25l[16;135H7-48[14;48H[?12l[?25h[?25l[16;135H8-49[14;49H[?12l[?25h[?25l[16;135H9-50[14;50H[?12l[?25h[?25l[16;134H30-51[14;51H[?12l[?25h[?25l[16;135H1-52[14;52H[?12l[?25h[?25l[16;135H2-53[14;53H[?12l[?25h[?25l[16;135H3-54[14;54H[?12l[?25h[?25l[16;135H4-55[14;55H[?12l[?25h[?25l[16;135H5-56[14;56H[?12l[?25h[?25l[16;135H6-57[14;57H[?12l[?25h[?25l[16;135H7-58[14;58H[?12l[?25h[?25l[16;135H8-59[14;59H[?12l[?25h[?25l[16;135H9-60[14;60H[?12l[?25h[?25l[16;134H40-61[14;61H[?12l[?25h[?25l[16;135H1-62[14;62H[?12l[?25h[?25l[16;135H2-63[14;63H[?12l[?25h[?25l[16;135H3-64[14;64H[?12l[?25h[?25l[16;135H4-65[14;65H[?12l[?25h[?25l[16;135H5-66[14;66H[?12l[?25h[?25l[16;135H6-67[14;67H[?12l[?25h[?25l[16;135H7-68[14;68H[?12l[?25h[?25l[16;135H8-69[14;69H[?12l[?25h[?25l[16;135H9-70[14;70H[?12l[?25h[?25l[16;134H50-71[14;71H[?12l[?25h[?25l[16;135H1-72[14;72H[?12l[?25h[?25l[16;135H2-73[14;73H[?12l[?25h[?25l[16;135H3-74[14;74H[?12l[?25h[?25l[16;135H4-75[14;75H[?12l[?25h[?25l[16;135H5-76[14;76H[?12l[?25h[?25l[16;135H6-77[14;77H[?12l[?25h[?25l[16;135H7-78[14;78H[?12l[?25h[?25l[16;135H8-79[14;79H[?12l[?25h[?25l[16;135H9-80[14;80H[?12l[?25h[?25l[16;134H60-81[14;81H[?12l[?25h[?25l[16;135H1-82[14;82H[?12l[?25h[?25l[16;135H2-83[14;83H[?12l[?25h[?25l[16;135H3-84[14;84H[?12l[?25h[?25l[16;135H4-85[14;85H[?12l[?25h[?25l[16;135H5-86[14;86H[?12l[?25h[?25l[16;135H6-87[14;87H[?12l[?25h[?25l[16;135H7-88[14;88H[?12l[?25h[?25l[16;135H8-89[14;89H[?12l[?25h[?25l[16;135H9-90[14;90H[?12l[?25h[?25l[16;134H70-91[14;91H[?12l[?25h[?25l[16;135H1-92[14;92H[?12l[?25h[?25l[16;135H2-93[14;93H[?12l[?25h[?25l[16;135H3-94[14;94H[?12l[?25h[?25l[16;135H4-95[14;95H[?12l[?25h[?25l[16;135H5-96[14;96H[?12l[?25h[?25l[16;135H6-97[14;97H[?12l[?25h[?25l[16;135H7-98[14;98H[?12l[?25h[?25l[16;135H8-99[14;99H[?12l[?25h[?25l[16;135H9-100[14;100H[?12l[?25h[?25l[16;134H80-101[14;101H[?12l[?25h[?25l[16;135H1-102[14;102H[?12l[?25h[?25l[16;135H2-103[14;103H[?12l[?25h[?25l[16;135H3-104[14;104H[?12l[?25h[?25l[16;135H4-105[14;105H[?12l[?25h[?25l[16;135H5-106[14;106H[?12l[?25h[?25l[16;135H6-107[14;107H[?12l[?25h[?25l[16;135H7-108[14;108H[?12l[?25h[?25l[16;135H8-109[14;109H[?12l[?25h[?25l[16;135H9-110[14;110H[?12l[?25h[?25l[16;134H90-111[14;111H[?12l[?25h[?25l[16;135H1-112[14;112H[?12l[?25h[?25l[16;135H2-113[14;113H[?12l[?25h[?25l[16;135H3-114[14;114H[?12l[?25h[?25l[16;135H4-115[14;115H[?12l[?25h[?25l[16;135H5-116[14;116H[?12l[?25h[?25l[16;135H6-117[14;117H[?12l[?25h[?25l[16;135H7-118[14;118H[?12l[?25h[?25l[16;135H8-119[14;119H[?12l[?25h[?25l[16;135H9-120[14;120H[?12l[?25h[?25l[16;134H100-121[14;121H[?12l[?25h[?25l[16;136H1-122[14;122H[?12l[?25h[?25l[16;136H2-123[14;123H[?12l[?25h[?25l[16;136H3-124[14;124H[?12l[?25h[?25l[16;136H4-125[14;125H[?12l[?25h[?25l[16;136H5-126[14;126H[?12l[?25h[?25l[16;136H6-127[14;127H[?12l[?25h[?25[31mw.[m[35m\n[m[31m"[m);[16;136H7-128[14;128H[?12l[?25h[?25l[16;132H6,35-55  [15;55H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H totalLow = totalLow + low;[16;131H[K[16;131H27,30-51      52%[15;51H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;24H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[16;131H[K[16;131H28,62-83      56%[15;83H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[16;131H[K[16;131H29,50-64      60%[15;64H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[16;131H[K[16;131H30,4-18[7C65%[15;18H[?12l[?25h[?25l[1;15r[15;1H
+[1;16r[15;16H }[16;131H[K[16;131H31,4-18[7C69%[2;29H[106m{[15;17H}[?12l[?25h[m[16;1H[K[15;17H[?25l[16;131H31,3-17[7C69%[15;17H[?12l[?25h[?25l[16;131H[K[16;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 38L, 872C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/in_lab> lsgcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/in_lab> [H[2Jjsherry1@matrix:~/IPC144/w3/in_lab> w3
+---=== IPC Temperature Analyzer ===---
+
+Enter the high value for day 1:8
+
+Enter the low value for day 1:-2
+
+Enter the high value for day 2:9
+
+Enter the low value for day 2:-4
+
+Enter the high value for day 3:11
+
+Enter the low value for day 3:5
+
+The average (mean) temperature was:  4.50
+jsherry1@matrix:~/IPC144/w3/in_lab> [6Pls[7Pw3[7Pw3[7Pw3[7Pw3[7Pw3[7Pw3[7Pw3w3[7Pw3[7Pw3[7Pw3w3w3[7P[7P[7P[7P[7P[7P[7P[7P[7P[7P[7P[7Pw3[7Pw3[7Pw3[7Pvi temps.[[[[[[[[[[Kw3
+---=== IPC Temperature Analyzer ===---
+
+Enter the high value for day 1:8
+
+Enter the low value for day 1:-2
+
+Enter the high value for day 2:41
+
+Enter the low value for day 2:-4
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 2:9
+
+Enter the low value for day 2:-4
+
+Enter the high value for day 3:5
+
+Enter the low value for day 3:11
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 3:11
+
+Enter the low value for day 3:5
+
+The average (mean) temperature was:  13.33
+jsherry1@matrix:~/IPC144/w3/in_lab> [6Pvi temps.c 
+[?1049h[?1h=[1;16r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[16;1H"temps.c" 38L, 872C[>c[1;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[2;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[3;24H totalHigh = totalHigh  + high;[4;24H totalLow = totalLow + low;[5;24H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[6;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[8;16H }[12;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was:  [m[35m%2.2f\n[m[31m"[m,averageTemps);
+[38;5;130mreturn[m [31m0[m;
+}[16;131H31,3-17[7CBot[8;17H[?12l[?25h[?25l[16;132H2,0-1 [9;1H[?12l[?25h[27m[m[H[2J[?25l[2;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[3;17H [38;5;130mdo[m{[4;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m:"[m,i+[31m1[m);[5;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[6;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m:"[m,i+[31m1[m);[7;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[8;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[9;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[10;24H totalHigh = totalHigh  + high;[11;24H totalLow = totalLow + low;[12;24H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[13;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[15;16H }[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was:  [m[35m%2.2f\n[m[31m"[m,averageTemps);
+[38;5;130mreturn[m [31m0[m;
+}
+
+[94m~                                                                                                                                                   [24;1H~                                                                                                                                                   [25;1H~                                                                                                                                                   [26;1H~                                                                                                                                                   [27;1H~                                                                                                                                                   [28;1H~                                                                                                                                                   [m[29;131H32,0-1[8CBot[16;1H[?12l[?25h[?25l[29;132H3,1-8[17;8H[?12l[?25h[?25l[29;132H4,0-1[18;1H[?12l[?25h[?25l[29;132H5,1  [19;1H[?12l[?25h[?25l[29;132H6[20;1H[?12l[?25h[?25l[29;132H7[21;1H[?12l[?25h[?25l[29;132H8,0-1[22;1H[?12l[?25h[?25l[29;132H7,1  [21;1H[?12l[?25h[?25l[29;132H6[20;1H[?12l[?25h[?25l[29;132H5[19;1H[?12l[?25h[?25l[29;132H4,0-1[18;1H[?12l[?25h[?25l[29;132H3,1-8[17;8H[?12l[?25h[?25l[29;132H2,0-1[16;1H[?12l[?25h[?25l[29;132H1,1-8[15;8H[?12l[?25h[?25l[29;132H0[14;8H[?12l[?25h[?25l[29;131H29[13;8H[?12l[?25h[?25l[29;132H8[12;8H[?12l[?25h[?25l[29;132H7[11;8H[?12l[?25h[?25l[29;132H6[10;8H[?12l[?25h[?25l[29;132H5[9;8H[?12l[?25h[?25l[29;132H4[8;8H[?12l[?25h[?25l[29;132H3[7;8H[?12l[?25h[?25l[29;132H2[6;8H[?12l[?25h[?25l[29;132H1[5;8H[?12l[?25h[?25l[29;132H0[4;8H[?12l[?25h[?25l[29;131H19[3;8H[?12l[?25h[?25l[29;132H8[2;8H[?12l[?25h[?25l[29;132H7[1;8H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1Hprintf([31m"---=== IPC Temperature Analyzer ===---[m[35m\n[m[31m"[m);[29;131H[K[29;131H16,1[10CBot[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[29;131H[K[29;131H15,0-1[8CBot[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1H[32mfloat[m averageTemps;[29;131H[K[29;131H14,1[10CBot[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1H[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;[29;131H[K[29;131H13,1[10CBot[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1H[32mint[m high=[31m0[m,low=[31m0[m;[29;131H[K[29;131H12,1[10CBot[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1H[32mint[m i;[29;131H[K[29;131H11,1[10CBot[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1H[32mint[m main([32mvoid[m){[29;131H[K[29;131H10,1[10C90%[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[29;131H[K[29;131H9,0-1[9C80%[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1H[35m#define NUMS [m[31m3[m[29;131H[K[29;131H8,1[11C70%[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[1;1H[35m#include[m[31m<stdio.h>[m[29;131H[K[29;131H7,1[11C60%[1;1H[?12l[?25h[?25l[1;28r[1;1H[L[1;29r[29;131H[K[29;131H6,0-1[9C50%[1;1H[?12l[?25h[?25l[29;1H[1m-- INSERT --[m[29;131H[K[29;131H6,1[11C50%[1;1H[?12l[?25h[?25l[29;131H7[2;1H[?12l[?25h[?25l[29;131H8[3;1H[?12l[?25h[?25l[29;131H9[4;1H[?12l[?25h[?25l[29;131H10,1[5;1H[?12l[?25h[?25l[29;132H1[6;1H[?12l[?25h[?25l[29;132H2[7;1H[?12l[?25h[?25l[29;132H3[8;1H[?12l[?25h[?25l[29;132H4[9;1H[?12l[?25h[?25l[29;132H5[10;1H[?12l[?25h[?25l[29;132H6[11;1H[?12l[?25h[?25l[29;132H7[12;1H[?12l[?25h[?25l[29;132H8[13;1H[?12l[?25h[?25l[29;132H9[14;1H[?12l[?25h[?25l[29;131H20[15;1H[?12l[?25h[?25l[29;132H1[16;1H[?12l[?25h[?25l[29;132H2[17;1H[?12l[?25h[?25l[29;132H3[18;1H[?12l[?25h[?25l[29;132H4[19;1H[?12l[?25h[?25l[29;132H5[20;1H[?12l[?25h[?25l[29;132H6[21;1H[?12l[?25h[?25l[29;132H7[22;1H[?12l[?25h[?25l[29;132H8[23;1H[?12l[?25h[?25l[29;132H9[24;1H[?12l[?25h[?25l[29;131H30[25;1H[?12l[?25h[?25l[29;134H2-9[25;9H[?12l[?25h[?25l[29;134H3-17[25;17H[?12l[?25h[?25l[29;134H4-18[25;18H[?12l[?25h[?25l[13;29H[106m{[26;17H}[m[29;132H1[26;18H[?12l[?25h[?25l[29;134H3-17[26;17H[?12l[?25h[?25l[13;29H{[26;17H}[29;132H0[25;17H[?12l[?25h[?25l[29;134H4-25[25;25H[?12l[?25h[?25 t[29;134H5-26[25;26H[?12l[?25h[?25to[29;134H6-27[25;27H[?12l[?25h[?25ot[29;134H7-28[25;28H[?12l[?25h[?25ta[29;134H8-29[25;29H[?12l[?25h[?25al[29;134H9-30[25;30H[?12l[?25h[?25lH[29;134H10-31[25;31H[?12l[?25h[?25Hi[29;135H1-32[25;32H[?12l[?25h[?25ig[29;135H2-33[25;33H[?12l[?25h[?25gh[29;135H3-34[25;34H[?12l[?25h[?25l[29;135H4-35[25;35H[?12l[?25h[?25 =[29;135H5-36[25;36H[?12l[?25h[?25l[29;135H6-37[25;37H[?12l[?25h[?25 t[29;135H7-38[25;38H[?12l[?25h[?25to[29;135H8-39[25;39H[?12l[?25h[?25ot[29;135H9-40[25;40H[?12l[?25h[?25ta[29;134H20-41[25;41H[?12l[?25h[?25al[29;135H1-42[25;42H[?12l[?25h[?25lH[29;135H2-43[25;43H[?12l[?25h[?25Hi[29;135H3-44[25;44H[?12l[?25h[?25ig[29;135H4-45[25;45H[?12l[?25h[?25gh[29;135H5-46[25;46H[?12l[?25h[?25l[29;135H6-47[25;47H[?12l[?25h[?25 +[29;135H7-48[25;48H[?12l[?25h[?25l[29;135H8-49[25;49H[?12l[?25h[?25 h[29;135H9-50[25;50H[?12l[?25h[?25hi[29;134H30-51[25;51H[?12l[?25h[?25ig[29;135H1-52[25;52H[?12l[?25h[?25gh[29;135H2-53[25;53H[?12l[?25h[?25h;[29;135H3-54[25;54H[?12l[?25h[?25l[26;28r[26;1H[L[1;29r[29;131H[K[29;131H31,3-17[7C45%[26;17H[?12l[?25h[?25 t[29;134H4-18[26;18H[?12l[?25h[?25to[29;134H5-19[26;19H[?12l[?25h[?25ot[29;134H6-20[26;20H[?12l[?25h[?25ta[29;134H7-21[26;21H[?12l[?25h[?25al[29;134H8-22[26;22H[?12l[?25h[?2a [29;134H7-21[26;21H[?12l[?25h[?2t [29;134H6-20[26;20H[?12l[?25h[?2o [29;134H5-19[26;19H[?12l[?25h[?2t [29;134H4-18[26;18H[?12l[?25h[?2  [29;134H3-17[26;17H[?12l[?25h[?25l[29;134H4-25[26;25H[?12l[?25h[?25 t[29;134H5-26[26;26H[?12l[?25h[?25to[29;134H6-27[26;27H[?12l[?25h[?25ot[29;134H7-28[26;28H[?12l[?25h[?25ta[29;134H8-29[26;29H[?12l[?25h[?25al[29;134H9-30[26;30H[?12l[?25h[?25lL[29;134H10-31[26;31H[?12l[?25h[?25Lo[29;135H1-32[26;32H[?12l[?25h[?25ow[29;135H2-33[26;33H[?12l[?25h[?25l[29;135H3-34[26;34H[?12l[?25h[?25 +[29;135H4-35[26;35H[?12l[?25h[?2  [29;135H3-34[26;34H[?12l[?25h[?25 =[29;135H4-35[26;35H[?12l[?25h[?25l[29;135H5-36[26;36H[?12l[?25h[?25 t[29;135H6-37[26;37H[?12l[?25h[?25to[29;135H7-38[26;38H[?12l[?25h[?25ot[29;135H8-39[26;39H[?12l[?25h[?25ta[29;135H9-40[26;40H[?12l[?25h[?25al[29;134H20-41[26;41H[?12l[?25h[?25lL[29;135H1-42[26;42H[?12l[?25h[?25Lo[29;135H2-43[26;43H[?12l[?25h[?25ow[29;135H3-44[26;44H[?12l[?25h[?25l[29;135H4-45[26;45H[?12l[?25h[?25 +[29;135H5-46[26;46H[?12l[?25h[?25l[29;135H6-47[26;47H[?12l[?25h[?25 l[29;135H7-48[26;48H[?12l[?25h[?25lo[29;135H8-49[26;49H[?12l[?25h[?25ow[29;135H9-50[26;50H[?12l[?25h[?25w:[29;134H30-51[26;51H[?12l[?25h[?2w [29;134H29-50[26;50H[?12l[?25h[?25w;[29;134H30-51[26;51H[?12l[?25h[?25l[27;16H  [28;16H }[29;132H2,10-24[7C1[27;24H[?12l[?25h[?25 a[29;135H1-25[27;25H[?12l[?25h[?25av[29;135H2-26[27;26H[?12l[?25h[?25ve[29;135H3-27[27;27H[?12l[?25h[?25er[29;135H4-28[27;28H[?12l[?25h[?25ra[29;135H5-29[27;29H[?12l[?25h[?25ag[29;135H6-30[27;30H[?12l[?25h[?25ge[29;135H7-31[27;31H[?12l[?25h[?25eT[29;135H8-32[27;32H[?12l[?25h[?25Te[29;135H9-33[27;33H[?12l[?25h[?25em[29;134H20-34[27;34H[?12l[?25h[?25mp[29;135H1-35[27;35H[?12l[?25h[?25ps[29;135H2-36[27;36H[?12l[?25h[?25l[29;135H3-37[27;37H[?12l[?25h[?25 =[29;135H4-38[27;38H[?12l[?25h[?25l[29;135H5-39[27;39H[?12l[?25h[?25 F[29;135H6-40[27;40H[?12l[?25h[?2  [29;135H5-39[27;39H[?12l[?25h[?25 ([28;17H[97m[101m}[m[29;135H6-40[27;40H[?12l[?25h[?25(f[29;135H7-41[27;41H[?12l[?25h[?25fl[29;135H8-42[27;42H[?12l[?25h[?25lo[29;135H9-43[27;43H[?12l[?25h[?25oa[29;134H30-44[27;44H[?12l[?25h[[32mfloat[m[29;135H1-45[27;45H[?12l[?25h[?25[32mt[m)[28;17H}[29;134H25-39[27;39H[?12l[?25h[?25l[106m([5C)[m[29;134H32-46[27;46H[?12l[?25h[?25[106m)[m([28;17H[97m[101m}[m[27;39H([5C)[29;135H3-47[27;47H[?12l[?25h[?25(t[29;135H4-48[27;48H[?12l[?25h[?25to[29;135H5-49[27;49H[?12l[?25h[?25ot[29;135H6-50[27;50H[?12l[?25h[?25ta[29;135H7-51[27;51H[?12l[?25h[?25al[29;135H8-52[27;52H[?12l[?25h[?25lH[29;135H9-53[27;53H[?12l[?25h[?25Hi[29;134H40-54[27;54H[?12l[?25h[?25ig[29;135H1-55[27;55H[?12l[?25h[?25gh[29;135H2-56[27;56H[?12l[?25h[?25l[29;135H3-57[27;57H[?12l[?25h[?25 +[29;135H4-58[27;58H[?12l[?25h[?25l[29;135H5-59[27;59H[?12l[?25h[?25 t[29;135H6-60[27;60H[?12l[?25h[?25to[29;135H7-61[27;61H[?12l[?25h[?25ot[29;135H8-62[27;62H[?12l[?25h[?25ta[29;135H9-63[27;63H[?12l[?25h[?25al[29;134H50-64[27;64H[?12l[?25h[?25lL[29;135H1-65[27;65H[?12l[?25h[?25Lo[29;135H2-66[27;66H[?12l[?25h[?25ow[29;135H3-67[27;67H[?12l[?25h[?25w)[28;17H}[29;134H32-46[27;46H[?12l[?25h[?25l[106m([20C)[m[29;134H54-68[27;68H[?12l[?25h[?25l[27;46H([20C)[29;135H5-69[27;69H[?12l[?25h[?25 /[29;135H6-70[27;70H[?12l[?25h[?25l[29;135H7-71[27;71H[?12l[?25h[?25 ([28;17H[97m[101m}[m[29;135H8-72[27;72H[?12l[?25h[?25(N[29;135H9-73[27;73H[?12l[?25h[?25NU[29;134H60-74[27;74H[?12l[?25h[?25UM[29;135H1-75[27;75H[?12l[?25h[?25MS[29;135H2-76[27;76H[?12l[?25h[?25l[29;135H3-77[27;77H[?12l[?25h[?25 *[29;135H4-78[27;78H[?12l[?25h[?25l[29;135H5-79[27;79H[?12l[?25h[?25 [31m2[m[29;135H6-80[27;80H[?12l[?25h[?25[31m2[m)[28;17H}[29;134H57-71[27;71H[?12l[?25h[?25l[106m([8C)[m[29;134H67-8[27;81H[?12l[?25h[?25[106m)[m;[27;71H([8C)[29;135H8-82[27;82H[?12l[?25h[?25l[29;132H1,30-51[26;51H[?12l[?25h[?25l[29;132H0,33-54[25;54H[?12l[?25h[?25l[29;131H29,50-6[24;64H[?12l[?25h[?25l[24;25H[106m([36C)[m[29;134H49-63[24;63H[?12l[?25h[?25l[29;135H8-62[24;62H[?12l[?25h[?25l[24;25H([36C)[29;135H7-61[24;61H[?12l[?25h[?25l[29;135H6-60[24;60H[?12l[?25h[?25l[29;135H5-59[24;59H[?12l[?25h[?25l[29;135H4-58[24;58H[?12l[?25h[?25l[29;132H8,37[23;58H[?12l[?25h[?25l[29;135H6-57[23;57H[?12l[?25h[?25l[29;135H5-56[23;56H[?12l[?25h[?25l[29;135H4-55[23;55H[?12l[?25h[?25l[29;135H3-54[23;54H[?12l[?25h[?25l[29;135H2-53[23;53H[?12l[?25h[?25l[29;135H1-52[23;52H[?12l[?25h[?25l[29;135H0-51[23;51H[?12l[?25h[?25l[29;134H29-50[23;50H[?12l[?25h[?25l[29;135H8-49[23;49H[?12l[?25h[?2[106m([20C)[m[29;135H7-48[23;48H[?12l[?25h[?25l[29;135H6-47[23;47H[?12l[?25h[?25l[23;40H[106m([5C)[m([20C)[29;135H5-46[23;46H[?12l[?25h([5C)[29;135H4-45[23;45H[?12l[?25h[?25l[29;135H3-44[23;44H[?12l[?25h[?25l[29;135H2-43[23;43H[?12l[?25h[?25l[29;135H1-42[23;42H[?12l[?25h[?2[106m([5C)[m[29;135H0-41[23;41H[?12l[?25h[?25l[29;134H19-40[23;40H[?12l[?25h[?25l([5C)[29;135H8-39[23;39H[?12l[?25h[?25l[29;135H7-38[23;38H[?12l[?25h[?25l[29;135H6-37[23;37H[?12l[?25h[?25l[29;135H5-36[23;36H[?12l[?25h[?25l[29;135H4-35[23;35H[?12l[?25h[?25l[29;135H3-34[23;34H[?12l[?25h[?25l[29;135H2-33[23;33H[?12l[?25h[?25l[29;135H1-32[23;32H[?12l[?25h[?25l[29;135H0-31[23;31H[?12l[?25h[?25l[29;134H9-30 [23;30H[?12l[?25h[?25l[29;134H8-29[23;29H[?12l[?25h[?25l[29;134H7-28[23;28H[?12l[?25h[?25l[29;134H6-27[23;27H[?12l[?25h[?25l[29;134H5-26[23;26H[?12l[?25h[?25l[29;134H4-25[23;25H[?12l[?25h[?25 /averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[29;134H5-26[23;26H[?12l[?25h[?25[34m//averageTemps = (float)(totalHigh + totalLow) / (NUMS * 2);[m[29;134H6-27[23;27H[?12l[?25h[?25l[29;132H7[22;27H[?12l[?25h[?25l[29;134H5-26[22;26H[?12l[?25h[?25l[29;134H4-25[22;25H[?12l[?25h[?25 /totalLow = totalLow + low;[29;134H5-26[22;26H[?12l[?25h[?25[34m//totalLow = totalLow + low;[m[29;134H6-27[22;27H[?12l[?25h[?25l[29;132H6,7[21;27H[?12l[?25h[?25l[29;134H6-26[21;26H[?12l[?25h[?25l[29;134H5-25[21;25H[?12l[?25h[?25 /totalHigh = totalHigh  + high;[29;134H6-26[21;26H[?12l[?25h[?25[34m//totalHigh = totalHigh  + high;[m[29;134H7-27[21;27H[?12l[?25h[29;1H[K[21;26H[?25l[29;131H26,6-26[7C41%[21;26H[?12l[?25h[?25l[29;131H[K[29;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 40L, 1006C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/in_lab> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/in_lab> w3
+---=== IPC Temperature Analyzer ===---
+
+Enter the high value for day 1:8
+
+Enter the low value for day 1:-2
+
+Enter the high value for day 2:41
+
+Enter the low value for day 2:-4
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 2:9
+
+Enter the low value for day 2:-4
+
+Enter the high value for day 3:5
+
+Enter the low value for day 3:11
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 3:11
+
+Enter the low value for day 3:5
+
+The average (mean) temperature was:  4.50
+jsherry1@matrix:~/IPC144/w3/in_lab> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 40L, 1006C[>c[1;1H[35m#define NUMS [m[31m3[m
+
+[32mint[m main([32mvoid[m){
+[32mint[m i;
+[32mint[m high=[31m0[m,low=[31m0[m;
+[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;
+[32mfloat[m averageTemps;
+
+printf([31m"---=== IPC Temperature Analyzer ===---[m[35m\n[m[31m"[m);[11;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[12;17H [38;5;130mdo[m{[13;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m:"[m,i+[31m1[m);[14;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[15;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m:"[m,i+[31m1[m);[16;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[17;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[18;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[19;24H [34m//totalHigh = totalHigh  + high;[m[20;131H26,6-26[7C33%[19;26H[?12l[?25h[?25l[20;132H5,5[18;26H[?12l[?25h[?25l[20;132H4[17;26H[?12l[?25h[?25l[20;132H3[16;26H[?12l[?25h[?25l[20;132H2[15;26H[?12l[?25h[?25l[20;132H1[14;26H[?12l[?25h[?25l[20;132H0[13;26H[?12l[?25h[?25l[20;131H19,9-24[12;24H[?12l[?25h[?25l[20;131H20,5-26[13;26H[?12l[?25h[?25l[20;134H6-27[13;27H[?12l[?25h[?25l[20;134H7-28[13;28H[?12l[?25h[?25l[20;134H8-29[13;29H[?12l[?25h[?25l[20;134H9-30[13;30H[?12l[?25h[?25lf[106m([40C)[m[20;134H10-31[13;31H[?12l[?25h[?25l([40C)[20;135H1-32[13;32H[?12l[?25h[?25l[20;135H2-33[13;33H[?12l[?25h[?25l[20;135H3-34[13;34H[?12l[?25h[?25l[20;135H4-35[13;35H[?12l[?25h[?25l[20;135H5-36[13;36H[?12l[?25h[?25l[20;135H6-37[13;37H[?12l[?25h[?25l[20;135H7-38[13;38H[?12l[?25h[?25l[20;135H8-39[13;39H[?12l[?25h[?25l[20;135H9-40[13;40H[?12l[?25h[?25l[20;134H20-41[13;41H[?12l[?25h[?25l[20;135H1-42[13;42H[?12l[?25h[?25l[20;135H2-43[13;43H[?12l[?25h[?25l[20;135H3-44[13;44H[?12l[?25h[?25l[20;135H4-45[13;45H[?12l[?25h[?25l[20;135H5-46[13;46H[?12l[?25h[?25l[20;135H6-47[13;47H[?12l[?25h[?25l[20;135H7-48[13;48H[?12l[?25h[?25l[20;135H8-49[13;49H[?12l[?25h[?25l[20;135H9-50[13;50H[?12l[?25h[?25l[20;134H30-51[13;51H[?12l[?25h[?25l[20;135H1-52[13;52H[?12l[?25h[?25l[20;135H2-53[13;53H[?12l[?25h[?25l[20;135H3-54[13;54H[?12l[?25h[?25l[20;135H4-55[13;55H[?12l[?25h[?25l[20;135H5-56[13;56H[?12l[?25h[?25l[20;135H6-57[13;57H[?12l[?25h[?25l[20;135H7-58[13;58H[?12l[?25h[?25l[20;135H8-59[13;59H[?12l[?25h[?25l[20;135H9-60[13;60H[?12l[?25h[?25l[20;134H40-61[13;61H[?12l[?25h[?25l[20;135H1-62[13;62H[?12l[?25h[?25l[20;135H2-63[13;63H[?12l[?25h[?25l[20;135H3-64[13;64H[?12l[?25h[?25l[20;135H4-65[13;65H[?12l[?25h[?25l[20;135H5-66[13;66H[?12l[?25h[?25l[20;135H6-67[13;67H[?12l[?25h[?25l[20;135H7-68[13;68H[?12l[?25h[?25l[20;135H6-67[13;67H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;13H[K[20;131H20,46-67      33%[13;67H[?12l[?25h[?25[31m: "[m,i+[31m1[m);[20;135H7-68[13;68H[?12l[?25h[?25l[20;132H1,22-43[14;43H[?12l[?25h[?25l[14;30H[106m([10C)[m[20;135H1-42[14;42H[?12l[?25h[?25l[14;30H([10C)[20;132H2[15;42H[?12l[?25h[?25l[20;132H3[16;42H[?12l[?25h[?25l[20;132H2[15;42H[?12l[?25h[?25l[20;135H2-43[15;43H[?12l[?25h[?25l[20;135H3-44[15;44H[?12l[?25h[?25l[20;135H4-45[15;45H[?12l[?25h[?25l[20;135H5-46[15;46H[?12l[?25h[?25l[20;135H6-47[15;47H[?12l[?25h[?25l[20;135H7-48[15;48H[?12l[?25h[?25l[20;135H8-49[15;49H[?12l[?25h[?25l[20;135H9-50[15;50H[?12l[?25h[?25l[20;134H30-51[15;51H[?12l[?25h[?25l[20;135H1-52[15;52H[?12l[?25h[?25l[20;135H2-53[15;53H[?12l[?25h[?25l[20;135H3-54[15;54H[?12l[?25h[?25l[20;135H4-55[15;55H[?12l[?25h[?25l[20;135H5-56[15;56H[?12l[?25h[?25l[20;135H6-57[15;57H[?12l[?25h[?25l[20;135H7-58[15;58H[?12l[?25h[?25l[20;135H8-59[15;59H[?12l[?25h[?25l[20;135H9-60[15;60H[?12l[?25h[?25l[20;134H40-61[15;61H[?12l[?25h[?25l[20;135H1-62[15;62H[?12l[?25h[?25l[20;135H2-63[15;63H[?12l[?25h[?25l[20;135H3-64[15;64H[?12l[?25h[?25l[20;135H4-65[15;65H[?12l[?25h[?25l[20;135H5-66[15;66H[?12l[?25h[?25[31m: "[m,i+[31m1[m);[20;135H6-67[15;67H[?12l[?25h[20;1H[K[15;66H[?25l[20;131H22,45-66      33%[15;66H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 40L, 1008C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/in_lab> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/in_lab> [6P[Kw3
+---=== IPC Temperature Analyzer ===---
+
+Enter the high value for day 1: 34^C
+jsherry1@matrix:~/IPC144/w3/in_lab> ~nasim.razavi/su[Kbmit 144_w3_lab
+[H[2JSubmitter (V0.94)
+Submitting Workshop 3 in lab
+gcc -Wall -o ws temps.c 2> error.txt
+Success! no errors or warnings...
+
+
+READ THE FOLLOWING CAREFULLY!
+I am about to execute the tester and script the output to "output.txt"
+Please enter the values carefuly and exactly as instructed.
+Press <ENTER> to start...
+[H[2JFOLLOW THESE INSTRUCTIONS:
+1- Type ws and hit <ENTER>
+2- Use the test data specified in Workshop 3 in lab to test the program
+3- When done, type exit and hit <ENTER> to continue the submission process.
+Script started, file is output.txt
+jsherry1@matrix:~/IPC144/w3/in_lab> ws
+---=== IPC Temperature Analyzer ===---
+
+Enter the high value for day 1: 8
+
+Enter the low value for day 1: -2
+
+Enter the high value for day 2: 41
+
+Enter the low value for day 2: -4
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 2: 9
+
+Enter the low value for day 2: -4
+
+Enter the high value for day 3: 5
+
+Enter the low value for day 3: 11
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 3: 11
+
+Enter the low value for day 3: 5
+
+The average (mean) temperature was:  4.50
+jsherry1@matrix:~/IPC144/w3/in_lab> exit
+exit
+Script done, file is output.txt
+
+In line number 4 of your output:
+The output should be:
+Enter the high value for day 1: 8
+But your output is: 
+
+^
+|
+Professor's character ASCII code: hex(45), dec(69)
+un-matched character ASCII code: hex(d), dec(13)
+Outputs don't match. Submission aborted!
+jsherry1@matrix:~/IPC144/w3/in_lab> [H[2Jjsherry1@matrix:~/IPC144/w3/in_lab> w3[6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 40L, 1008C[>c[1;1H[34m//IPC144 
+//workshop 3, in lab[m
+
+[35m#include[m[31m<stdio.h>[m
+[35m#define NUMS [m[31m3[m
+
+[32mint[m main([32mvoid[m){
+[32mint[m i;
+[32mint[m high=[31m0[m,low=[31m0[m;
+[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;
+[32mfloat[m averageTemps;
+
+printf([31m"---=== IPC Temperature Analyzer ===---[m[35m\n[m[31m"[m);[15;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[16;17H [38;5;130mdo[m{[17;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[18;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[19;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H22,45-66      14%[19;66H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;1H[K[20;131H23,20-41      19%[19;41H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[20;131H[K[20;131H24,20-41      23%[19;41H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H25,20-41      28%[19;41H[?12l[?25h[?25l[20;132H4[18;41H[?12l[?25h[?25l[20;132H3[17;41H[?12l[?25h[?25l[20;132H2[16;41H[?12l[?25h[?25l[15;30H[106m([10C)[m[20;132H1[15;41H[?12l[?25h[?25l[15;30H([10C)[20;132H0[14;41H[?12l[?25h[?25l[20;131H19,9-24 [13;24H[?12l[?25h[?25l[20;132H8,22-29[12;29H[?12l[?25h[?25l[20;132H7,1-8  [11;8H[?12l[?25h[?25l[20;132H6,41 [10;41H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H16,41[9C28%[10;41H[?12l[?25h[?25l[20;135H2[10;42H[?12l[?25h[?25l[20;135H3[10;43H[?12l[?25h[?25l[20;135H4[10;44H[?12l[?25h[?25l[20;135H5[10;45H[?12l[?25h[?25l[20;135H6[10;46H[?12l[?25h[?25l[20;135H7[10;47H[?12l[?25h[?25l[20;135H8[10;48H[?12l[?25h[?25l[20;135H9[10;49H[?12l[?25h[?2[35m\"[m[31m);[m[10;51H[K[11;1H[31m        
+        for (i=0;i<NUMS;++i){
+                 do{    
+                        printf([m[1C\nEnter the high value [38;5;130mfor[m day %d: [1C[31m,i+1);
+                        scanf([m[1C%d[1C[31m,&high);
+                        printf([m[1C\nEnter the low value [38;5;130mfor[m day %d: [1C[31m,i+1);
+                        scanf([m[1C%d[1C[31m,&low);
+                        if (high < low || low < -40 || high > 40)
+                        printf([m[1C\nIncorrect values, temperatures must be in the range -[2C to [2C, high must be greater than low.\n[1C[31m);[m[20;135H8[10;48H[?12l[?25h[?2[31m-"[m);[10;50H[K[11;1H        
+        [38;5;130mfor[m (i=[1C;i<NUMS;++i){
+                 [38;5;130mdo[m{    
+                        printf([1C[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: [m[1C,i+[1C);
+                        scanf([1C[35m%d[m[1C,&high);
+                        printf([1C[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: [m[1C,i+[1C);
+                        scanf([1C[35m%d[m[1C,&low);
+                        [38;5;130mif[m (high < low || low < -[2C || high > [2C)
+                        printf([1C[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[1C);[20;135H7[10;47H[?12l[?25h[20;1H[K[10;46H[?25l[20;131H16,46[9C28%[10;46H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 40L, 1006C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/in_lab> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/in_lab> [6P[Kw3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: ^C
+jsherry1@matrix:~/IPC144/w3/in_lab> [6P~nasim.razavi/submit 144_w3_lab
+[H[2JSubmitter (V0.94)
+Submitting Workshop 3 in lab
+gcc -Wall -o ws temps.c 2> error.txt
+Success! no errors or warnings...
+
+
+READ THE FOLLOWING CAREFULLY!
+I am about to execute the tester and script the output to "output.txt"
+Please enter the values carefuly and exactly as instructed.
+Press <ENTER> to start...
+[H[2JFOLLOW THESE INSTRUCTIONS:
+1- Type ws and hit <ENTER>
+2- Use the test data specified in Workshop 3 in lab to test the program
+3- When done, type exit and hit <ENTER> to continue the submission process.
+Script started, file is output.txt
+jsherry1@matrix:~/IPC144/w3/in_lab> ws
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 8
+
+Enter the low value for day 1: -2
+
+Enter the high value for day 2: 41
+
+Enter the low value for day 2: -4
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 2: 9
+
+Enter the low value for day 2: -4
+
+Enter the high value for day 3: 5
+
+Enter the low value for day 3: 11
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 3: 11
+
+Enter the low value for day 3: 5
+
+The average (mean) temperature was:  4.50
+jsherry1@matrix:~/IPC144/w3/in_lab> exit
+exit
+Script done, file is output.txt
+
+In line number 28 of your output:
+The output should be:
+The average (mean) temperature was: 4.50
+But your output is: 
+The average (mean) temperature was:  4.50
+                                    ^
+------------------------------------|
+Professor's character ASCII code: hex(34), dec(52)
+un-matched character ASCII code: hex(20), dec(32)
+Outputs don't match. Submission aborted!
+jsherry1@matrix:~/IPC144/w3/in_lab> w3[6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 40L, 1006C[>c[1;1H[34m//jayson sherry
+//141056176
+//jsherry1@myseneca.ca
+//IPC144 
+//workshop 3, in lab[m
+
+[35m#include[m[31m<stdio.h>[m
+[35m#define NUMS [m[31m3[m
+
+[32mint[m main([32mvoid[m){
+[32mint[m i;
+[32mint[m high=[31m0[m,low=[31m0[m;
+[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;
+[32mfloat[m averageTemps;
+
+printf([31m"---=== IPC Temperature Analyzer ===---"[m);[18;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[19;17H [38;5;130mdo[m{[20;131H16,46[9CTop[16;46H[?12l[?25h[?25l[20;132H7,1-8[17;8H[?12l[?25h[?25l[20;132H8[18;8H[?12l[?25h[?25l[20;132H9[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;1H[K[20;131H20,1-8[9C4%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H21,1-8[9C9%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H22,1-8[8C14%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;131H[K[20;131H23,1-8[8C19%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[20;131H[K[20;131H24,1-8[8C23%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H25,1-8[8C28%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [34m//totalHigh = totalHigh  + high;[m[20;131H[K[20;131H26,1-8[8C33%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [34m//totalLow = totalLow + low;[m[20;131H[K[20;131H27,1-8[8C38%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [34m//averageTemps = (float)(totalHigh + totalLow) / (NUMS * 2);[m[20;131H[K[20;131H28,1-8[8C42%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[20;131H[K[20;131H29,1-8[8C47%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H30,1-8[8C52%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalLow = totalLow + low;[20;131H[K[20;131H31,1-8[8C57%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H32,1-8[8C61%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;16H }[20;131H[K[20;131H33,1-8[8C66%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H34,0-1[8C71%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H35,1-8[8C76%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H36,0-1[8C80%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was:  [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H[K[20;131H37,8[10C85%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[38;5;130mreturn[m [31m0[m;[20;131H[K[20;131H38,8[10C90%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H}[20;131H[K[20;131H39,1[10C95%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H40,0-1[8CBot[19;1H[?12l[?25h[?25l[20;131H39,1  [18;1H[?12l[?25h[?25l[20;132H8,8[17;8H[?12l[?25h[?25l[20;132H7[16;8H[?12l[?25h[?25l[20;134H9[16;9H[?12l[?25h[?25l[20;134H10[16;10H[?12l[?25h[?25l[20;135H1[16;11H[?12l[?25h[?25l[20;135H2[16;12H[?12l[?25h[?25l[20;135H3[16;13H[?12l[?25h[?25l[20;135H4[16;14H[?12l[?25h[?25l[20;135H5[16;15H[?12l[?25h[?25l[20;135H6[16;16H[?12l[?25h[?25l[20;135H7[16;17H[?12l[?25h[?25l[20;135H8[16;18H[?12l[?25h[?25l[20;135H9[16;19H[?12l[?25h[?25l[20;134H20[16;20H[?12l[?25h[?25l[20;135H1[16;21H[?12l[?25h[?25l[20;135H2[16;22H[?12l[?25h[?25l[1C[31m[106m([4C)[m[20;135H3[16;23H[?12l[?25h[?25l[31m(mean)[m[20;135H4[16;24H[?12l[?25h[?25l[20;135H5[16;25H[?12l[?25h[?25l[20;135H6[16;26H[?12l[?25h[?25l[20;135H7[16;27H[?12l[?25h[[31m[106m([4C)[m[20;135H8[16;28H[?12l[?25h[31m(mean)[m[20;135H9[16;29H[?12l[?25h[?25l[20;134H30[16;30H[?12l[?25h[?25l[20;135H1[16;31H[?12l[?25h[?25l[20;135H2[16;32H[?12l[?25h[?25l[20;135H3[16;33H[?12l[?25h[?25l[20;135H4[16;34H[?12l[?25h[?25l[20;135H5[16;35H[?12l[?25h[?25l[20;135H6[16;36H[?12l[?25h[?25l[20;135H7[16;37H[?12l[?25h[?25l[20;135H8[16;38H[?12l[?25h[?25l[20;135H9[16;39H[?12l[?25h[?25l[20;134H40[16;40H[?12l[?25h[?25l[20;135H1[16;41H[?12l[?25h[?25l[20;135H2[16;42H[?12l[?25h[?25l[20;135H3[16;43H[?12l[?25h[?25l[20;135H4[16;44H[?12l[?25h[?25l[20;135H5[16;45H[?12l[?25h[?25l[20;135H6[16;46H[?12l[?25h[?25l[20;135H7[16;47H[?12l[?25h[?25l[20;135H8[16;48H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H37,48[9CBot[16;48H[?12l[?25h[?2[31m [m[35m%2.2f\n[m[31m"[m,averageTemps);[16;70H[K[20;135H7[16;47H[?12l[?25h[?2[31m:[m[35m%2.2f\n[m[31m"[m,averageTemps);[16;69H[K[20;135H6[16;46H[?12l[?25h[?25[31m: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;135H7[16;47H[?12l[?25h[20;1H[K[16;46H[?25l[20;131H37,46[9CBot[16;46H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 40L, 1005C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/in_lab> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/in_lab> [6P~nasim.razavi/submit 144_w3_lab
+[H[2JSubmitter (V0.94)
+Submitting Workshop 3 in lab
+gcc -Wall -o ws temps.c 2> error.txt
+Success! no errors or warnings...
+
+
+READ THE FOLLOWING CAREFULLY!
+I am about to execute the tester and script the output to "output.txt"
+Please enter the values carefuly and exactly as instructed.
+Press <ENTER> to start...
+[H[2JFOLLOW THESE INSTRUCTIONS:
+1- Type ws and hit <ENTER>
+2- Use the test data specified in Workshop 3 in lab to test the program
+3- When done, type exit and hit <ENTER> to continue the submission process.
+Script started, file is output.txt
+jsherry1@matrix:~/IPC144/w3/in_lab> ws
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 8
+
+Enter the low value for day 1: -2
+
+Enter the high value for day 2: 41
+
+Enter the low value for day 2: -4
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 2: 
+9
+
+Enter the low value for day 2: ^C
+jsherry1@matrix:~/IPC144/w3/in_lab> [K[2P[2P[7Pw3[7Pw3[7Pw3w3w3w3exi[2P[2P[2P[K
+jsherry1@matrix:~/IPC144/w3/in_lab> 
+jsherry1@matrix:~/IPC144/w3/in_lab> ls
+[0m[00m144_w3_lab_output.txt[0m  [00mdiff.txt[0m  [00merror.txt[0m  [00moutput.txt[0m  [00mtemps.c[0m  [00;32mw3[0m  [00;32mws[0m
+jsherry1@matrix:~/IPC144/w3/in_lab> [2P[2P[7Pw3[7Pw3[7Pw3[7Pw3[7Pw3[7Pw3[7Pw3w3[7Pw3[7Pw3[7Pw3w3w3[7P[7P[7P[7P[7Pvi temps.[[[[[[[[[[Kexit
+exit
+Script done, file is output.txt
+
+In line number 14 of your output:
+The output should be:
+Enter the high value for day 2: 9
+But your output is: 
+Enter the high value for day 2: 
+                                ^
+--------------------------------|
+Professor's character ASCII code: hex(39), dec(57)
+un-matched character ASCII code: hex(d), dec(13)
+Outputs don't match. Submission aborted!
+jsherry1@matrix:~/IPC144/w3/in_lab> ~nasim.razavi/submit 144_w3_lab
+[H[2JSubmitter (V0.94)
+Submitting Workshop 3 in lab
+gcc -Wall -o ws temps.c 2> error.txt
+Success! no errors or warnings...
+
+
+READ THE FOLLOWING CAREFULLY!
+I am about to execute the tester and script the output to "output.txt"
+Please enter the values carefuly and exactly as instructed.
+Press <ENTER> to start...
+[H[2JFOLLOW THESE INSTRUCTIONS:
+1- Type ws and hit <ENTER>
+2- Use the test data specified in Workshop 3 in lab to test the program
+3- When done, type exit and hit <ENTER> to continue the submission process.
+Script started, file is output.txt
+jsherry1@matrix:~/IPC144/w3/in_lab> ws
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 8
+
+Enter the low value for day 1: -2
+
+Enter the high value for day 2: 41
+
+Enter the low value for day 2: -4
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 2: 9
+
+Enter the low value for day 2: -4
+
+Enter the high value for day 3: 5
+
+Enter the low value for day 3: 11
+
+Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.
+
+Enter the high value for day 3: 11
+
+Enter the low value for day 3: 5
+
+The average (mean) temperature was: 4.50
+jsherry1@matrix:~/IPC144/w3/in_lab> exit
+exit
+Script done, file is output.txt
+Success!... Outputs match.
+
+Would you like to submit this demonstration of Workshop 3 in lab? (Y)es/(N)o: y
+Thank you!, Your work is now submitted.
+jsherry1@matrix:~/IPC144/w3/in_lab> ls
+[0m[00m144_w3_lab_output.txt[0m  [00mdiff.txt[0m  [00merror.txt[0m  [00moutput.txt[0m  [00mtemps.c[0m  [00;32mw3[0m  [00;32mws[0m
+jsherry1@matrix:~/IPC144/w3/in_lab> cp temps.c /w3/at_home
+cp: cannot create regular file `/w3/at_home': No such file or directory
+jsherry1@matrix:~/IPC144/w3/in_lab> [Kcp temps.c IPC144
+cp: cannot create regular file `IPC144/w3/at_home': No such file or directory
+jsherry1@matrix:~/IPC144/w3/in_lab> ..
+jsherry1@matrix:~/IPC144/w3> ls
+[0m[01;34mat_home[0m  [01;34min_lab[0m
+jsherry1@matrix:~/IPC144/w3> cd at_home
+jsherry1@matrix:~/IPC144/w3/at_home> ls
+jsherry1@matrix:~/IPC144/w3/at_home> [H[2Jjsherry1@matrix:~/IPC144/w3/at_home> ..
+jsherry1@matrix:~/IPC144/w3> ls
+[0m[01;34mat_home[0m  [01;34min_lab[0m
+jsherry1@matrix:~/IPC144/w3> cd in_lab
+jsherry1@matrix:~/IPC144/w3/in_lab> ls
+[0m[00m144_w3_lab_output.txt[0m  [00mdiff.txt[0m  [00merror.txt[0m  [00moutput.txt[0m  [00mtemps.c[0m  [00;32mw3[0m  [00;32mws[0m
+jsherry1@matrix:~/IPC144/w3/in_lab> cp temps.c ~/IPC144/w3/at_home
+jsherry1@matrix:~/IPC144/w3/in_lab> ..
+jsherry1@matrix:~/IPC144/w3> ls
+[0m[01;34mat_home[0m  [01;34min_lab[0m
+jsherry1@matrix:~/IPC144/w3> cd at_home
+jsherry1@matrix:~/IPC144/w3/at_home> ls
+[0m[00mtemps.c[0m
+jsherry1@matrix:~/IPC144/w3/at_home> t[K[Kouch reflect.txt
+jsherry1@matrix:~/IPC144/w3/at_home> ls
+[0m[00mreflect.txt[0m  [00mtemps.c[0m
+jsherry1@matrix:~/IPC144/w3/at_home> vi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 40L, 1005C[>c[1;1H[34m//jayson sherry
+//141056176
+//jsherry1@myseneca.ca
+//IPC144 
+//workshop 3, in lab[m
+
+[35m#include[m[31m<stdio.h>[m
+[35m#define NUMS [m[31m3[m
+
+[32mint[m main([32mvoid[m){
+[32mint[m i;
+[32mint[m high=[31m0[m,low=[31m0[m;
+[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;
+[32mfloat[m averageTemps;
+
+printf([31m"---=== IPC Temperature Analyzer ===---"[m);[18;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[19;17H [38;5;130mdo[m{[20;131H1,1[11CTop[1;1H[?12l[?25h[?25l[20;131H2[2;1H[?12l[?25h[?25l[20;131H3[3;1H[?12l[?25h[?25l[20;131H4[4;1H[?12l[?25h[?25l[20;133H2[4;2H[?12l[?25h[?25l[20;131H5[5;2H[?12l[?25h[?25l[20;133H3[5;3H[?12l[?25h[?25l[20;133H4[5;4H[?12l[?25h[?25l[20;133H5[5;5H[?12l[?25h[?25l[20;133H6[5;6H[?12l[?25h[?25l[20;133H7[5;7H[?12l[?25h[?25l[20;133H8[5;8H[?12l[?25h[?25l[20;133H9[5;9H[?12l[?25h[?25l[20;133H10[5;10H[?12l[?25h[?25l[20;134H1[5;11H[?12l[?25h[?25l[20;134H2[5;12H[?12l[?25h[?25l[20;134H3[5;13H[?12l[?25h[?25l[20;134H4[5;14H[?12l[?25h[?25l[20;134H5[5;15H[?12l[?25h[?25l[20;134H6[5;16H[?12l[?25h[?25l[20;134H7[5;17H[?12l[?25h[?25l[20;134H8[5;18H[?12l[?25h[?25l[20;134H9[5;19H[?12l[?25h[?25l[20;133H20[5;20H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;13H[K[20;131H5,20[10CTop[5;20H[?12l[?25h[?25l[20;134H1[5;21H[?12l[?25h[?25l[5;20H[K[20;134H0[5;20H[?12l[?25h[?25l[5;19H[K[20;133H19[5;19H[?12l[?25h[?25l[5;18H[K[20;134H8[5;18H[?12l[?25h[?25l[5;17H[K[20;134H7[5;17H[?12l[?25h[?25l[5;16H[K[20;134H6[5;16H[?12l[?25h[?25l[5;15H[K[20;134H5[5;15H[?12l[?25h[?25[34m a[m[20;134H6[5;16H[?12l[?25h[?25[34mat[m[20;134H7[5;17H[?12l[?25h[?25l[34m [m[20;134H8[5;18H[?12l[?25h[?25[34m h[m[20;134H9[5;19H[?12l[?25h[?25[34mho[m[20;133H20[5;20H[?12l[?25h[?25[34mom[m[20;134H1[5;21H[?12l[?25h[?25[34mme[m[20;134H2[5;22H[?12l[?25h[20;1H[K[5;21H[?25l[20;131H5,21[10CTop[5;21H[?12l[?25h[?25l[20;131H6,0-1[6;1H[?12l[?25h[?25l[20;131H7,17 [7;17H[?12l[?25h[?25l[20;131H8,14[8;14H[?12l[?25h[?25l[20;134H3[8;13H[?12l[?25h[?25l[20;134H4[8;14H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H8,14[10CTop[8;14H[?12l[?25h[?25l[20;134H5[8;15H[?12l[?25h[?25l[8;14H[K[20;134H4[8;14H[?12l[?25h[?25[35m [m[31m4[m[20;134H5[8;15H[?12l[?25h[?25l[20;131H9,1 [9;1H[?12l[?25h[?25l[20;131H10,15[10;15H[?12l[?25h[?25l[20;132H1,7 [11;7H[?12l[?25h[?25l[20;132H2,15[12;15H[?12l[?25h[?25l[20;132H3[13;15H[?12l[?25h[?25l[20;132H4[14;15H[?12l[?25h[?25l[20;132H5,1 [15;1H[?12l[?25h[?25l[20;132H6,15[16;15H[?12l[?25h[?25l[20;132H7,2-9[17;9H[?12l[?25h[?25l[20;132H8,8-15[18;15H[?12l[?25h[?25l[20;132H9,2-9 [19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H20,2-9[9C4%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H21,2-9[9C9%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H22,2-9[8C14%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;131H[K[20;131H23,2-9[8C19%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[20;131H[K[20;131H24,2-9[8C23%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H25,2-9[8C28%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [34m//totalHigh = totalHigh  + high;[m[20;131H[K[20;131H26,2-9[8C33%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [34m//totalLow = totalLow + low;[m[20;131H[K[20;131H27,2-9[8C38%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [34m//averageTemps = (float)(totalHigh + totalLow) / (NUMS * 2);[m[20;131H[K[20;131H28,2-9[8C42%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[20;131H[K[20;131H29,2-9[8C47%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H30,2-9[8C52%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalLow = totalLow + low;[20;131H[K[20;131H31,2-9[8C57%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H32,2-9[8C61%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;16H }[20;131H[K[20;131H33,2-9[8C66%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H34,1[10C71%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H35,2-9[8C76%[19;9H[?12l[?25h[20;1H[K[19;8H[?25l[20;131H35,1-8[8C76%[19;8H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 40L, 1006C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> lslslslslslscp tls[14P[6Pgcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> ls
+[0m[00mreflect.txt[0m  [00mtemps.c[0m  [00;32mw3[0m
+jsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 12
+
+Enter the low value for day 1: 1
+
+Enter the high value for day 2: 12
+
+Enter the low value for day 2: 1
+
+Enter the high value for day 3: 12
+
+Enter the low value for day 3: 1
+
+Enter the high value for day 4: 12
+
+Enter the low value for day 4: 1
+
+The average (mean) temperature was: 6.50
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 40L, 1006C[>c[1;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[2;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[3;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[4;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[5;24H [34m//totalHigh = totalHigh  + high;[m[6;24H [34m//totalLow = totalLow + low;[m[7;24H [34m//averageTemps = (float)(totalHigh + totalLow) / (NUMS * 2);[m[8;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[9;24H totalHigh = totalHigh + high;[10;24H totalLow = totalLow + low;[11;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[12;16H }[16;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);
+[38;5;130mreturn[m [31m0[m;
+}[20;131H35,1-8[8CBot[14;8H[?12l[?25h[?25l[20;132H4,0-1[13;1H[?12l[?25h[?25l[20;132H3,1-8[12;8H[?12l[?25h[?25l[20;132H2[11;8H[?12l[?25h[?25l[20;132H1[10;8H[?12l[?25h[?25l[20;132H0[9;8H[?12l[?25h[?25l[20;131H29[8;8H[?12l[?25h[?25l[20;134H2-16[8;16H[?12l[?25h[?25l[20;132H8[7;16H[?12l[?25h[?25l[20;134H3-24[7;24H[?12l[?25h[?25l[20;134H4-25[7;25H[?12l[?25h[?25l[20;134H5-26[7;26H[?12l[?25h[?25l[20;134H6-27[7;27H[?12l[?25h[?25l[20;134H7-28[7;28H[?12l[?25h[?25l[20;134H8-29[7;29H[?12l[?25h[?25l[20;134H9-30[7;30H[?12l[?25h[?25l[20;134H10-31[7;31H[?12l[?25h[?25l[20;135H1-32[7;32H[?12l[?25h[?25l[20;135H2-33[7;33H[?12l[?25h[?25l[20;135H3-34[7;34H[?12l[?25h[?25l[20;135H4-35[7;35H[?12l[?25h[?25l[20;135H5-36[7;36H[?12l[?25h[?25l[20;135H6-37[7;37H[?12l[?25h[?25l[20;135H7-38[7;38H[?12l[?25h[?25l[20;135H8-39[7;39H[?12l[?25h[?25l[20;135H9-40[7;40H[?12l[?25h[?25l[20;134H20-41[7;41H[?12l[?25h[?25l[1C[34m[106m([5C)[m[20;135H1-42[7;42H[?12l[?25h[?25l[34m(float)[m[20;135H2-43[7;43H[?12l[?25h[?25l[20;135H3-44[7;44H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;13H[K[20;131H28,23-44      Bot[7;44H[?12l[?25h[?25l[20;135H4-45[7;45H[?12l[?25h[?25l[20;135H5-46[7;46H[?12l[?25h[?25l[20;135H6-47[7;47H[?12l[?25h[34m[106m([5C)[m[20;135H7-48[7;48H[?12l[?25h[34m(float)[m[34m[106m([20C)[m[20;135H8-49[7;49H[?12l[?25h[?25l[20;135H9-50[7;50H[?12l[?25h[?25[34m([20C)[m[20;134H30-51[7;51H[?12l[?25h[?25l[20;135H1-52[7;52H[?12l[?25h[?25l[20;135H2-53[7;53H[?12l[?25h[?25l[20;135H3-54[7;54H[?12l[?25h[?25l[20;135H4-55[7;55H[?12l[?25h[?25l[20;135H5-56[7;56H[?12l[?25h[?25l[20;135H6-57[7;57H[?12l[?25h[?25l[20;135H7-58[7;58H[?12l[?25h[?25l[20;135H8-59[7;59H[?12l[?25h[?25l[20;135H9-60[7;60H[?12l[?25h[?25l[20;134H40-61[7;61H[?12l[?25h[?25l[20;135H1-62[7;62H[?12l[?25h[?25l[20;135H2-63[7;63H[?12l[?25h[?25l[20;135H3-64[7;64H[?12l[?25h[?25l[20;135H4-65[7;65H[?12l[?25h[?25l[20;135H5-66[7;66H[?12l[?25h[?25l[20;135H6-67[7;67H[?12l[?25h[?25l[20;135H7-68[7;68H[?12l[?25h[?25l[20;135H8-69[7;69H[?12l[?25h[?25l[7;49H[34m[106m([20C)[m[20;135H9-70[7;70H[?12l[?25h[?25l[20;134H50-71[7;71H[?12l[?25h[?25l[7;49H[34m([20C)[m[20;135H1-72[7;72H[?12l[?25h[?25l[20;135H2-73[7;73H[?12l[?25h[?25l[1C[34m[106m([8C)[m[20;135H3-74[7;74H[?12l[?25h[?25l[20;135H4-75[7;75H[?12l[?25h[?25[34m([8C)[m[20;135H5-76[7;76H[?12l[?25h[?25l[20;135H6-77[7;77H[?12l[?25h[?25l[20;135H7-78[7;78H[?12l[?25h[?25l[20;135H8-79[7;79H[?12l[?25h[?25l[20;135H9-80[7;80H[?12l[?25h[?25l[20;134H60-81[7;81H[?12l[?25h[?25l[20;135H1-82[7;82H[?12l[?25h[?25l[7;74H[34m[106m([8C)[m[20;135H2-83[7;83H[?12l[?25h[?25l[20;135H3-84[7;84H[?12l[?25h[?25l[7;74H[34m([8C)[m[20;135H4-85[7;85H[?12l[?25h[?25l[7;84H[K[7;74H[34m[106m([8C)[m[20;135H3-84[7;84H[?12l[?25h[?25l[7;83H[K[7;74H[34m([m[20;135H2-83[7;83H[?12l[?25h[?25l[7;82H[K[20;135H1-82[7;82H[?12l[?25h[?25l[7;81H[K[20;135H0-81[7;81H[?12l[?25h[?25l[7;80H[K[20;134H59-80[7;80H[?12l[?25h[?25l[7;79H[K[20;135H8-79[7;79H[?12l[?25h[?25l[7;78H[K[20;135H7-78[7;78H[?12l[?25h[?25l[7;77H[K[20;135H6-77[7;77H[?12l[?25h[?25l[7;76H[K[20;135H5-76[7;76H[?12l[?25h[?25l[7;75H[K[20;135H4-75[7;75H[?12l[?25h[?25l[7;74H[K[20;135H3-74[7;74H[?12l[?25h[?25l[7;73H[K[20;135H2-73[7;73H[?12l[?25h[?25l[7;72H[K[20;135H1-72[7;72H[?12l[?25h[?25l[7;71H[K[7;49H[34m[106m([20C)[m[20;135H0-71[7;71H[?12l[?25h[?25l[7;70H[K[7;49H[34m([m[20;134H49-70[7;70H[?12l[?25h[?25l[7;69H[K[20;135H8-69[7;69H[?12l[?25h[?25l[7;68H[K[20;135H7-68[7;68H[?12l[?25h[?25l[7;67H[K[20;135H6-67[7;67H[?12l[?25h[?25l[7;66H[K[20;135H5-66[7;66H[?12l[?25h[?25l[7;65H[K[20;135H4-65[7;65H[?12l[?25h[?25l[7;64H[K[20;135H3-64[7;64H[?12l[?25h[?25l[7;63H[K[20;135H2-63[7;63H[?12l[?25h[?25l[7;62H[K[20;135H1-62[7;62H[?12l[?25h[?25l[7;61H[K[20;135H0-61[7;61H[?12l[?25h[?25l[7;60H[K[20;134H39-60[7;60H[?12l[?25h[?25l[7;59H[K[20;135H8-59[7;59H[?12l[?25h[?25l[7;58H[K[20;135H7-58[7;58H[?12l[?25h[?25l[7;57H[K[20;135H6-57[7;57H[?12l[?25h[?25l[7;56H[K[20;135H5-56[7;56H[?12l[?25h[?25l[7;55H[K[20;135H4-55[7;55H[?12l[?25h[?25l[7;54H[K[20;135H3-54[7;54H[?12l[?25h[?25l[7;53H[K[20;135H2-53[7;53H[?12l[?25h[?25l[7;52H[K[20;135H1-52[7;52H[?12l[?25h[?25l[7;51H[K[20;135H0-51[7;51H[?12l[?25h[?25l[7;50H[K[20;134H29-50[7;50H[?12l[?25h[?25l[7;49H[K[7;42H[34m[106m([5C)[m[20;135H8-49[7;49H[?12l[?25h[?25l[7;48H[K[7;42H[34m([m[20;135H7-48[7;48H[?12l[?25h[?25l[7;47H[K[20;135H6-47[7;47H[?12l[?25h[?25l[7;46H[K[20;135H5-46[7;46H[?12l[?25h[?25l[7;45H[K[20;135H4-45[7;45H[?12l[?25h[?25l[7;44H[K[20;135H3-44[7;44H[?12l[?25h[?25l[7;43H[K[20;135H2-43[7;43H[?12l[?25h[?25l[7;42H[K[20;135H1-42[7;42H[?12l[?25h[?25l[7;41H[K[20;135H0-41[7;41H[?12l[?25h[?25l[7;40H[K[20;134H19-40[7;40H[?12l[?25h[?25l[7;39H[K[20;135H8-39[7;39H[?12l[?25h[?25l[7;38H[K[20;135H7-38[7;38H[?12l[?25h[?25l[7;37H[K[20;135H6-37[7;37H[?12l[?25h[?25l[7;36H[K[20;135H5-36[7;36H[?12l[?25h[?25l[7;35H[K[20;135H4-35[7;35H[?12l[?25h[?25l[7;34H[K[20;135H3-34[7;34H[?12l[?25h[?25l[7;33H[K[20;135H2-33[7;33H[?12l[?25h[?25l[7;32H[K[20;135H1-32[7;32H[?12l[?25h[?25l[7;31H[K[20;135H0-31[7;31H[?12l[?25h[?25l[7;30H[K[20;134H9-30 [7;30H[?12l[?25h[?25l[7;29H[K[20;134H8-29[7;29H[?12l[?25h[?25l[7;28H[K[20;134H7-28[7;28H[?12l[?25h[?25l[7;27H[K[20;134H6-27[7;27H[?12l[?25h[?2/[7;26H[K[20;134H5-26[7;26H[?12l[?25h[?25l[7;25H[K[20;134H4-25[7;25H[?12l[?25h[?25l[20;134H3-17[7;17H[?12l[?25h[?25l[20;134H2-9 [7;9H[?12l[?25h[?25l[20;134H1  [7;1H[?12l[?25h[?25l[6;19r[19;1H
+[1;20r[6;24H [34m//totalLow = totalLow + low;[m[19;1H[94m~                                                                                                                                                   [m[20;131H[K[20;131H27,32-53      Bot[6;53H[?12l[?25h[?25l[6;52H[K[20;135H1-52[6;52H[?12l[?25h[?25l[6;51H[K[20;135H0-51[6;51H[?12l[?25h[?25l[6;50H[K[20;134H29-50[6;50H[?12l[?25h[?25l[6;49H[K[20;135H8-49[6;49H[?12l[?25h[?25l[6;48H[K[20;135H7-48[6;48H[?12l[?25h[?25l[6;47H[K[20;135H6-47[6;47H[?12l[?25h[?25l[6;46H[K[20;135H5-46[6;46H[?12l[?25h[?25l[6;45H[K[20;135H4-45[6;45H[?12l[?25h[?25l[6;44H[K[20;135H3-44[6;44H[?12l[?25h[?25l[6;43H[K[20;135H2-43[6;43H[?12l[?25h[?25l[6;42H[K[20;135H1-42[6;42H[?12l[?25h[?25l[6;41H[K[20;135H0-41[6;41H[?12l[?25h[?25l[6;40H[K[20;134H19-40[6;40H[?12l[?25h[?25l[6;39H[K[20;135H8-39[6;39H[?12l[?25h[?25l[6;38H[K[20;135H7-38[6;38H[?12l[?25h[?25l[6;37H[K[20;135H6-37[6;37H[?12l[?25h[?25l[6;36H[K[20;135H5-36[6;36H[?12l[?25h[?25l[6;35H[K[20;135H4-35[6;35H[?12l[?25h[?25l[6;34H[K[20;135H3-34[6;34H[?12l[?25h[?25l[6;33H[K[20;135H2-33[6;33H[?12l[?25h[?25l[6;32H[K[20;135H1-32[6;32H[?12l[?25h[?25l[6;31H[K[20;135H0-31[6;31H[?12l[?25h[?25l[6;30H[K[20;134H9-30 [6;30H[?12l[?25h[?25l[6;29H[K[20;134H8-29[6;29H[?12l[?25h[?25l[6;28H[K[20;134H7-28[6;28H[?12l[?25h[?25l[6;27H[K[20;134H6-27[6;27H[?12l[?25h[?2/[6;26H[K[20;134H5-26[6;26H[?12l[?25h[?25l[6;25H[K[20;134H4-25[6;25H[?12l[?25h[?25l[20;134H3-17[6;17H[?12l[?25h[?25l[20;134H2-9 [6;9H[?12l[?25h[?25l[20;134H1  [6;1H[?12l[?25h[?25l[5;19r[19;1H
+[1;20r[5;24H [34m//totalHigh = totalHigh  + high;[m[19;1H[94m~                                                                                                                                                   [m[20;131H[K[20;131H26,37-57      Bot[5;57H[?12l[?25h[?25l[5;56H[K[20;135H6-56[5;56H[?12l[?25h[?25l[5;55H[K[20;135H5-55[5;55H[?12l[?25h[?25l[5;54H[K[20;135H4-54[5;54H[?12l[?25h[?25l[5;53H[K[20;135H3-53[5;53H[?12l[?25h[?25l[5;52H[K[20;135H2-52[5;52H[?12l[?25h[?25l[5;51H[K[20;135H1-51[5;51H[?12l[?25h[?25l[5;50H[K[20;135H0-50[5;50H[?12l[?25h[?25l[5;49H[K[20;134H29-49[5;49H[?12l[?25h[?25l[5;48H[K[20;135H8-48[5;48H[?12l[?25h[?25l[5;47H[K[20;135H7-47[5;47H[?12l[?25h[?25l[5;46H[K[20;135H6-46[5;46H[?12l[?25h[?25l[5;45H[K[20;135H5-45[5;45H[?12l[?25h[?25l[5;44H[K[20;135H4-44[5;44H[?12l[?25h[?25l[5;43H[K[20;135H3-43[5;43H[?12l[?25h[?25l[5;42H[K[20;135H2-42[5;42H[?12l[?25h[?25l[5;41H[K[20;135H1-41[5;41H[?12l[?25h[?25l[5;40H[K[20;135H0-40[5;40H[?12l[?25h[?25l[5;39H[K[20;134H19-39[5;39H[?12l[?25h[?25l[5;38H[K[20;135H8-38[5;38H[?12l[?25h[?25l[5;37H[K[20;135H7-37[5;37H[?12l[?25h[?25l[5;36H[K[20;135H6-36[5;36H[?12l[?25h[?25l[5;35H[K[20;135H5-35[5;35H[?12l[?25h[?25l[5;34H[K[20;135H4-34[5;34H[?12l[?25h[?25l[5;33H[K[20;135H3-33[5;33H[?12l[?25h[?25l[5;32H[K[20;135H2-32[5;32H[?12l[?25h[?25l[5;31H[K[20;135H1-31[5;31H[?12l[?25h[?25l[5;30H[K[20;135H0-30[5;30H[?12l[?25h[?25l[5;29H[K[20;134H9-29 [5;29H[?12l[?25h[?25l[5;28H[K[20;134H8-28[5;28H[?12l[?25h[?25l[5;27H[K[20;134H7-27[5;27H[?12l[?25h[?2/[5;26H[K[20;134H6-26[5;26H[?12l[?25h[?25l[5;25H[K[20;134H5-25[5;25H[?12l[?25h[?25l[20;134H4-18[5;18H[?12l[?25h[20;1H[K[5;17H[?25l[20;131H26,3-17[7CBot[5;17H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 38L, 877C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 38L, 877C[>c[1;1H[35m#define NUMS [m[31m4[m
+
+[32mint[m main([32mvoid[m){
+[32mint[m i;
+[32mint[m high=[31m0[m,low=[31m0[m;
+[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;
+[32mfloat[m averageTemps;
+
+printf([31m"---=== IPC Temperature Analyzer ===---"[m);[11;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[12;17H [38;5;130mdo[m{[13;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[14;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[15;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[16;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[17;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[18;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H26,3-17[7C36%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[20;1H[K[20;131H27,3-17[7C42%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H28,3-24[7C47%[19;24H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalLow = totalLow + low;[20;131H[K[20;131H29,3-24[7C52%[19;24H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H30,3-17[7C57%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[6;29H[106m{[m[19;16H [106m}[m[20;131H[K[20;131H31,3-17[7C63%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[5;29H{[18;17H}[20;131H[K[20;131H32,0-1[8C68%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H33,1-8[8C73%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H34,0-1[8C78%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H[K[20;131H35,17[9C84%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[38;5;130mreturn[m [31m0[m;[20;131H[K[20;131H36,9[10C89%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H}[20;131H[K[20;131H37,1[10C94%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H38,0-1[8CBot[19;1H[?12l[?25h[?25l
+[1m-- INSERT --[m[20;131H[K[20;131H38,1[10CBot[19;1H[?12l[?25h[?25l[20;132H7[18;1H[?12l[?25h[?25l[20;132H6[17;1H[?12l[?25h[?25l[20;132H5[16;1H[?12l[?25h[?25l[20;134H2[16;2H[?12l[?25h[?25l[20;134H3[16;3H[?12l[?25h[?25l[20;134H4[16;4H[?12l[?25h[?25l[20;134H5[16;5H[?12l[?25h[?25l[20;134H6[16;6H[?12l[?25h[?25lf[106m([60C)[m[20;134H7[16;7H[?12l[?25h[?25l[20;134H8[16;8H[?12l[?25h[?25([60C)[20;134H9[16;9H[?12l[?25h[?25l[20;134H10[16;10H[?12l[?25h[?25l[20;135H1[16;11H[?12l[?25h[?25l[20;135H2[16;12H[?12l[?25h[?25l[20;135H3[16;13H[?12l[?25h[?25l[20;135H4[16;14H[?12l[?25h[?25l[20;135H5[16;15H[?12l[?25h[?25l[20;135H6[16;16H[?12l[?25h[?25l[20;135H7[16;17H[?12l[?25h[?25l[20;135H8[16;18H[?12l[?25h[?25l[20;135H9[16;19H[?12l[?25h[?25l[20;134H20[16;20H[?12l[?25h[?25l[20;135H1[16;21H[?12l[?25h[?25l[20;135H2[16;22H[?12l[?25h[?25l[1C[31m[106m([4C)[m[20;135H3[16;23H[?12l[?25h[?25l[20;135H4[16;24H[?12l[?25h[?25[31m(mean)[m[20;135H5[16;25H[?12l[?25h[?25l[20;135H6[16;26H[?12l[?25h[?25l[20;135H7[16;27H[?12l[?25h[[31m[106m([4C)[m[20;135H8[16;28H[?12l[?25h[?25l[20;135H9[16;29H[?12l[?25h[31m(mean)[m[20;134H30[16;30H[?12l[?25h[?25l[20;135H1[16;31H[?12l[?25h[?25l[20;135H2[16;32H[?12l[?25h[?25l[20;135H3[16;33H[?12l[?25h[?25l[20;135H4[16;34H[?12l[?25h[?25l[20;135H5[16;35H[?12l[?25h[?25l[20;135H6[16;36H[?12l[?25h[?25l[20;135H7[16;37H[?12l[?25h[?25l[20;135H8[16;38H[?12l[?25h[?25l[20;135H9[16;39H[?12l[?25h[?25l[20;134H40[16;40H[?12l[?25h[?25l[20;135H1[16;41H[?12l[?25h[?25l[20;135H2[16;42H[?12l[?25h[?25l[20;135H3[16;43H[?12l[?25h[?25l[20;135H4[16;44H[?12l[?25h[?25l[20;135H5[16;45H[?12l[?25h[?25l[20;135H6[16;46H[?12l[?25h[?25l[20;135H7[16;47H[?12l[?25h[?25l[20;135H8[16;48H[?12l[?25h[?25l[20;135H9[16;49H[?12l[?25h[?25l[20;134H50[16;50H[?12l[?25h[?25l[20;135H1[16;51H[?12l[?25h[?25l[20;135H2[16;52H[?12l[?25h[?25l[20;135H3[16;53H[?12l[?25h[?25l[20;135H4[16;54H[?12l[?25h[?25l[20;135H5[16;55H[?12l[?25h[?25l[20;135H6[16;56H[?12l[?25h[?25l[20;135H7[16;57H[?12l[?25h[?25l[20;135H8[16;58H[?12l[?25h[?25l[20;135H9[16;59H[?12l[?25h[?25l[20;134H60[16;60H[?12l[?25h[?25l[20;135H1[16;61H[?12l[?25h[?25l[20;135H2[16;62H[?12l[?25h[?25l[20;135H3[16;63H[?12l[?25h[?25l[20;135H4[16;64H[?12l[?25h[?25l[20;135H5[16;65H[?12l[?25h[?25l[20;135H6[16;66H[?12l[?25h[?25l[20;135H7[16;67H[?12l[?25h[?25l[16;7H[106m([60C)[m[20;135H8[16;68H[?12l[?25h[?25l[20;135H9[16;69H[?12l[?25h[?25l[16;7H([60C)[20;134H70[16;70H[?12l[?25h[?25l[17;19r[17;1H[L[1;20r[20;131H[K[20;131H36,1[10C95%[17;1H[?12l[?25h[?25lT[20;134H2[17;2H[?12l[?25h[?25Th[20;134H3[17;3H[?12l[?25h[?25he[20;134H4[17;4H[?12l[?25h[?25l[20;134H5[17;5H[?12l[?25h[?25 h[20;134H6[17;6H[?12l[?25h[?25hi[20;134H7[17;7H[?12l[?25h[?25ig[20;134H8[17;8H[?12l[?25h[?25gh[20;134H9[17;9H[?12l[?25h[?25he[20;134H10[17;10H[?12l[?25h[?25es[20;135H1[17;11H[?12l[?25h[?25st[20;135H2[17;12H[?12l[?25h[?25l[20;135H3[17;13H[?12l[?25h[?25 t[20;135H4[17;14H[?12l[?25h[?25te[20;135H5[17;15H[?12l[?25h[?25em[20;135H6[17;16H[?12l[?25h[?25mp[20;135H7[17;17H[?12l[?25h[?25pe[20;135H8[17;18H[?12l[?25h[?25er[20;135H9[17;19H[?12l[?25h[?25ra[20;134H20[17;20H[?12l[?25h[?25at[20;135H1[17;21H[?12l[?25h[?25tu[20;135H2[17;22H[?12l[?25h[?25ur[20;135H3[17;23H[?12l[?25h[?25re[20;135H4[17;24H[?12l[?25h[?25l[20;135H5[17;25H[?12l[?25h[?25 w[20;135H6[17;26H[?12l[?25h[?25wa[20;135H7[17;27H[?12l[?25h[?25as[20;135H8[17;28H[?12l[?25h[?25l[20;135H9[17;29H[?12l[?25h[?25 %[20;134H30[17;30H[?12l[?25h[?25%d[20;135H1[17;31H[?12l[?25h[?25l[20;135H0[17;30H[?12l[?25h[?25l[20;134H29[17;29H[?12l[?25h[?25l[20;135H8[17;28H[?12l[?25h[?25l[20;135H7[17;27H[?12l[?25h[?25l[20;135H6[17;26H[?12l[?25h[?25l[20;135H5[17;25H[?12l[?25h[?25l[20;135H4[17;24H[?12l[?25h[?25l[20;135H3[17;23H[?12l[?25h[?25l[20;135H2[17;22H[?12l[?25h[?25l[20;135H1[17;21H[?12l[?25h[?25l[20;135H0[17;20H[?12l[?25h[?25l[20;134H19[17;19H[?12l[?25h[?25l[20;135H8[17;18H[?12l[?25h[?25l[20;135H7[17;17H[?12l[?25h[?25l[20;135H6[17;16H[?12l[?25h[?25l[20;135H5[17;15H[?12l[?25h[?25l[20;135H4[17;14H[?12l[?25h[?25l[20;135H3[17;13H[?12l[?25h[?25l[20;135H2[17;12H[?12l[?25h[?25l[20;135H1[17;11H[?12l[?25h[?25l[20;135H0[17;10H[?12l[?25h[?25l[20;134H9 [17;9H[?12l[?25h[?25l[20;134H8[17;8H[?12l[?25h[?25l[20;134H7[17;7H[?12l[?25h[?25l[20;134H6[17;6H[?12l[?25h[?25l[20;134H5[17;5H[?12l[?25h[?25l[20;134H4[17;4H[?12l[?25h[?25l[20;134H3[17;3H[?12l[?25h[?25l[20;134H2[17;2H[?12l[?25h[?25l[20;134H1[17;1H[?12l[?25h[?25lpThe highest temperature was %d[20;134H2[17;2H[?12l[?25h[?25prThe highest temperature was %d[20;134H3[17;3H[?12l[?25h[?25riThe highest temperature was %d[20;134H4[17;4H[?12l[?25h[?25inThe highest temperature was %d[20;134H5[17;5H[?12l[?25h[?25ntThe highest temperature was %d[20;134H6[17;6H[?12l[?25h[?25tfThe highest temperature was %d[20;134H7[17;7H[?12l[?25h[?25f(The highest temperature was %d
+
+[97m[101m}[m[20;134H8[17;8H[?12l[?25h[?25([31m"The highest temperature was [m[35m%d[m
+[31mreturn 0;
+}[m[20;134H9[17;9H[?12l[?25h[?25l[20;134H10[17;10H[?12l[?25h[?25l[20;135H1[17;11H[?12l[?25h[?25l[20;135H2[17;12H[?12l[?25h[?25l[20;135H3[17;13H[?12l[?25h[?25l[20;135H4[17;14H[?12l[?25h[?25l[20;135H5[17;15H[?12l[?25h[?25l[20;135H6[17;16H[?12l[?25h[?25l[20;135H7[17;17H[?12l[?25h[?25l[20;135H8[17;18H[?12l[?25h[?25l[20;135H9[17;19H[?12l[?25h[?25l[20;134H20[17;20H[?12l[?25h[?25l[20;135H1[17;21H[?12l[?25h[?25l[20;135H2[17;22H[?12l[?25h[?25l[20;135H3[17;23H[?12l[?25h[?25l[20;135H4[17;24H[?12l[?25h[?25l[20;135H5[17;25H[?12l[?25h[?25l[20;135H6[17;26H[?12l[?25h[?25l[20;135H7[17;27H[?12l[?25h[?25l[20;135H8[17;28H[?12l[?25h[?25l[20;135H9[17;29H[?12l[?25h[?25l[20;134H30[17;30H[?12l[?25h[?25l[20;135H1[17;31H[?12l[?25h[?25l[20;135H2[17;32H[?12l[?25h[?25l[20;135H3[17;33H[?12l[?25h[?25l[20;135H4[17;34H[?12l[?25h[?25l[20;135H5[17;35H[?12l[?25h[?25l[20;135H6[17;36H[?12l[?25h[?25l[20;135H7[17;37H[?12l[?25h[?25l[20;135H8[17;38H[?12l[?25h[?25l[20;135H9[17;39H[?12l[?25h[?25[35md[m[31m,[m[20;134H40[17;40H[?12l[?25h[?25l[31m [m[20;135H1[17;41H[?12l[?25h[?25[31m o[m[20;135H2[17;42H[?12l[?25h[?25[31mon[m[20;135H3[17;43H[?12l[?25h[?25l[31m [m[20;135H4[17;44H[?12l[?25h[?25[31m d[m[20;135H5[17;45H[?12l[?25h[?25[31mda[m[20;135H6[17;46H[?12l[?25h[?25[31may[m[20;135H7[17;47H[?12l[?25h[?25l[31m [m[20;135H8[17;48H[?12l[?25h[?25[31m @[m[20;135H9[17;49H[?12l[?25h[?25l[17;48H[K[20;135H8[17;48H[?12l[?25h[?25[31m %[m[20;135H9[17;49H[?12l[?25h[?25[35m%d[m[20;134H50[17;50H[?12l[?25h[?25[35md\[m[20;135H1[17;51H[?12l[?25h[?25[35m\n[m[20;135H2[17;52H[?12l[?25h[?25[35mn[m[31m"[m
+[38;5;130mreturn[m [1C;
+[97m[101m}[m[20;135H3[17;53H[?12l[?25h[?25[31m"[m,[20;135H4[17;54H[?12l[?25h[?25,)
+
+}[20;134H7 [17;7H[?12l[?25h[?25l[106m([46C)[m[20;134H55[17;55H[?12l[?25h[?25[106m)[m;[17;7H([46C)[20;135H6[17;56H[?12l[?25h[?25l[18;1H[K[19;1H[38;5;130mreturn[m [31m0[m;[20;132H7,1 [10C0[18;1H[?12l[?25h[?25lp[20;134H2[18;2H[?12l[?25h[?25pr[20;134H3[18;3H[?12l[?25h[?25ri[20;134H4[18;4H[?12l[?25h[?25in[20;134H5[18;5H[?12l[?25h[?25nt[20;134H6[18;6H[?12l[?25h[?25tf[20;134H7[18;7H[?12l[?25h[?25f([20;134H8[18;8H[?12l[?25h[?25([31m"
+return 0;[m[20;134H9[18;9H[?12l[?25h[?25[31m"T[m[20;134H10[18;10H[?12l[?25h[?25[31mTh[m[20;135H1[18;11H[?12l[?25h[?25[31mhe[m[20;135H2[18;12H[?12l[?25h[?25l[31m [m[20;135H3[18;13H[?12l[?25h[?25[31m l[m[20;135H4[18;14H[?12l[?25h[?25[31mlo[m[20;135H5[18;15H[?12l[?25h[?25[31mow[m[20;135H6[18;16H[?12l[?25h[?25[31mwe[m[20;135H7[18;17H[?12l[?25h[?25[31mes[m[20;135H8[18;18H[?12l[?25h[?25[31mst[m[20;135H9[18;19H[?12l[?25h[?25l[31m [m[20;134H20[18;20H[?12l[?25h[?25[31m t[m[20;135H1[18;21H[?12l[?25h[?25[31mte[m[20;135H2[18;22H[?12l[?25h[?25[31mem[m[20;135H3[18;23H[?12l[?25h[?25[31mmp[m[20;135H4[18;24H[?12l[?25h[?25[31mpr[m[20;135H5[18;25H[?12l[?25h[?25[31mra[m[20;135H6[18;26H[?12l[?25h[?25[31mat[m[20;135H7[18;27H[?12l[?25h[?25[31mtu[m[20;135H8[18;28H[?12l[?25h[?25[31mur[m[20;135H9[18;29H[?12l[?25h[?25[31mre[m[20;134H30[18;30H[?12l[?25h[?25l[31m [m[20;135H1[18;31H[?12l[?25h[?25[31m w[m[20;135H2[18;32H[?12l[?25h[?25[31mwa[m[20;135H3[18;33H[?12l[?25h[?25[31mas[m[20;135H4[18;34H[?12l[?25h[?25l[31m [m[20;135H5[18;35H[?12l[?25h[?25[31m %[m[20;135H6[18;36H[?12l[?25h[?25[35m%d[m[20;135H7[18;37H[?12l[?25h[?25[35md[m[31m,[m[20;135H8[18;38H[?12l[?25h[?25l[31m [m[20;135H9[18;39H[?12l[?25h[?25[31m o[m[20;134H40[18;40H[?12l[?25h[?25[31mon[m[20;135H1[18;41H[?12l[?25h[?25l[31m [m[20;135H2[18;42H[?12l[?25h[?25[31m d[m[20;135H3[18;43H[?12l[?25h[?25[31mda[m[20;135H4[18;44H[?12l[?25h[?25[31may[m[20;135H5[18;45H[?12l[?25h[?25l[31m [m[20;135H6[18;46H[?12l[?25h[?25[31m %[m[20;135H7[18;47H[?12l[?25h[?25[35m%d[m[20;135H8[18;48H[?12l[?25h[?25[35md\[m[20;135H9[18;49H[?12l[?25h[?25[35m\n[m[20;134H50[18;50H[?12l[?25h[?25[35mn[m[31m"[m
+[38;5;130mreturn[m [1C;[20;135H1[18;51H[?12l[?25h[?25[31m"[m,[20;135H2[18;52H[?12l[?25h[?25,)[20;134H7 [18;7H[?12l[?25h[?25l[106m([44C)[m[20;134H53[18;53H[?12l[?25h[?25[106m)[m;[18;7H([44C)[20;135H4[18;54H[?12l[?25h[?25l[17;7H[106m([46C)[m[20;132H6[17;54H[?12l[?25h[?25l[17;7H([46C)[20;132H4,1 [15;1H[?12l[?25h[?25l[20;132H2[13;1H[?12l[?25h[?25l[20;132H0,40-54[11;54H[?12l[?25h[?25l[20;131H28,33[9;54H[?12l[?25h[?25l[20;132H7,40[8;54H[?12l[?25h[?25l[20;132H6,4-18 [7;18H[?12l[?25h[?25l[20;132H5,33-54[6;54H[?12l[?25h[?25l[20;132H4[5;54H[?12l[?25h[?25l[20;132H2[3;54H[?12l[?25h[?25l[20;132H0[1;54H[?12l[?25h[?25l[1;19r[1;1H[2L[1;20r[1;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[2;17H [38;5;130mdo[m{[20;131H[K[20;131H18,23-30      80%[1;29H[106m{[14;17H}[1;30H[?12l[?25h[?25l[1;19r[m[1;1H[L[1;20r[20;131H[K[20;131H17,2-9[8C76%[2;29H{[15;17H}[1;9H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1Hprintf([31m"---=== IPC Temperature Analyzer ===---"[m);[20;131H[K[20;131H16,50[9C71%[1;50H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H15,1[10C66%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mfloat[m averageTemps;[20;131H[K[20;131H14,20[9C61%[1;20H[?12l[?25h[?25l[20;132H5,1 [2;1H[?12l[?25h[?25l[20;132H6,50[3;50H[?12l[?25h[?25l[20;132H7,2-9[4;9H[?12l[?25h[?25l[5;29H[106m{[18;17H}[m[20;132H8,23-30[5;30H[?12l[?25h[?25{[18;17H}[20;132H9,10-25[6;25H[?12l[?25h[?25l[20;131H20,33-54[7;54H[?12l[?25h[?25l[20;132H1,22-43[8;43H[?12l[?25h[?25l[20;132H2,33-54[9;54H[?12l[?25h[?25l[20;132H3,21-42[10;42H[?12l[?25h[?25l[20;132H4,33-54[11;54H[?12l[?25h[?25l[20;132H5[12;54H[?12l[?25h[?25l[20;132H6,4-18 [13;18H[?12l[?25h[?25l[20;132H5,33-54[12;54H[?12l[?25h[?25l[20;132H3,21-42[10;42H[?12l[?25h[?25l[20;132H2,33-54[9;54H[?12l[?25h[?25l[20;132H1,22-43[8;43H[?12l[?25h[?25l[20;132H0,33-54[7;54H[?12l[?25h[?25l[20;131H19,10-25[6;25H[?12l[?25h[?25l[20;132H7,2-9  [4;9H[?12l[?25h[?25l[20;132H6,50 [3;50H[?12l[?25h[?25l[20;132H5,1 [2;1H[?12l[?25h[?25l[20;132H4,20[1;20H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;[20;131H[K[20;131H13,28[9C57%[1;28H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m high=[31m0[m,low=[31m0[m;[20;131H[K[20;131H12,18[9C52%[1;18H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m i;[20;131H[K[20;131H11,7[10C47%[1;7H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m main([32mvoid[m){[20;131H[K[20;131H10,16[9C42%[1;16H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H9,1[11C38%[1;1H[?12l[?25h[?25l[1;19r[1;1H[2L[1;20r[1;1H[35m#include[m[31m<stdio.h>[m
+[35m#define NUMS [m[31m4[m[20;131H[K[20;131H7,18[10C28%[1;18H[?12l[?25h[?25l[1;19r[1;1H[2L[1;20r[1;1H[34m//workshop 3, at home[m[20;131H[K[20;131H5,22[10C19%[1;22H[?12l[?25h[?25l[1;19r[1;1H[2L[1;20r[1;1H[34m//jsherry1@myseneca.ca
+//IPC144 [m[20;131H[K[20;131H3,23[11C9%[1;23H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[34m//141056176[m[20;131H[K[20;131H2,12[11C4%[1;12H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[34m//jayson sherry[m[20;131H[K[20;131H1,16[10CTop[1;16H[?12l[?25h[?25l[20;131H2,12[2;12H[?12l[?25h[?25l[20;131H3,23[3;23H[?12l[?25h[?25l[20;131H4,10[4;10H[?12l[?25h[?25l[20;131H5,22[5;22H[?12l[?25h[?25l[20;131H6,1 [6;1H[?12l[?25h[?25l[20;131H7,18[7;18H[?12l[?25h[?25l[20;131H8,15[8;15H[?12l[?25h[?25l[20;131H9,1 [9;1H[?12l[?25h[?25l[20;131H10,16[10;16H[?12l[?25h[?25l[20;132H1,7 [11;7H[?12l[?25h[?25l[20;132H2,18[12;18H[?12l[?25h[?25l[20;132H3,2[13;28H[?12l[?25h[?25l[20;132H4,20[14;20H[?12l[?25h[?25l[15;19r[15;1H[L[1;20r[20;131H[K[20;131H15,1[10CTop[15;1H[?12l[?25h[?25l[20;132H4[14;1H[?12l[?25h[?25l[20;132H3[13;1H[?12l[?25h[?25l[20;134H2[13;2H[?12l[?25h[?25l[20;134H3[13;3H[?12l[?25h[?25l[20;134H4[13;4H[?12l[?25h[?25l[20;134H5[13;5H[?12l[?25h[?25l[20;134H6[13;6H[?12l[?25h[?25l[20;134H7[13;7H[?12l[?25h[?25l[20;134H8[13;8H[?12l[?25h[?25l[20;134H9[13;9H[?12l[?25h[?25l[20;134H10[13;10H[?12l[?25h[?25l[20;135H1[13;11H[?12l[?25h[?25l[20;135H2[13;12H[?12l[?25h[?25l[20;135H3[13;13H[?12l[?25h[?25l[20;135H4[13;14H[?12l[?25h[?25l[20;135H5[13;15H[?12l[?25h[?25l[20;135H6[13;16H[?12l[?25h[?25l[20;135H7[13;17H[?12l[?25h[?25l[20;135H8[13;18H[?12l[?25h[?25l[20;135H9[13;19H[?12l[?25h[?25l[20;134H20[13;20H[?12l[?25h[?25l[20;135H1[13;21H[?12l[?25h[?25l[20;135H2[13;22H[?12l[?25h[?25l[20;135H3[13;23H[?12l[?25h[?25l[20;135H4[13;24H[?12l[?25h[?25l[20;135H5[13;25H[?12l[?25h[?25l[20;135H6[13;26H[?12l[?25h[?25l[20;135H7[13;27H[?12l[?25h[?25l[20;135H8[13;28H[?12l[?25h[?25l[14;19r[14;1H[L[1;20r[20;131H[K[20;131H14,1[10CTop[14;1H[?12l[?25h[?25li[20;134H2[14;2H[?12l[?25h[?25in[20;134H3[14;3H[?12l[?25h[?25l[32mint[m[20;134H4[14;4H[?12l[?25h[?25l[20;134H5[14;5H[?12l[?25h[?25 h[20;134H6[14;6H[?12l[?25h[?25hi[20;134H7[14;7H[?12l[?25h[?25ig[20;134H8[14;8H[?12l[?25h[?25gh[20;134H9[14;9H[?12l[?25h[?25he[20;134H10[14;10H[?12l[?25h[?25es[20;135H1[14;11H[?12l[?25h[?25st[20;135H2[14;12H[?12l[?25h[?25tT[20;135H3[14;13H[?12l[?25h[?25Te[20;135H4[14;14H[?12l[?25h[?25em[20;135H5[14;15H[?12l[?25h[?25mp[20;135H6[14;16H[?12l[?25h[?25p,[20;135H7[14;17H[?12l[?25h[?25,L[20;135H8[14;18H[?12l[?25h[?25LO[20;135H9[14;19H[?12l[?25h[?25Ow[20;134H20[14;20H[?12l[?25h[?25l[14;19H[K[20;134H19[14;19H[?12l[?25h[?25l[14;18H[K[20;135H8[14;18H[?12l[?25h[?25l[14;17H[K[20;135H7[14;17H[?12l[?25h[?25,l[20;135H8[14;18H[?12l[?25h[?25lo[20;135H9[14;19H[?12l[?25h[?25ow[20;134H20[14;20H[?12l[?25h[?25we[20;135H1[14;21H[?12l[?25h[?25es[20;135H2[14;22H[?12l[?25h[?25st[20;135H3[14;23H[?12l[?25h[?25tt[20;135H4[14;24H[?12l[?25h[?25te[20;135H5[14;25H[?12l[?25h[?25em[20;135H6[14;26H[?12l[?25h[?25mp[20;135H7[14;27H[?12l[?25h[?25l[14;26H[K[20;135H6[14;26H[?12l[?25h[?25l[14;25H[K[20;135H5[14;25H[?12l[?25h[?25l[14;24H[K[20;135H4[14;24H[?12l[?25h[?25l[14;23H[K[20;135H3[14;23H[?12l[?25h[?25tT[20;135H4[14;24H[?12l[?25h[?25Te[20;135H5[14;25H[?12l[?25h[?25em[20;135H6[14;26H[?12l[?25h[?25mp[20;135H7[14;27H[?12l[?25h[?25p;[20;135H8[14;28H[?12l[?25h[?25l[20;135H7[14;27H[?12l[?25h[?25l[20;135H6[14;26H[?12l[?25h[?25l[20;135H5[14;25H[?12l[?25h[?25l[20;135H4[14;24H[?12l[?25h[?25l[20;135H3[14;23H[?12l[?25h[?25l[20;135H1[14;21H[?12l[?25h[?25l[20;135H0[14;20H[?12l[?25h[?25l[20;134H19[14;19H[?12l[?25h[?25l[20;135H8[14;18H[?12l[?25h[?25l[20;135H7[14;17H[?12l[?25h[?25l[20;135H6[14;16H[?12l[?25h[?25l[20;135H5[14;15H[?12l[?25h[?25l[20;135H6[14;16H[?12l[?25h[?25p=,lowestTemp;[20;135H7[14;17H[?12l[?25h[?25=[31m0[m,lowestTemp;[20;135H8[14;18H[?12l[?25h[?25l[20;135H9[14;19H[?12l[?25h[?25l[20;134H20[14;20H[?12l[?25h[?25l[20;135H1[14;21H[?12l[?25h[?25l[20;135H2[14;22H[?12l[?25h[?25l[20;135H3[14;23H[?12l[?25h[?25l[20;135H4[14;24H[?12l[?25h[?25l[20;135H5[14;25H[?12l[?25h[?25l[20;135H6[14;26H[?12l[?25h[?25l[20;135H7[14;27H[?12l[?25h[?25l[20;135H8[14;28H[?12l[?25h[?25l[20;135H9[14;29H[?12l[?25h[?25p=;[20;134H30[14;30H[?12l[?25h[?25=[31m0[m;[20;135H1[14;31H[?12l[?25h[?25l[20;132H5,20[15;20H[?12l[?25h[?25l[20;132H6,1 [16;1H[?12l[?25h[?25l[20;132H7[17;1H[?12l[?25h[?25l[20;132H8,31[18;31H[?12l[?25h[?25l[20;132H9,2-9[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[20;131H[K[20;131H20,23-30[7C4%[19;30H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;17H [38;5;130mdo[m{[20;131H[K[20;131H21,10-25[7C8%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H22,10-31      13%[19;31H[106m([41C)[19;31H[?12l[?25h[?25l[1;19r[m[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H23,10-31      17%[18;31H([41C)[19;30H[106m([10C)[19;31H[?12l[?25h[?25l[1;19r[m[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H24,10-31      21%[18;30H([10C)[19;31H[106m([40C)[19;31H[?12l[?25h[?25l[1;19r[m[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;131H[K[20;131H25,10-31      26%[18;31H([40C)[19;30H[106m([9C)[19;31H[?12l[?25h[?25l[1;19r[m[19;1H
+[1;20r[19;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[20;131H[K[20;131H26,10-31      30%[18;30H([9C)[19;31H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H27,10-31      34%[19;31H[106m([99C)[19;31H[?12l[?25h[?25l[1;19r[m[19;1H
+[1;20r[20;131H[K[20;131H28,4-18[7C39%[18;31H([99C)[19;18H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[20;131H[K[20;131H29,17-31      43%[19;31H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H30,10-31      47%[19;31H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalLow = totalLow + low;[20;131H[K[20;131H31,10-31      52%[19;31H[?12l[?25h[?25l[20;132H0[18;31H[?12l[?25h[?25l[20;131H29,17[17;31H[?12l[?25h[?25l[20;132H8,4-18 [16;18H[?12l[?25h[?25l[20;134H5-25[16;25H[?12l[?25h[?25 i[20;134H6-26[16;26H[?12l[?25h[?25[38;5;130mif[m[20;134H7-27[16;27H[?12l[?25h[?25l[20;134H8-28[16;28H[?12l[?25h[?25 ([17;18H[97m[101m}[m[20;134H9-29[16;29H[?12l[?25h[?25(h[20;134H10-30[16;30H[?12l[?25h[?25hi[20;135H1-31[16;31H[?12l[?25h[?25ig[20;135H2-32[16;32H[?12l[?25h[?25gh[20;135H3-33[16;33H[?12l[?25h[?25h.[20;135H4-34[16;34H[?12l[?25h[?25l[16;33H[K[20;135H3-33[16;33H[?12l[?25h[?25h>[20;135H4-34[16;34H[?12l[?25h[?25>h[20;135H5-35[16;35H[?12l[?25h[?25hi[20;135H6-36[16;36H[?12l[?25h[?25ig[20;135H7-37[16;37H[?12l[?25h[?25gh[20;135H8-38[16;38H[?12l[?25h[?25he[20;135H9-39[16;39H[?12l[?25h[?25es[20;134H20-40[16;40H[?12l[?25h[?25st[20;135H1-41[16;41H[?12l[?25h[?25tT[20;135H2-42[16;42H[?12l[?25h[?25Te[20;135H3-43[16;43H[?12l[?25h[?25em[20;135H4-44[16;44H[?12l[?25h[?25mp[20;135H5-45[16;45H[?12l[?25h[?25l[20;135H6-46[16;46H[?12l[?25h[?25 \[20;135H7-47[16;47H[?12l[?25h[?25\\[20;135H8-48[16;48H[?12l[?25h[?25l[16;47H[K[20;135H7-47[16;47H[?12l[?25h[?25l[16;46H[K[20;135H6-46[16;46H[?12l[?25h[?25 |[20;135H7-47[16;47H[?12l[?25h[?25||[20;135H8-48[16;48H[?12l[?25h[?25l[20;135H9-49[16;49H[?12l[?25h[?25 l[20;134H30-50[16;50H[?12l[?25h[?25lo[20;135H1-51[16;51H[?12l[?25h[?25ow[20;135H2-52[16;52H[?12l[?25h[?25we[20;135H3-53[16;53H[?12l[?25h[?25l[16;52H[K[20;135H2-52[16;52H[?12l[?25h[?25w>[20;135H3-53[16;53H[?12l[?25h[?25>l[20;135H4-54[16;54H[?12l[?25h[?25lo[20;135H5-55[16;55H[?12l[?25h[?25ow[20;135H6-56[16;56H[?12l[?25h[?25we[20;135H7-57[16;57H[?12l[?25h[?25es[20;135H8-58[16;58H[?12l[?25h[?25st[20;135H9-59[16;59H[?12l[?25h[?25tT[20;134H40-60[16;60H[?12l[?25h[?25Te[20;135H1-61[16;61H[?12l[?25h[?25em[20;135H2-62[16;62H[?12l[?25h[?25mp[20;135H3-63[16;63H[?12l[?25h[?25p)[17;18H}[20;134H8-28 [16;28H[?12l[?25h[?25l[106m([34C)[m[20;134H44-64[16;64H[?12l[?25h[?25[106m)[m{[16;28H([34C)[106m{[17;18H}[m[20;135H5-65[16;65H[?12l[?25h[?25[106m{[m}[20;135H4-64[16;64H[?12l[?25h[?25l[1C[106m}[m[17;18H}[20;135H6-66[16;66H[?12l[?25h[?25l[20;135H5-65[16;65H[?12l[?25h[?25l[17;19r[17;1H[L[1;20r[16;64H[106m{ [m[17;24H }[20;131H[K[20;131H29,4-25[7C50%[16;65H[K[17;25H[106m[?12l[?25h[?25l[ [106m        [m}[17;25H        [106m}[m[20;134H5-33[17;33H[?12l[?25h[?25 [106mh[h[106m}[m[20;134H6-34[17;34H[?12l[?25h[?25h[106mi[i[106m}[m[20;134H7-35[17;35H[?12l[?25h[?25i[106mg[g[106m}[m[20;134H8-36[17;36H[?12l[?25h[?25g[106mh[h[106m}[m[20;134H9-37[17;37H[?12l[?25h[?25h[106me[e[106m}[m[20;134H10-38[17;38H[?12l[?25h[?25e[106ms[s[106m}[m[20;135H1-39[17;39H[?12l[?25h[?25s[106mt[t[106m}[m[20;135H2-40[17;40H[?12l[?25h[?25t[106mT[T[106m}[m[20;135H3-41[17;41H[?12l[?25h[?25T[106me[e[106m}[m[20;135H4-42[17;42H[?12l[?25h[?25e[106mm[m[106m}[m[20;135H5-43[17;43H[?12l[?25h[?25m[106mp[p[106m}[m[20;135H6-44[17;44H[?12l[?25h[?25p[106m [ [106m}[m[20;135H7-45[17;45H[?12l[?25h[?25 [106m=[=[106m}[m[20;135H8-46[17;46H[?12l[?25h[?25=[106m [ [106m}[m[20;135H9-47[17;47H[?12l[?25h[?25 [106mh[h[106m}[m[20;134H20-48[17;48H[?12l[?25h[?25h[106mi[i[106m}[m[20;135H1-49[17;49H[?12l[?25h[?25i[106mg[g[106m}[m[20;135H2-50[17;50H[?12l[?25h[?25g[106mh[h[106m}[m[20;135H3-51[17;51H[?12l[?25h[?25h[106m;[;[106m}[m[20;135H4-52[17;52H[?12l[?25h[?25;[106m [m[18;17H        }[18;26H[K[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[17;52H[K[18;25H[106m}[m[20;131H30,4-25       48[18;25H[?12l[?25h[?25 [106m        [m}[18;25H        [106m}[m[20;134H5-33[18;33H[?12l[?25h[?25 [106ml[l[106m}[m[20;134H6-34[18;34H[?12l[?25h[?25l[106mo[o[106m}[m[20;134H7-35[18;35H[?12l[?25h[?25o[106mw[w[106m}[m[20;134H8-36[18;36H[?12l[?25h[?25w[106me[e[106m}[m[20;134H9-37[18;37H[?12l[?25h[?25e[106ms[s[106m}[m[20;134H10-38[18;38H[?12l[?25h[?25s[106mt[t[106m}[m[20;135H1-39[18;39H[?12l[?25h[?25t[106mT[T[106m}[m[20;135H2-40[18;40H[?12l[?25h[?25T[106me[e[106m}[m[20;135H3-41[18;41H[?12l[?25h[?25e[106mm[m[106m}[m[20;135H4-42[18;42H[?12l[?25h[?25m[106mp[p[106m}[m[20;135H5-43[18;43H[?12l[?25h[?25p[106m [ [106m}[m[20;135H6-44[18;44H[?12l[?25h[?25 [106m=[=[106m}[m[20;135H7-45[18;45H[?12l[?25h[?25=[106m [ [106m}[m[20;135H8-46[18;46H[?12l[?25h[?25 [106ml[l[106m}[m[20;135H9-47[18;47H[?12l[?25h[?25l[106mo[o[106m}[m[20;134H20-48[18;48H[?12l[?25h[?25o[106mw[w[106m}[m[20;135H1-49[18;49H[?12l[?25h[?25w[106m:[:[106m}[m[20;135H2-50[18;50H[?12l[?25h[?2w}[106}[m[18;50H[K[20;135H1-49[18;49H[?12l[?25h[?25w[106m;[;[106m}[m[20;135H2-50[18;50H[?12l[?25h[?25;[106m [m[19;17H        }[19;26H[K[18;50H[K[19;25H[106m}[m[20;132H1,4-25 [7C6[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[20;131H[K[20;131H32,11-25      50%[15;64H{[18;25H}[19;25H[106m([36C)[19;25H[?12l[?25h[?25l[1;19r[m[19;1H
+[1;20r[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H33,4-25[7C53%[18;25H([36C)[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalLow = totalLow + low;[20;131H[K[20;131H34,4-25[7C57%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H35,11-25      61%[19;25H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;16H }[20;131H[K[20;131H37,1[10C69%[19;1H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[20;131H[K[20;131H39,1[10C76%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H[K[20;131H40,25[9C80%[19;25H[?12l[?25h[?25l[20;131H39,1 [18;1H[?12l[?25h[?25l[20;132H8,2-9[17;9H[?12l[?25h[?25l[20;132H9,1  [18;1H[?12l[?25h[?25l[20;131H40,25[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,);[20;131H[K[20;131H41,25[9C84%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,);[20;131H[K[20;131H42,25[9C88%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[38;5;130mreturn[m [31m0[m;[20;131H[K[20;131H43,10[9C92%[19;10H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H}[20;131H[K[20;131H44,2[10C96%[19;2H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H45,1[10CBot[19;1H[?12l[?25h[?25l[20;132H4,2[18;2H[?12l[?25h[?25l[20;132H3,10[17;10H[?12l[?25h[?25l[20;134H9 [17;9H[?12l[?25h[?25l[20;134H8[17;8H[?12l[?25h[?25l[20;134H7[17;7H[?12l[?25h[?25l[20;134H6[17;6H[?12l[?25h[?25l[20;134H5[17;5H[?12l[?25h[?25l[20;134H4[17;4H[?12l[?25h[?25l[20;134H3[17;3H[?12l[?25h[?25l[20;134H2[17;2H[?12l[?25h[?25l[20;134H1[17;1H[?12l[?25h[?25l[20;132H2[16;1H[?12l[?25h[?25l[20;132H1[15;1H[?12l[?25h[?25l/printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,);[20;134H2[15;2H[?12l[?25h[?25[34m//printf("The highest temperature was %d, on day %d\n",);[m[20;134H3[15;3H[?12l[?25h[?25l[20;132H2[16;3H[?12l[?25h[?25l[20;134H2[16;2H[?12l[?25h[?25l[20;134H1[16;1H[?12l[?25h[?25l/printf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,);[20;134H2[16;2H[?12l[?25h[?25[34m//printf("The lowest temprature was %d, on day %d\n",);[m[20;134H3[16;3H[?12l[?25h[?25l[20;132H3[17;3H[?12l[?25h[?25l[20;134H4[17;4H[?12l[?25h[?25l[20;134H5[17;5H[?12l[?25h[?25l[20;134H6[17;6H[?12l[?25h[?25l[20;134H7[17;7H[?12l[?25h[?25l[20;134H8[17;8H[?12l[?25h[?25l[20;134H9[17;9H[?12l[?25h[?25l[16;9H[34m[106m([44C)[m[20;132H2[16;9H[?12l[?25h[?25l[20;134H10[16;10H[?12l[?25h[?25[34m([44C)[m[20;135H1[16;11H[?12l[?25h[?25l[20;135H2[16;12H[?12l[?25h[?25l[20;135H3[16;13H[?12l[?25h[?25l[20;135H4[16;14H[?12l[?25h[?25l[20;135H5[16;15H[?12l[?25h[?25l[20;135H6[16;16H[?12l[?25h[?25l[20;135H7[16;17H[?12l[?25h[?25l[20;135H8[16;18H[?12l[?25h[?25l[20;135H9[16;19H[?12l[?25h[?25l[20;134H20[16;20H[?12l[?25h[?25l[20;135H1[16;21H[?12l[?25h[?25l[20;135H2[16;22H[?12l[?25h[?25l[20;135H3[16;23H[?12l[?25h[?25l[20;135H4[16;24H[?12l[?25h[?25l[20;135H5[16;25H[?12l[?25h[?25l[20;135H6[16;26H[?12l[?25h[?25l[20;135H7[16;27H[?12l[?25h[?25l[20;135H8[16;28H[?12l[?25h[?25l[20;135H9[16;29H[?12l[?25h[?25l[20;134H30[16;30H[?12l[?25h[?25l[20;135H1[16;31H[?12l[?25h[?25l[20;135H2[16;32H[?12l[?25h[?25l[20;135H3[16;33H[?12l[?25h[?25l[20;135H4[16;34H[?12l[?25h[?25l[20;135H5[16;35H[?12l[?25h[?25l[20;135H6[16;36H[?12l[?25h[?25l[20;135H7[16;37H[?12l[?25h[?25l[20;135H8[16;38H[?12l[?25h[?25l[20;135H9[16;39H[?12l[?25h[?25l[20;134H40[16;40H[?12l[?25h[?25l[20;135H1[16;41H[?12l[?25h[?25l[20;135H2[16;42H[?12l[?25h[?25l[20;135H3[16;43H[?12l[?25h[?25l[20;135H4[16;44H[?12l[?25h[?25l[20;135H5[16;45H[?12l[?25h[?25l[20;135H6[16;46H[?12l[?25h[?25l[20;135H7[16;47H[?12l[?25h[?25l[20;135H8[16;48H[?12l[?25h[?25l[20;135H9[16;49H[?12l[?25h[?25l[20;134H50[16;50H[?12l[?25h[?25l[20;135H1[16;51H[?12l[?25h[?25l[20;135H2[16;52H[?12l[?25h[?25l[20;135H3[16;53H[?12l[?25h[?25l[16;9H[34m[106m([44C)[m[20;135H4[16;54H[?12l[?25h[?25l[20;135H5[16;55H[?12l[?25h[?25l[20;135H4[16;54H[?12l[?25h[?25l[16;9H[34m([44C)[m[20;132H1[15;54H[?12l[?25h[?25l[20;135H5[15;55H[?12l[?25h[?25l[15;9H[34m[106m([46C)[m[20;135H6[15;56H[?12l[?25h[?25[34m,[m[34m[106mh[m[34h[m[34m[106m)[m[20;135H7[15;57H[?12l[?25h[?25[34mh[m[34m[106mi[m[34i[m[34m[106m)[m[20;135H8[15;58H[?12l[?25h[?25[34mi[m[34m[106mg[m[34g[m[34m[106m)[m[20;135H9[15;59H[?12l[?25h[?25[34mg[m[34m[106mh[m[34h[m[34m[106m)[m[20;134H60[15;60H[?12l[?25h[?25[34mh[m[34m[106me[m[34e[m[34m[106m)[m[20;135H1[15;61H[?12l[?25h[?25[34me[m[34m[106ms[m[34s[m[34m[106m)[m[20;135H2[15;62H[?12l[?25h[?25[34ms[m[34m[106mt[m[34t[m[34m[106m)[m[20;135H3[15;63H[?12l[?25h[?25[34mt[m[34m[106mT[m[34T[m[34m[106m)[m[20;135H4[15;64H[?12l[?25h[?25[34mT[m[34m[106me[m[34e[m[34m[106m)[m[20;135H5[15;65H[?12l[?25h[?25[34me[m[34m[106mm[m[34m[m[34m[106m)[m[20;135H6[15;66H[?12l[?25h[?25[34mm[m[34m[106mp[m[34p[m[34m[106m)[m[20;135H7[15;67H[?12l[?25h[?25l[15;9H[34m([57C)[m[20;132H2,56[16;56H[?12l[?25h[?25l[16;9H[34m[106m([44C)[m[20;135H5[16;55H[?12l[?25h[?25l[20;135H4[16;54H[?12l[?25h[?25[34m,[m[34m[106ml[m[34l[m[34m[106m)[m[20;135H5[16;55H[?12l[?25h[?25[34ml[m[34m[106mo[m[34o[m[34m[106m)[m[20;135H6[16;56H[?12l[?25h[?25[34mo[m[34m[106mw[m[34w[m[34m[106m)[m[20;135H7[16;57H[?12l[?25h[?25[34mw[m[34m[106me[m[34e[m[34m[106m)[m[20;135H8[16;58H[?12l[?25h[?25[34me[m[34m[106ms[m[34s[m[34m[106m)[m[20;135H9[16;59H[?12l[?25h[?25[34ms[m[34m[106mt[m[34t[m[34m[106m)[m[20;134H60[16;60H[?12l[?25h[?25[34mt[m[34m[106mT[m[34T[m[34m[106m)[m[20;135H1[16;61H[?12l[?25h[?25[34mT[m[34m[106me[m[34e[m[34m[106m)[m[20;135H2[16;62H[?12l[?25h[?25[34me[m[34m[106mm[m[34m[m[34m[106m)[m[20;135H3[16;63H[?12l[?25h[?25[34mm[m[34m[106mp[m[34p[m[34m[106m)[m[20;135H4[16;64H[?12l[?25h[?25l[16;9H[34m([54C)[m[20;132H3,10[17;10H[?12l[?25h[?25l[16;9H[34m[106m([54C)[m[20;132H2,64[16;64H[?12l[?25h[?25l[20;135H5[16;65H[?12l[?25h[?25l[16;9H[34m([54C)[m[20;135H6[16;66H[?12l[?25h[?25l[17;19r[17;1H[L[1;20r[17;1H[34m//[m[20;131H[K[20;131H43,3[10C96%[17;3H[?12l[?25h[?25l/[17;2H[K[20;134H2[17;2H[?12l[?25h[?25l[17;1H[K[20;134H1[17;1H[?12l[?25h[?25lp[20;134H2[17;2H[?12l[?25h[?25pr[20;134H3[17;3H[?12l[?25h[?25ri[20;134H4[17;4H[?12l[?25h[?25in[20;134H5[17;5H[?12l[?25h[?25nt[20;134H6[17;6H[?12l[?25h[?25tf[20;134H7[17;7H[?12l[?25h[?25l[20;134H8[17;8H[?12l[?25h[?25 (
+
+[97m[101m}[m[20;134H9[17;9H[?12l[?25h[?25([31m"
+return 0;
+}[m[20;134H10[17;10H[?12l[?25h[?25[31m"%[m[20;135H1[17;11H[?12l[?25h[?25[35m%d[m[20;135H2[17;12H[?12l[?25h[?25[35md\[m[20;135H3[17;13H[?12l[?25h[?25[35m\n[m[20;135H4[17;14H[?12l[?25h[?25[35mn[m[31m:[m[20;135H5[17;15H[?12l[?25h[?25l[17;14H[K[20;135H4[17;14H[?12l[?25h[?25[35mn[m[31m"[m
+[38;5;130mreturn[m [1C;
+[97m[101m}[m[20;135H5[17;15H[?12l[?25h[?25[31m"[m,[20;135H6[17;16H[?12l[?25h[?25l[20;135H5[17;15H[?12l[?25h[?25l[20;135H4[17;14H[?12l[?25h[?25l[20;135H3[17;13H[?12l[?25h[?25l[20;135H2[17;12H[?12l[?25h[?25l[20;135H1[17;11H[?12l[?25h[?25l[20;135H0[17;10H[?12l[?25h[?25[31m"h[m[35m%d\n[m[31m"[m,[20;135H1[17;11H[?12l[?25h[?25[31mhi[m[35m%d\n[m[31m"[m,[20;135H2[17;12H[?12l[?25h[?25[31mig[m[35m%d\n[m[31m"[m,[20;135H3[17;13H[?12l[?25h[?25[31mgh[m[35m%d\n[m[31m"[m,[20;135H4[17;14H[?12l[?25h[?25[31mhe[m[35m%d\n[m[31m"[m,[20;135H5[17;15H[?12l[?25h[?25[31mes[m[35m%d\n[m[31m"[m,[20;135H6[17;16H[?12l[?25h[?25[31mst[m[35m%d\n[m[31m"[m,[20;135H7[17;17H[?12l[?25h[?25l[20;135H8[17;18H[?12l[?25h[?25l[20;135H9[17;19H[?12l[?25h[?25l[20;134H20[17;20H[?12l[?25h[?25l[20;135H1[17;21H[?12l[?25h[?25l[20;135H2[17;22H[?12l[?25h[?25l[20;135H3[17;23H[?12l[?25h[?25,h[20;135H4[17;24H[?12l[?25h[?25hi[20;135H5[17;25H[?12l[?25h[?25ig[20;135H6[17;26H[?12l[?25h[?25gh[20;135H7[17;27H[?12l[?25h[?25he[20;135H8[17;28H[?12l[?25h[?25es[20;135H9[17;29H[?12l[?25h[?25st[20;134H30[17;30H[?12l[?25h[?25tT[20;135H1[17;31H[?12l[?25h[?25Te[20;135H2[17;32H[?12l[?25h[?25em[20;135H3[17;33H[?12l[?25h[?25mp[20;135H4[17;34H[?12l[?25h[?25p)
+
+}[20;134H8 [17;8H[?12l[?25h[?25l[106m([25C)[m[20;134H35[17;35H[?12l[?25h[?25[106m)[m;[17;8H([25C)[20;135H6[17;36H[?12l[?25h[?25l[18;1H[K[19;1H[38;5;130mreturn[m [31m0[m;[20;132H4,1 [10C2[18;1H[?12l[?25h[?25lp[20;134H2[18;2H[?12l[?25h[?25pr[20;134H3[18;3H[?12l[?25h[?25ri[20;134H4[18;4H[?12l[?25h[?25in[20;134H5[18;5H[?12l[?25h[?25nt[20;134H6[18;6H[?12l[?25h[?25tf[20;134H7[18;7H[?12l[?25h[?25f([20;134H8[18;8H[?12l[?25h[?25([31m"
+return 0;[m[20;134H9[18;9H[?12l[?25h[?25[31m"l[m[20;134H10[18;10H[?12l[?25h[?25[31mlo[m[20;135H1[18;11H[?12l[?25h[?25[31mow[m[20;135H2[18;12H[?12l[?25h[?25[31mwe[m[20;135H3[18;13H[?12l[?25h[?25[31mes[m[20;135H4[18;14H[?12l[?25h[?25[31mst[m[20;135H5[18;15H[?12l[?25h[?25l[31m [m[20;135H6[18;16H[?12l[?25h[?25[31m %[m[20;135H7[18;17H[?12l[?25h[?25[35m%d[m[20;135H8[18;18H[?12l[?25h[?25[35md\[m[20;135H9[18;19H[?12l[?25h[?25[35m\n[m[20;134H20[18;20H[?12l[?25h[?25[35mn[m[31m"[m
+[38;5;130mreturn[m [1C;[20;135H1[18;21H[?12l[?25h[?25[31m"[m,[20;135H2[18;22H[?12l[?25h[?25,l[20;135H3[18;23H[?12l[?25h[?25lo[20;135H4[18;24H[?12l[?25h[?25ow[20;135H5[18;25H[?12l[?25h[?25we[20;135H6[18;26H[?12l[?25h[?25es[20;135H7[18;27H[?12l[?25h[?25st[20;135H8[18;28H[?12l[?25h[?25tT[20;135H9[18;29H[?12l[?25h[?25Te[20;134H30[18;30H[?12l[?25h[?25em[20;135H1[18;31H[?12l[?25h[?25mp[20;135H2[18;32H[?12l[?25h[?25p)[20;134H7 [18;7H[?12l[?25h[?25l[106m([24C)[m[20;134H33[18;33H[?12l[?25h[?25[106m)[m;[18;7H([24C)[20;135H4[18;34H[?12l[?25h[?25l[18;7H[106m([24C)[m[20;135H3[18;33H[?12l[?25h[?25l[20;135H2[18;32H[?12l[?25h[?25l[18;7H([24C)[20;135H1[18;31H[?12l[?25h[?25l[20;135H0[18;30H[?12l[?25h[?25l[20;134H29[18;29H[?12l[?25h[?25l[20;135H8[18;28H[?12l[?25h[?25l[20;135H7[18;27H[?12l[?25h[?25l[20;135H6[18;26H[?12l[?25h[?25l[20;135H5[18;25H[?12l[?25h[?25l[20;135H4[18;24H[?12l[?25h[?25l[20;135H3[18;23H[?12l[?25h[?25l[20;135H2[18;22H[?12l[?25h[?25l[20;135H1[18;21H[?12l[?25h[?25l[20;135H0[18;20H[?12l[?25h[?25l[20;134H19[18;19H[?12l[?25h[?25l[20;135H8[18;18H[?12l[?25h[?25l[20;135H7[18;17H[?12l[?25h[?25l[20;132H3[17;17H[?12l[?25h[?25[31mt [m[35m%d\n[m[31m"[m,highestTemp);[20;135H8[17;18H[?12l[?25h[20;1H[K[17;17H[?25l[20;131H43,17[9C92%[17;17H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 47L, 1208C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> [H[2Jjsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 10
+
+Enter the low value for day 1: 5
+
+Enter the high value for day 2: 9
+
+Enter the low value for day 2: 4
+
+Enter the high value for day 3: 8
+
+Enter the low value for day 3: 3
+
+Enter the high value for day 4: 7
+
+Enter the low value for day 4: 2
+
+The average (mean) temperature was: 6.00
+highest 10
+lowest 5
+jsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 10
+
+Enter the low value for day 1: 1
+
+Enter the high value for day 2: 40
+
+Enter the low value for day 2: -40
+
+Enter the high value for day 3: 34
+
+Enter the low value for day 3: 23
+
+Enter the high value for day 4: 23
+
+Enter the low value for day 4: 12
+
+The average (mean) temperature was: 12.88
+highest 34
+lowest 23
+jsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 40
+
+Enter the low value for day 1: -40
+
+Enter the high value for day 2: 12
+
+Enter the low value for day 2: 1
+
+Enter the high value for day 3: 34
+
+Enter the low value for day 3: 23
+
+Enter the high value for day 4: 39
+
+Enter the low value for day 4: 30
+
+The average (mean) temperature was: 17.38
+highest 39
+lowest 30
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 47L, 1208C[>c[1;32H highestTemp = high;[2;32H lowestTemp = low;[3;24H }[4;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[5;24H totalHigh = totalHigh + high;[6;24H totalLow = totalLow + low;[7;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[8;16H }[12;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);
+[34m//printf("The highest temperature was %d, on day %d\n",highestTemp);
+//printf("The lowest temprature was %d, on day %d\n",lowestTemp);[m
+printf ([31m"highest [m[35m%d\n[m[31m"[m,highestTemp);
+printf([31m"lowest [m[35m%d\n[m[31m"[m,lowestTemp);
+[38;5;130mreturn[m [31m0[m;
+}[20;131H43,17[9CBot[15;17H[?12l[?25h[?25l[20;132H2[14;17H[?12l[?25h[?25l[20;132H1[13;17H[?12l[?25h[?25l[20;132H0[12;17H[?12l[?25h[?25l[20;131H39,0-1[11;1H[?12l[?25h[?25l[20;132H8,1-8[10;8H[?12l[?25h[?25l[20;132H7,0-1[9;1H[?12l[?25h[?25l[20;132H6,3-17[8;17H[?12l[?25h[?25l[20;132H5[7;17H[?12l[?25h[?25l[20;132H4,3-24[6;24H[?12l[?25h[?25l[20;132H3[5;24H[?12l[?25h[?25l[20;132H2,3-17[4;17H[?12l[?25h[?25l[20;132H1,3-24[3;24H[?12l[?25h[?25l[20;132H0[2;24H[?12l[?25h[?25l[20;131H29[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high>highestTemp || low>lowestTemp){[20;1H[K[20;131H28,3-17[7C96%[1;17H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H27,3-24[7C92%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[20;131H[K[20;131H26,3-24[7C89%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;131H[K[20;131H25,3-24[7C85%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H24,3-24[7C82%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H23,3-24[7C78%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H22,3-24[7C75%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;17H [38;5;130mdo[m{[20;131H[K[20;131H21,3-17[7C71%[1;17H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[20;131H[K[20;131H20,10-17      67%[1;17H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H19,1-8[8C64%[1;8H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1Hprintf([31m"---=== IPC Temperature Analyzer ===---"[m);[20;131H[K[20;131H18,17[9C60%[1;17H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H17,0-1[8C57%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H16,0-1[8C53%[1;1H[?12l[?25h[?25l[20;132H7[2;1H[?12l[?25h[?25l[20;132H8,17 [3;17H[?12l[?25h[?25l[20;132H9,1-8[4;8H[?12l[?25h[?25l[20;131H20,10-17[5;17H[?12l[?25h[?25l[20;132H1,3-17 [6;17H[?12l[?25h[?25l[20;132H2,3-24[7;24H[?12l[?25h[?25l[20;132H3[8;24H[?12l[?25h[?25l[20;132H4[9;24H[?12l[?25h[?25l[20;132H5[10;24H[?12l[?25h[?25l[20;132H6[11;24H[?12l[?25h[?25l[20;132H7[12;24H[?12l[?25h[?25l[20;132H8,3-17[13;17H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H28,3-17[7C53%[13;17H[?12l[?25h[?25l[20;132H9[14;17H[?12l[?25h[?25l[20;134H4-25[14;25H[?12l[?25h[?25l[20;134H5-33[14;33H[?12l[?25h[?25l[20;131H30[15;33H[?12l[?25h[?25l[20;134H4-25[15;25H[?12l[?25h[?25l[20;131H29[14;25H[?12l[?25h[?25l[20;132H8,5[13;25H[?12l[?25h[?25l[20;134H6-26[13;26H[?12l[?25h[?25l[20;134H7-27[13;27H[?12l[?25h[?25l [106m([34C)[m[20;134H8-28[13;28H[?12l[?25h[?25l[20;134H9-29[13;29H[?12l[?25h[?25([34C)[20;134H10-30[13;30H[?12l[?25h[?25l[20;135H1-31[13;31H[?12l[?25h[?25l[20;135H2-32[13;32H[?12l[?25h[?25l[20;135H3-33[13;33H[?12l[?25h[?25l[20;135H4-34[13;34H[?12l[?25h[?25l[20;135H5-35[13;35H[?12l[?25h[?25l[20;135H6-36[13;36H[?12l[?25h[?25l[20;135H7-37[13;37H[?12l[?25h[?25l[20;135H8-38[13;38H[?12l[?25h[?25l[20;135H9-39[13;39H[?12l[?25h[?25l[20;134H20-40[13;40H[?12l[?25h[?25l[20;135H1-41[13;41H[?12l[?25h[?25l[20;135H2-42[13;42H[?12l[?25h[?25l[20;135H3-43[13;43H[?12l[?25h[?25l[20;135H4-44[13;44H[?12l[?25h[?25l[20;135H5-45[13;45H[?12l[?25h[?25l[20;135H6-46[13;46H[?12l[?25h[?25l[20;135H7-47[13;47H[?12l[?25h[?25l[20;135H8-48[13;48H[?12l[?25h[?25l[20;135H9-49[13;49H[?12l[?25h[?25l[20;134H30-50[13;50H[?12l[?25h[?25l[20;135H1-51[13;51H[?12l[?25h[?25l[20;135H2-52[13;52H[?12l[?25h[?25l[20;135H3-53[13;53H[?12l[?25h[?25l[20;135H4-54[13;54H[?12l[?25h[?25l[20;135H5-55[13;55H[?12l[?25h[?25l[20;135H6-56[13;56H[?12l[?25h[?25l[20;135H7-57[13;57H[?12l[?25h[?25l[20;135H8-58[13;58H[?12l[?25h[?25l[20;135H9-59[13;59H[?12l[?25h[?25l[20;134H40-60[13;60H[?12l[?25h[?25l[20;135H1-61[13;61H[?12l[?25h[?25l[20;135H2-62[13;62H[?12l[?25h[?25l[13;28H[106m([34C)[m[20;135H3-63[13;63H[?12l[?25h[?2m)[106m{[m[13;64H[K[13;62H[106m)[m{[20;135H2-62[13;62H[?12l[?25h[?2e)[106m{[m[13;63H[K[13;61H[106m)[m{[20;135H1-61[13;61H[?12l[?25h[?2T)[106m{[m[13;62H[K[13;60H[106m)[m{[20;135H0-60[13;60H[?12l[?25h[?2t)[106m{[m[13;61H[K[13;59H[106m)[m{[20;134H39-59[13;59H[?12l[?25h[?2s)[106m{[m[13;60H[K[13;58H[106m)[m{[20;135H8-58[13;58H[?12l[?25h[?2e)[106m{[m[13;59H[K[13;57H[106m)[m{[20;135H7-57[13;57H[?12l[?25h[?2w)[106m{[m[13;58H[K[13;56H[106m)[m{[20;135H6-56[13;56H[?12l[?25h[?2o)[106m{[m[13;57H[K[13;55H[106m)[m{[20;135H5-55[13;55H[?12l[?25h[?2l)[106m{[m[13;56H[K[13;54H[106m)[m{[20;135H4-54[13;54H[?12l[?25h[?2>)[106m{[m[13;55H[K[13;53H[106m)[m{[20;135H3-53[13;53H[?12l[?25h[?2w)[106m{[m[13;54H[K[13;52H[106m)[m{[20;135H2-52[13;52H[?12l[?25h[?2o)[106m{[m[13;53H[K[13;51H[106m)[m{[20;135H1-51[13;51H[?12l[?25h[?2l)[106m{[m[13;52H[K[13;50H[106m)[m{[20;135H0-50[13;50H[?12l[?25h[?2 )[106m{[m[13;51H[K[13;49H[106m)[m{[20;134H29-49[13;49H[?12l[?25h[?2|)[106m{[m[13;50H[K[13;48H[106m)[m{[20;135H8-48[13;48H[?12l[?25h[?2|)[106m{[m[13;49H[K[13;47H[106m)[m{[20;135H7-47[13;47H[?12l[?25h[?2 )[106m{[m[13;48H[K[13;46H[106m)[m{[20;135H6-46[13;46H[?12l[?25h[?2p)[106m{[m[13;47H[K[13;45H[106m)[m{[20;135H5-45[13;45H[?12l[?25h[?25l[13;28H([16C)[20;132H9,17[14;45H[?12l[?25h[?25l[20;131H30[15;45H[?12l[?25h[?25l[20;135H8-46[15;46H[?12l[?25h[?25l[20;135H9-47[15;47H[?12l[?25h[?25l[20;134H20-48[15;48H[?12l[?25h[?25l[20;135H1-49[15;49H[?12l[?25h[?25l[20;135H2-50[15;50H[?12l[?25h[?25l[15;49H[K[20;135H1-49[15;49H[?12l[?25h[?25l[15;48H[K[20;135H0-48[15;48H[?12l[?25h[?25l[15;47H[K[20;134H19-47[15;47H[?12l[?25h[?25l[15;46H[K[20;135H8-46[15;46H[?12l[?25h[?25l[20;135H7-45[15;45H[?12l[?25h[?25l[15;44H[K[20;135H6-44[15;44H[?12l[?25h[?25l[20;135H5-43[15;43H[?12l[?25h[?25l[15;42H[K[20;135H4-42[15;42H[?12l[?25h[?25l[15;41H[K[20;135H3-41[15;41H[?12l[?25h[?25l[15;40H[K[20;135H2-40[15;40H[?12l[?25h[?25l[15;39H[K[20;135H1-39[15;39H[?12l[?25h[?25l[15;38H[K[20;135H0-38[15;38H[?12l[?25h[?25l[15;37H[K[20;134H9-37 [15;37H[?12l[?25h[?25l[15;36H[K[20;134H8-36[15;36H[?12l[?25h[?25l[15;35H[K[20;134H7-35[15;35H[?12l[?25h[?25l[15;34H[K[20;134H6-34[15;34H[?12l[?25h[?25l[15;33H[K[20;134H5-33[15;33H[?12l[?25h[?25l[20;134H4-25[15;25H[?12l[?25h[?25l[20;134H3-17[15;17H[?12l[?25h[?25l[20;134H2-9 [15;9H[?12l[?25h[?25l[20;134H1  [15;1H[?12l[?25h[?25l[14;19r[19;1H
+[1;20r[14;32H highestTemp = high;[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H29,24-52      55%[14;52H[?12l[?25h[?25l[13;46H[106m{[15;25H}[m[20;131H30,5-26 [15;26H[?12l[?25h[?25l[13;46H{[15;25H}[20;132H1,38-52[16;52H[?12l[?25h[?25l[13;46H[106m{[15;25H}[m[20;132H0,5-26 [15;26H[?12l[?25h[?25l[16;19r[16;1H[L[1;20r[20;131H[K[20;131H31,4-25[7C53%[13;46H{[15;25H}[16;25H[?12l[?25h[?25 f[20;134H5-26[16;26H[?12l[?25h[?25fi[20;134H6-27[16;27H[?12l[?25h[?25l[20;134H7-28[16;28H[?12l[?25h[?25 ([17;18H[97m[101m}[m[20;134H8-29[16;29H[?12l[?25h[?25l[16;28H[K[17;18H}[20;134H7-28[16;28H[?12l[?25h[?25l[20;134H6-27[16;27H[?12l[?25h[?25l[16;26H[K[20;134H5-26[16;26H[?12l[?25h[?25l[16;25H[K[20;134H4-25[16;25H[?12l[?25h[?25 i[20;134H5-26[16;26H[?12l[?25h[?25[38;5;130mif[m[20;134H6-27[16;27H[?12l[?25h[?25l[20;134H7-28[16;28H[?12l[?25h[?25 ([17;18H[97m[101m}[m[20;134H8-29[16;29H[?12l[?25h[?25(l[20;134H9-30[16;30H[?12l[?25h[?25lo[20;134H10-31[16;31H[?12l[?25h[?25ow[20;135H1-32[16;32H[?12l[?25h[?25w>[20;135H2-33[16;33H[?12l[?25h[?25l[16;32H[K[20;135H1-32[16;32H[?12l[?25h[?25w<[20;135H2-33[16;33H[?12l[?25h[?25<l[20;135H3-34[16;34H[?12l[?25h[?25lo[20;135H4-35[16;35H[?12l[?25h[?25ow[20;135H5-36[16;36H[?12l[?25h[?25we[20;135H6-37[16;37H[?12l[?25h[?25es[20;135H7-38[16;38H[?12l[?25h[?25st[20;135H8-39[16;39H[?12l[?25h[?25tT[20;135H9-40[16;40H[?12l[?25h[?25Te[20;134H20-41[16;41H[?12l[?25h[?25em[20;135H1-42[16;42H[?12l[?25h[?25mp[20;135H2-43[16;43H[?12l[?25h[?25p)[17;18H}[20;134H7-28 [16;28H[?12l[?25h[?25l[106m([14C)[m[20;134H23-44[16;44H[?12l[?25h[?25[106m)[m{[16;28H([14C)[106m{[17;18H}[m[20;135H4-45[16;45H[?12l[?25h[?25[106m{[m}[20;135H3-44[16;44H[?12l[?25h[?25l[1C[106m}[m[17;18H}[20;135H5-46[16;46H[?12l[?25h[?25l[20;135H4-45[16;45H[?12l[?25h[?25l[17;19r[17;1H[L[1;20r[16;44H[106m{ [m[17;24H }[20;131H[K[20;131H32,4-25[7C51%[16;45H[K[17;25H[106m[?12l[?25h[?25l[ [106ml[l[106m}[m[20;134H5-26[17;26H[?12l[?25h[?25l[106mo[o[106m}[m[20;134H6-27[17;27H[?12l[?25h[?25o[106mw[w[106m}[m[20;134H7-28[17;28H[?12l[?25h[?25w[106me[e[106m}[m[20;134H8-29[17;29H[?12l[?25h[?25e[106ms[s[106m}[m[20;134H9-30[17;30H[?12l[?25h[?25s[106mt[t[106m}[m[20;134H10-31[17;31H[?12l[?25h[?25t[106mT[T[106m}[m[20;135H1-32[17;32H[?12l[?25h[?25T[106me[e[106m}[m[20;135H2-33[17;33H[?12l[?25h[?25e[106mm[m[106m}[m[20;135H3-34[17;34H[?12l[?25h[?25m[106mp[p[106m}[m[20;135H4-35[17;35H[?12l[?25h[?25p[106m [ [106m}[m[20;135H5-36[17;36H[?12l[?25h[?25 [106m=[=[106m}[m[20;135H6-37[17;37H[?12l[?25h[?25=[106m [ [106m}[m[20;135H7-38[17;38H[?12l[?25h[?25 [106ml[l[106m}[m[20;135H8-39[17;39H[?12l[?25h[?25l[106mo[o[106m}[m[20;135H9-40[17;40H[?12l[?25h[?25o[106mw[w[106m}[m[20;134H20-41[17;41H[?12l[?25h[?25l[20;135H1-42[17;42H[?12l[?25h[?25[106m}[m;[16;44H{[17;41H}[20;135H2-43[17;43H[?12l[?25h[?25l[16;44H[106m{[17;41H}[m[20;135H1-42[17;42H[?12l[?25h[?25l[20;135H0-41[17;41H[?12l[?25h[?25l[16;44H{[17;41H}[20;134H19-40[17;40H[?12l[?25h[?25l[20;135H8-39[17;39H[?12l[?25h[?25l[20;135H7-38[17;38H[?12l[?25h[?25l[20;135H6-37[17;37H[?12l[?25h[?25l[20;135H5-36[17;36H[?12l[?25h[?25l[20;135H4-35[17;35H[?12l[?25h[?25l[20;135H3-34[17;34H[?12l[?25h[?25l[20;135H2-33[17;33H[?12l[?25h[?25l[20;135H1-32[17;32H[?12l[?25h[?25l[20;135H0-31[17;31H[?12l[?25h[?25l[20;134H9-30 [17;30H[?12l[?25h[?25l[20;134H8-29[17;29H[?12l[?25h[?25l[20;134H7-28[17;28H[?12l[?25h[?25l[20;134H6-27[17;27H[?12l[?25h[?25l[20;134H5-26[17;26H[?12l[?25h[?25l[20;134H4-25[17;25H[?12l[?25h[?25         lowestTemp = low};[20;134H5-33[17;33H[?12l[?25h[20;1H[K[17;32H[?25l[20;131H32,4-32[7C51%[17;32H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 48L, 1215C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> w3gcc temps.c -o w3
+temps.c: In function ‘main’:
+temps.c:32:21: error: expected ‘;’ before ‘}’ token
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 48L, 1215C[>c[1;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[2;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[3;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[4;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[5;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[6;24H [38;5;130mif[m (high>highestTemp){[7;32H highestTemp = high;[8;24H }[9;24H [38;5;130mif[m (low<lowestTemp){[10;32H lowestTemp = low};[11;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[12;24H totalHigh = totalHigh + high;[13;24H totalLow = totalLow + low;[14;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[15;16H }[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H32,4-32[7C75%[10;32H[?12l[?25h[?25l[20;132H1,11-32[9;32H[?12l[?25h[?25l[6;46H[106m{[8;25H}[m[20;132H0,4-25 [8;25H[?12l[?25h[?25l[6;46H{[8;25H}[20;131H29,4-32[7;32H[?12l[?25h[?25l[20;132H8,12-32[6;32H[?12l[?25h[?25l[20;132H7,11[5;32H[?12l[?25h[?25l[20;132H6[4;32H[?12l[?25h[?25l[20;132H5[3;32H[?12l[?25h[?25l[20;132H4[2;32H[?12l[?25h[?25l[20;132H3[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;1H[K[20;131H22,11-32      72%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;17H [38;5;130mdo[m{[20;131H[K[20;131H21,9-24[7C68%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i)[106m{[18;17H}[m[20;131H[K[20;131H20,22-29      65%[1;29H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[2;29H{[19;17H}[20;131H[K[20;131H19,1-8[8C62%[1;8H[?12l[?25h[?25l[2;29H[106m{[19;17H}[m[20;131H20,22-29[2;29H[?12l[?25h[?25l{[19;17H}[20;132H1,9-24 [3;24H[?12l[?25h[?25l[20;132H2,11-32[4;32H[?12l[?25h[?25l[20;132H3[5;32H[?12l[?25h[?25l[20;132H4[6;32H[?12l[?25h[?25l[20;132H5[7;32H[?12l[?25h[?25l[20;132H6[8;32H[?12l[?25h[?25l[20;132H7[9;32H[?12l[?25h[?25l[20;132H8,12[10;32H[?12l[?25h[?25l[20;132H9,4-32 [11;32H[?12l[?25h[?25l[10;46H[106m{[12;25H}[m[20;131H30,4-25[12;25H[?12l[?25h[?25l[10;46H{[12;25H}[20;132H1,11-32[13;32H[?12l[?25h[?25l[20;132H2,4-32 [14;32H[?12l[?25h[?25l[20;132H3,18-32[15;32H[?12l[?25h[?25l[20;132H4,11[16;32H[?12l[?25h[?25l[20;132H5[17;32H[?12l[?25h[?25l[20;132H6,18[18;32H[?12l[?25h[?25l[2;29H[106m{[19;17H}[m[20;132H7,3-17 [19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[1;29H{[18;17H}[20;131H[K[20;131H38,0-1[8C65%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H39,1-8[8C68%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H40,0-1[8C72%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H[K[20;131H41,32[9C75%[19;32H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[34m//printf("The highest temperature was %d, on day %d\n",highestTemp);[m[20;131H[K[20;131H42,32[9C79%[19;32H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[34m//printf("The lowest temprature was %d, on day %d\n",lowestTemp);[m[20;131H[K[20;131H43,32[9C82%[19;32H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf ([31m"highest [m[35m%d\n[m[31m"[m,highestTemp);[20;131H[K[20;131H44,32[9C86%[19;32H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf[106m([m[31m"lowest [m[35m%d\n[m[31m"[m,lowestTemp[106m)[m;[20;131H[K[20;131H45,32[9C89%[19;32H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[18;7H([24C)
+[38;5;130mreturn[m [31m0[m;[20;131H[K[20;131H46,9[10C93%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H}[20;131H[K[20;131H47,1[10C96%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H48,0-1[8CBot[19;1H[?12l[?25h[?25l[20;132H7,1  [18;1H[?12l[?25h[?25l[20;132H6,9[17;9H[?12l[?25h[?25l[16;7H[106m([24C)[m[20;132H5,32[16;32H[?12l[?25h[?25l[16;7H([24C)[20;132H4[15;32H[?12l[?25h[?25l[20;132H3[14;32H[?12l[?25h[?25l[20;132H2[13;32H[?12l[?25h[?25l[20;132H1[12;32H[?12l[?25h[?25l[20;132H0,0-1[11;1H[?12l[?25h[?25l[20;131H39,1-8[10;8H[?12l[?25h[?25l[20;132H8,0-1[9;1H[?12l[?25h[?25l[20;132H7,3-17[8;17H[?12l[?25h[?25l[20;132H6,18-32[7;32H[?12l[?25h[?25l[20;132H5,11[6;32H[?12l[?25h[?25l[20;132H4[5;32H[?12l[?25h[?25l[20;132H3,18[4;32H[?12l[?25h[?25l[20;132H2,4-32 [3;32H[?12l[?25h[?25l[20;132H1,11-32[2;32H[?12l[?25h[?25l[20;132H0,4-25 [1;25H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;32H highestTemp = high;[20;131H[K[20;131H29,4-32[7C96%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high>highestTemp){[20;131H[K[20;131H28,12-32      93%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H27,11-32      89%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[20;131H[K[20;131H26,11-32      86%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;131H[K[20;131H25,11-32      82%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H24,11-32      79%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H23,11-32      75%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H22,11-32      72%[1;32H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;17H [38;5;130mdo[m{[20;131H[K[20;131H21,9-24[7C68%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i)[106m{[18;17H}[m[20;131H[K[20;131H20,22-29      65%[1;29H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[2;29H{[19;17H}[20;131H[K[20;131H19,1-8[8C62%[1;8H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1Hprintf([31m"---=== IPC Temperature Analyzer ===---"[m);[20;131H[K[20;131H18,32[9C58%[1;32H[?12l[?25h[?25l[20;132H9,1-8[2;8H[?12l[?25h[?25l[20;131H20,22-29[3;29H[?12l[?25h[?25l[20;132H1,9-24 [4;24H[?12l[?25h[?25l[20;132H2,11-32[5;32H[?12l[?25h[?25l[20;132H3[6;32H[?12l[?25h[?25l[20;132H4[7;32H[?12l[?25h[?25l[20;132H5[8;32H[?12l[?25h[?25l[20;132H6[9;32H[?12l[?25h[?25l[20;132H7[10;32H[?12l[?25h[?25l[20;132H8,12[11;32H[?12l[?25h[?25l[20;132H9,4-32 [12;32H[?12l[?25h[?25l[11;46H[106m{[13;25H}[m[20;131H30,4-25[13;25H[?12l[?25h[?25l[11;46H{[13;25H}[20;134H3-24[13;24H[?12l[?25h[?25l[20;134H2-16[13;16H[?12l[?25h[?25l[20;134H1-8 [13;8H[?12l[?25h[?25l[20;134H2-16[13;16H[?12l[?25h[?25l[20;134H3-24[13;24H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H30,3-17[7C58%[13;17H[?12l[?25h[?25 }[13;25H[K[20;134H2-9 [13;9H[?12l[?25h[?25l[11;46H[106m{[13;17H}[m[20;134H3-17[13;17H[?12l[?25h[?25l[13;8H }[106m [m[13;17H[K[13;9H[106m}[m[13;10H[K[20;134H2-9 [13;9H[?12l[?25h[?25l}[106m [m[13;9H[K[13;1H[106m}[m[13;2H[K[20;134H1  [13;1H[?12l[?25h[?25l[12;19r[19;1H
+[1;20r[12;1H [30C highestTemp = high;}
+[106m        [m[19;16H }[20;131H[K[20;131H29,24-52      60%[12;52H[106m}[m
+        [12;52H[?12l[?25h[?25l[20;135H5-53[12;53H[?12l[?25h[?25l[12;52H[K[11;46H{[20;135H4-52[12;52H[?12l[?25h[?25l[12;51H[K[20;135H3-51[12;51H[?12l[?25h[?25h}[20;132H8,26-46[11;46H[?12l[?25h[?25l[106m{[12;51H}[m[20;132H9,24-52[12;52H[?12l[?25h[?25[106m}[m;[11;46H{[12;51H}[20;135H5-53[12;53H[?12l[?25h[20;1H[K[12;52H[?25l[20;131H29,24-52      60%[12;52H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 47L, 1211C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> gcc temps.c -o w3
+temps.c: In function ‘main’:
+temps.c:29:23: error: expected ‘;’ before ‘}’ token
+temps.c:31:21: error: expected ‘;’ before ‘}’ token
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 47L, 1211C[>c[1;1H[32mint[m i;
+[32mint[m high=[31m0[m,low=[31m0[m;
+[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;
+[32mint[m highestTemp=[31m0[m,lowestTemp=[31m0[m;
+[32mfloat[m averageTemps;
+
+
+printf([31m"---=== IPC Temperature Analyzer ===---"[m);[10;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[11;17H [38;5;130mdo[m{[12;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[13;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[14;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[15;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[16;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[17;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[18;24H [38;5;130mif[m (high>highestTemp){[19;32H highestTemp = high};[20;131H29,24-52      35%[19;52H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [38;5;130mif[m (low<lowestTemp){[20;1H[K[20;131H30,23-44      39%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;32H lowestTemp = low};[20;131H[K[20;131H31,16-44      42%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[20;131H[K[20;131H32,30-44      46%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H33,23-44      50%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalLow = totalLow + low;[20;131H[K[20;131H34,23-44      53%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H35,30-44      57%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[3;29H[106m{[m[19;16H [106m}[m[20;131H[K[20;131H36,3-17[7C60%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[2;29H{[18;17H}[20;131H[K[20;131H37,0-1[8C64%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H38,1-8[8C67%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H39,0-1[8C71%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H[K[20;131H40,44[9C75%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[34m//printf("The highest temperature was %d, on day %d\n",highestTemp);[m[20;131H[K[20;131H41,44[9C78%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[34m//printf("The lowest temprature was %d, on day %d\n",lowestTemp);[m[20;131H[K[20;131H42,44[9C82%[19;44H[?12l[?25h[?25l[20;132H1[18;44H[?12l[?25h[?25l[20;132H0[17;44H[?12l[?25h[?25l[20;131H39,0-1[16;1H[?12l[?25h[?25l[20;132H8,1-8[15;8H[?12l[?25h[?25l[20;132H7,0-1[14;1H[?12l[?25h[?25l[20;132H6,3-17[13;17H[?12l[?25h[?25l[20;132H5,30-44[12;44H[?12l[?25h[?25l[20;132H4,23[11;44H[?12l[?25h[?25l[20;132H3[10;44H[?12l[?25h[?25l[20;132H2,30[9;44H[?12l[?25h[?25l[20;132H1,16[8;44H[?12l[?25h[?25l[7;44H[106m{[8;49H}[m[20;132H0,23[7;44H[?12l[?25h[?25l{[8;49H}[20;131H29,16[6;44H[?12l[?25h[?25l[20;132H8,24[5;44H[?12l[?25h[?25l[20;132H7,23[4;44H[?12l[?25h[?25l[20;132H6[3;44H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H26,23-44      82%[3;44H[?12l[?25h[?25l[20;132H7[4;44H[?12l[?25h[?25l[20;132H8,24[5;44H[?12l[?25h[?25l[20;132H9,16[6;44H[?12l[?25h[?25l[20;135H7-45[6;45H[?12l[?25h[?25l[20;135H8-46[6;46H[?12l[?25h[?25l[20;135H9-47[6;47H[?12l[?25h[?25l[20;134H20-48[6;48H[?12l[?25h[?25l[20;135H1-49[6;49H[?12l[?25h[?25l[20;135H2-50[6;50H[?12l[?25h[?25l[5;46H[106m{[6;51H}[m[20;135H3-51[6;51H[?12l[?25h[?25l[20;135H4-52[6;52H[?12l[?25h[?25l[5;46H{[6;51H}[20;135H5-53[6;53H[?12l[?25h[?25l[6;52H[K[5;46H[106m{[6;51H}[m[20;135H4-52[6;52H[?12l[?25h[?25l[6;51H[K[5;46H{[20;135H3-51[6;51H[?12l[?25h[?25h;[20;135H4-52[6;52H[?12l[?25h[?25;}[20;132H8,26-46[5;46H[?12l[?25h[?25l[106m{[6;52H}[m[20;132H9,25-53[6;53H[?12l[?25h[?25l[6;52H[K[5;46H{[20;135H4-52[6;52H[?12l[?25h[?25l[7;19r[7;1H[L[1;20r[20;131H[K[20;131H30,5-33[7C79%[7;33H[?12l[?25h[?25 }[20;131H28,26-46[5;46H[?12l[?25h[?25l[7;24H }[7;33H[K[5;46H[106m{[7;25H}[m[20;131H30,5-26 [7;26H[?12l[?25h[?25l[5;46H{[7;25H}[20;132H1[8;26H[?12l[?25h[?25l[20;134H6-27[8;27H[?12l[?25h[?25l [106m([14C)[m[20;134H7-28[8;28H[?12l[?25h[?25l[20;134H8-29[8;29H[?12l[?25h[?25([14C)[20;134H9-30[8;30H[?12l[?25h[?25l[20;134H10-31[8;31H[?12l[?25h[?25l[20;135H1-32[8;32H[?12l[?25h[?25l[20;135H2-33[8;33H[?12l[?25h[?25l[20;135H3-34[8;34H[?12l[?25h[?25l[20;135H4-35[8;35H[?12l[?25h[?25l[20;135H5-36[8;36H[?12l[?25h[?25l[20;135H6-37[8;37H[?12l[?25h[?25l[20;135H7-38[8;38H[?12l[?25h[?25l[20;135H8-39[8;39H[?12l[?25h[?25l[20;135H9-40[8;40H[?12l[?25h[?25l[20;134H20-41[8;41H[?12l[?25h[?25l[20;135H1-42[8;42H[?12l[?25h[?25l[20;132H2,14[9;42H[?12l[?25h[?25l[20;135H5-43[9;43H[?12l[?25h[?25l[20;135H6-44[9;44H[?12l[?25h[?25l[20;135H7-45[9;45H[?12l[?25h[?25l[20;135H8-46[9;46H[?12l[?25h[?25l[20;135H9-47[9;47H[?12l[?25h[?25l[20;134H20-48[9;48H[?12l[?25h[?25l[8;44H[106m{[9;49H}[m[20;135H1-49[9;49H[?12l[?25h[?25l[20;135H2-50[9;50H[?12l[?25h[?25l[8;44H{[9;49H}[20;135H3-51[9;51H[?12l[?25h[?25l[9;50H[K[8;44H[106m{[9;49H}[m[20;135H2-50[9;50H[?12l[?25h[?25l[9;49H[K[8;44H{[20;135H1-49[9;49H[?12l[?25h[?25w;[20;135H2-50[9;50H[?12l[?25h[?25l[10;19r[10;1H[L[1;20r[20;131H[K[20;131H33,5-33[7C76%[10;33H[?12l[?25h[?25 }[20;132H1,23-44[8;44H[?12l[?25h[?25l[10;24H }[10;33H[K[8;44H[106m{[10;25H}[m[20;132H3,5-26 [10;26H[?12l[?25h[20;1H[K[10;25H[?25l[20;131H33,4-25[7C76%[10;25H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 49L, 1219C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> [H[2Jjsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 23
+
+Enter the low value for day 1: 20
+
+Enter the high value for day 2: 24
+
+Enter the low value for day 2: 21
+
+Enter the high value for day 3: 40
+
+Enter the low value for day 3: -40
+
+Enter the high value for day 4: 10
+
+Enter the low value for day 4: 10
+
+The average (mean) temperature was: 13.50
+highest 40
+lowest -40
+jsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 40
+
+Enter the low value for day 1: -40
+
+Enter the high value for day 2: 23
+
+Enter the low value for day 2: 12
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 23
+
+Enter the low value for day 4: 12
+
+The average (mean) temperature was: 13.12
+highest 40
+lowest -40
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 49L, 1219C[>c[1;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[2;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[3;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[4;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[5;24H [38;5;130mif[m (high>highestTemp){[6;32H highestTemp = high;[7;24H }[8;24H [38;5;130mif[m (low<lowestTemp)[106m{[m[9;32H lowestTemp = low;[10;24H [106m}[m[11;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[12;24H totalHigh = totalHigh + high;[13;24H totalLow = totalLow + low;[14;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[15;16H }[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H33,4-25[7C76%[10;25H[?12l[?25h[?25l[8;44H{[10;25H}[11;25H[106m([36C)[m[20;132H4,11-25[11;25H[?12l[?25h[?25l([36C)[20;132H5,4-25 [12;25H[?12l[?25h[?25l[20;132H6[13;25H[?12l[?25h[?25l[20;132H7,11-25[14;25H[?12l[?25h[?25l[20;132H8,3-17 [15;17H[?12l[?25h[?25l[20;132H9,0-1 [16;1H[?12l[?25h[?25l[20;131H40,1-8[17;8H[?12l[?25h[?25l[20;132H1,0-1[18;1H[?12l[?25h[?25l[20;132H2,25 [19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[34m//printf("The highest temperature was %d, on day %d\n",highestTemp);[m[20;1H[K[20;131H43,25[9C80%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[34m//printf("The lowest temprature was %d, on day %d\n",lowestTemp);[m[20;131H[K[20;131H44,25[9C83%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf ([31m"highest [m[35m%d\n[m[31m"[m,highestTemp);[20;131H[K[20;131H45,25[9C86%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"lowest [m[35m%d\n[m[31m"[m,lowestTemp);[20;131H[K[20;131H46,25[9C90%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[38;5;130mreturn[m [31m0[m;[20;131H[K[20;131H47,9[10C93%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H}[20;131H[K[20;131H48,1[10C96%[19;1H[?12l[?25h[?25l[20;132H7,9[18;9H[?12l[?25h[?25l[20;132H6,25[17;25H[?12l[?25h[?25l[20;132H5[16;25H[?12l[?25h[?25l[20;132H4[15;25H[?12l[?25h[?25l[20;132H3[14;25H[?12l[?25h[?25l[20;132H2[13;25H[?12l[?25h[?25l[20;132H3[14;25H[?12l[?25h[?25l[20;135H4[14;24H[?12l[?25h[?25l[20;135H3[14;23H[?12l[?25h[?25l[20;135H2[14;22H[?12l[?25h[?25l[20;135H1[14;21H[?12l[?25h[?25l[20;135H0[14;20H[?12l[?25h[?25l[20;134H19[14;19H[?12l[?25h[?25l[20;135H8[14;18H[?12l[?25h[?25l[20;135H7[14;17H[?12l[?25h[?25l[20;135H6[14;16H[?12l[?25h[?25l[20;135H5[14;15H[?12l[?25h[?25l[20;135H4[14;14H[?12l[?25h[?25l[20;135H3[14;13H[?12l[?25h[?25l[20;135H2[14;12H[?12l[?25h[?25l[20;135H1[14;11H[?12l[?25h[?25l[20;135H0[14;10H[?12l[?25h[?25[34m[106m([57C)[m[20;134H9 [14;9H[?12l[?25h[?25l[34m([57C)[m[20;134H8[14;8H[?12l[?25h[?25l[20;134H7[14;7H[?12l[?25h[?25l[20;134H6[14;6H[?12l[?25h[?25l[20;134H5[14;5H[?12l[?25h[?25l[20;134H4[14;4H[?12l[?25h[?25l[20;134H3[14;3H[?12l[?25h[?25l[20;134H2[14;2H[?12l[?25h[?25l[20;134H3[14;3H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H43,3[10C96%[14;3H[?12l[?25h[?25l/printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp);[14;68H[K[20;134H2[14;2H[?12l[?25h[?25printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp);[14;67H[K[20;134H1[14;1H[?12l[?25h[?25l[20;132H4[15;1H[?12l[?25h[?25l[20;134H2[15;2H[?12l[?25h[?25l[20;134H3[15;3H[?12l[?25h[?25l/printf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp);[15;65H[K[20;134H2[15;2H[?12l[?25h[?25printf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp);[15;64H[K[20;134H1[15;1H[?12l[?25h[?25l[20;132H5[16;1H[?12l[?25h[?25l/printf ([31m"highest [m[35m%d\n[m[31m"[m,highestTemp);[20;134H2[16;2H[?12l[?25h[?25[34m//printf ("highest %d\n",highestTemp);[m[20;134H3[16;3H[?12l[?25h[?25l[20;132H6[17;3H[?12l[?25h[?25l[20;134H2[17;2H[?12l[?25h[?25l[20;134H1[17;1H[?12l[?25h[?25l/printf([31m"lowest [m[35m%d\n[m[31m"[m,lowestTemp);[20;134H2[17;2H[?12l[?25h[?25[34m//printf("lowest %d\n",lowestTemp);[m[20;134H3[17;3H[?12l[?25h[20;1H[K[17;2H[?25l[20;131H46,2[10C96%[17;2H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 49L, 1219C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> [H[2Jjsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 40
+
+Enter the low value for day 1: -40
+
+Enter the high value for day 2: 23
+
+Enter the low value for day 2: 12
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 23
+
+Enter the low value for day 4: 12
+
+The average (mean) temperature was: 13.12
+The highest temperature was 40, on day 1076510720
+The lowest temprature was -40, on day 1076510720
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 49L, 1219C[>c[1;24H [38;5;130mif[m (low<lowestTemp){[2;32H lowestTemp = low;[3;24H }[4;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[5;24H totalHigh = totalHigh + high;[6;24H totalLow = totalLow + low;[7;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[8;16H }[12;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);
+printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp);
+printf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp);
+[34m//printf ("highest %d\n",highestTemp);
+//printf("lowest %d\n",lowestTemp);[m
+[38;5;130mreturn[m [31m0[m;
+}[20;131H46,2[10CBot[16;2H[?12l[?25h[?25l[20;134H3[16;3H[?12l[?25h[?25l[20;134H4[16;4H[?12l[?25h[?25l[20;134H5[16;5H[?12l[?25h[?25l[20;134H6[16;6H[?12l[?25h[?25l[20;134H7[16;7H[?12l[?25h[?25l[20;134H8[16;8H[?12l[?25h[?25l[1C[34m[106m([24C)[m[20;134H9[16;9H[?12l[?25h[?25l[34m([24C)[m[20;134H10[16;10H[?12l[?25h[?25l[20;135H1[16;11H[?12l[?25h[?25l[20;135H2[16;12H[?12l[?25h[?25l[20;135H3[16;13H[?12l[?25h[?25l[20;135H4[16;14H[?12l[?25h[?25l[20;135H5[16;15H[?12l[?25h[?25l[20;135H6[16;16H[?12l[?25h[?25l[20;135H7[16;17H[?12l[?25h[?25l[20;135H8[16;18H[?12l[?25h[?25l[20;135H9[16;19H[?12l[?25h[?25l[20;134H20[16;20H[?12l[?25h[?25l[20;135H1[16;21H[?12l[?25h[?25l[20;135H2[16;22H[?12l[?25h[?25l[20;135H3[16;23H[?12l[?25h[?25l[20;135H4[16;24H[?12l[?25h[?25l[20;135H5[16;25H[?12l[?25h[?25l[20;135H6[16;26H[?12l[?25h[?25l[20;135H7[16;27H[?12l[?25h[?25l[20;135H8[16;28H[?12l[?25h[?25l[20;135H9[16;29H[?12l[?25h[?25l[20;134H30[16;30H[?12l[?25h[?25l[20;135H1[16;31H[?12l[?25h[?25l[20;135H2[16;32H[?12l[?25h[?25l[20;135H3[16;33H[?12l[?25h[?25l[16;9H[34m[106m([24C)[m[20;135H4[16;34H[?12l[?25h[?25l[16;9H[34m([24C)[m[20;135H5[16;35H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;13H[K[20;131H46,35[9CBot[16;35H[?12l[?25h[?25l[20;135H6[16;36H[?12l[?25h[?25l[16;35H[K[16;9H[34m[106m([24C)[m[20;135H5[16;35H[?12l[?25h[?25l[16;34H[K[16;9H[34m([m[20;135H4[16;34H[?12l[?25h[?25l[16;33H[K[20;135H3[16;33H[?12l[?25h[?25l[16;32H[K[20;135H2[16;32H[?12l[?25h[?25l[16;31H[K[20;135H1[16;31H[?12l[?25h[?25l[16;30H[K[20;135H0[16;30H[?12l[?25h[?25l[16;29H[K[20;134H29[16;29H[?12l[?25h[?25l[16;28H[K[20;135H8[16;28H[?12l[?25h[?25l[16;27H[K[20;135H7[16;27H[?12l[?25h[?25l[16;26H[K[20;135H6[16;26H[?12l[?25h[?25l[16;25H[K[20;135H5[16;25H[?12l[?25h[?25l[16;24H[K[20;135H4[16;24H[?12l[?25h[?25l[16;23H[K[20;135H3[16;23H[?12l[?25h[?25l[16;22H[K[20;135H2[16;22H[?12l[?25h[?25l[16;21H[K[17;1H[34mreturn 0;[m[20;135H1[16;21H[?12l[?25h[?25l[16;20H[K[17;1H[38;5;130mreturn[m [31m0[m;[20;135H0[16;20H[?12l[?25h[?25l[16;19H[K[20;134H19[16;19H[?12l[?25h[?25l[16;18H[K[20;135H8[16;18H[?12l[?25h[?25l[16;17H[K[20;135H7[16;17H[?12l[?25h[?25l[16;16H[K[20;135H6[16;16H[?12l[?25h[?25l[16;15H[K[20;135H5[16;15H[?12l[?25h[?25l[16;14H[K[20;135H4[16;14H[?12l[?25h[?25l[16;13H[K[20;135H3[16;13H[?12l[?25h[?25l[16;12H[K[20;135H2[16;12H[?12l[?25h[?25l[16;11H[K[20;135H1[16;11H[?12l[?25h[?25l[16;10H[K[20;135H0[16;10H[?12l[?25h[?25l[16;9H[K[20;134H9 [16;9H[?12l[?25h[?25l[16;8H[K[20;134H8[16;8H[?12l[?25h[?25l[16;7H[K[20;134H7[16;7H[?12l[?25h[?25l[16;6H[K[20;134H6[16;6H[?12l[?25h[?25l[16;5H[K[20;134H5[16;5H[?12l[?25h[?25l[16;4H[K[20;134H4[16;4H[?12l[?25h[?25l[16;3H[K[20;134H3[16;3H[?12l[?25h[?25l/[16;2H[K[20;134H2[16;2H[?12l[?25h[?25l[16;1H[K[20;134H1[16;1H[?12l[?25h[?25l[15;19r[19;1H
+[1;20r[15;1H[34m//printf ("highest %d\n",highestTemp);[m[19;1H[94m~                                                                                                                                                   [m[20;131H[K[20;131H45,39[9CBot[15;39H[?12l[?25h[?25l[15;38H[K[15;10H[34m[106m([26C)[m[20;135H8[15;38H[?12l[?25h[?25l[15;37H[K[15;10H[34m([m[20;135H7[15;37H[?12l[?25h[?25l[15;36H[K[20;135H6[15;36H[?12l[?25h[?25l[15;35H[K[20;135H5[15;35H[?12l[?25h[?25l[15;34H[K[20;135H4[15;34H[?12l[?25h[?25l[15;33H[K[20;135H3[15;33H[?12l[?25h[?25l[15;32H[K[20;135H2[15;32H[?12l[?25h[?25l[15;31H[K[20;135H1[15;31H[?12l[?25h[?25l[15;30H[K[20;135H0[15;30H[?12l[?25h[?25l[15;29H[K[20;134H29[15;29H[?12l[?25h[?25l[15;28H[K[20;135H8[15;28H[?12l[?25h[?25l[15;27H[K[20;135H7[15;27H[?12l[?25h[?25l[15;26H[K[20;135H6[15;26H[?12l[?25h[?25l[15;25H[K[20;135H5[15;25H[?12l[?25h[?25l[15;24H[K[20;135H4[15;24H[?12l[?25h[?25l[15;23H[K[16;1H[34mreturn 0;[m[20;135H3[15;23H[?12l[?25h[?25l[15;22H[K[16;1H[38;5;130mreturn[m [31m0[m;[20;135H2[15;22H[?12l[?25h[?25l[15;21H[K[20;135H1[15;21H[?12l[?25h[?25l[15;20H[K[20;135H0[15;20H[?12l[?25h[?25l[15;19H[K[20;134H19[15;19H[?12l[?25h[?25l[15;18H[K[20;135H8[15;18H[?12l[?25h[?25l[15;17H[K[20;135H7[15;17H[?12l[?25h[?25l[15;16H[K[20;135H6[15;16H[?12l[?25h[?25l[15;15H[K[20;135H5[15;15H[?12l[?25h[?25l[15;14H[K[20;135H4[15;14H[?12l[?25h[?25l[15;13H[K[20;135H3[15;13H[?12l[?25h[?25l[15;12H[K[20;135H2[15;12H[?12l[?25h[?25l[15;11H[K[20;135H1[15;11H[?12l[?25h[?25l[15;10H[K[20;135H0[15;10H[?12l[?25h[?25l[15;9H[K[20;134H9 [15;9H[?12l[?25h[?25l[15;8H[K[20;134H8[15;8H[?12l[?25h[?25l[15;7H[K[20;134H7[15;7H[?12l[?25h[?25l[15;6H[K[20;134H6[15;6H[?12l[?25h[?25l[15;5H[K[20;134H5[15;5H[?12l[?25h[?25l[15;4H[K[20;134H4[15;4H[?12l[?25h[?25l[15;3H[K[20;134H3[15;3H[?12l[?25h[?25l/[15;2H[K[20;134H2[15;2H[?12l[?25h[?25l[15;1H[K[20;134H1[15;1H[?12l[?25h[?25l[14;19r[19;1H
+[1;20r[14;1Hprintf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp);[19;1H[94m~                                                                                                                                                   [m[20;131H[K[20;131H44,64[9CBot[14;64H[?12l[?25h[20;1H[K[14;63H[?25l[20;131H44,63[9CBot[14;63H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 47L, 1144C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> vi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 47L, 1144C[>c[1;32H highestTemp = high;[2;24H }[3;24H [38;5;130mif[m (low<lowestTemp){[4;32H lowestTemp = low;[5;24H }[6;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[7;24H totalHigh = totalHigh + high;[8;24H totalLow = totalLow + low;[9;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[10;16H }[14;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);
+printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp);
+printf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp);
+[38;5;130mreturn[m [31m0[m;
+}[20;131H44,63[9CBot[16;63H[?12l[?25h[?25l[20;132H3[15;63H[?12l[?25h[?25l[20;132H2[14;63H[?12l[?25h[?25l[20;132H1,0-1[13;1H[?12l[?25h[?25l[20;132H0,1-8[12;8H[?12l[?25h[?25l[20;131H39,0-1[11;1H[?12l[?25h[?25l[20;132H8,3-17[10;17H[?12l[?25h[?25l[20;132H7,49-63[9;63H[?12l[?25h[?25l[20;132H6,29-50[8;50H[?12l[?25h[?25l[20;132H5,32-53[7;53H[?12l[?25h[?25l[20;132H4,49-6[6;63H[?12l[?25h[?25l[3;44H[106m{[5;25H}[m[20;132H3,4-25 [5;25H[?12l[?25h[?25l[3;44H{[5;25H}[20;132H2,21-49[4;49H[?12l[?25h[?25l[3;44H[106m{[5;25H}[m[20;132H1,23-44[3;44H[?12l[?25h[?25l{[5;25H}[20;132H0,4-25 [2;25H[?12l[?25h[?25l[20;131H29,23-51[1;51H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high>highestTemp)[106m{[3;25H}[m[20;1H[K[20;131H28,26-46      96%[1;46H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[2;46H{[4;25H}[20;131H[K[20;131H27,42-63      92%[1;63H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[20;131H[K[20;131H26,42-63      89%[1;63H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;131H[K[20;131H25,20-41      85%[1;41H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H24,42-63      82%[1;63H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H23,21-42      78%[1;42H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H22,42-63      75%[1;63H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;17H [38;5;130mdo[m{[20;131H[K[20;131H21,9-24[7C71%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i)[106m{[19;17H}[m[20;131H[K[20;131H20,22-29      67%[1;29H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[2;29H{[20;131H[K[20;131H19,1-8[8C64%[1;8H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1Hprintf([31m"---=== IPC Temperature Analyzer ===---"[m);[20;131H[K[20;131H18,49[9C60%[1;49H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H17,0-1[8C57%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H16,0-1[8C53%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mfloat[m averageTemps;[20;131H[K[20;131H15,19[9C50%[1;19H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m highestTemp=[31m0[m,lowestTemp=[31m0[m;[20;131H[K[20;131H14,31[9C46%[1;31H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;[20;131H[K[20;131H13,27[9C42%[1;27H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m high=[31m0[m,low=[31m0[m;[20;131H[K[20;131H12,17[9C39%[1;17H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m i;[20;131H[K[20;131H11,6[10C35%[1;6H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m main([32mvoid[m){[20;131H[K[20;131H10,15[9C32%[1;15H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H9,0-1[9C28%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[35m#define NUMS [m[31m4[m[20;131H[K[20;131H8,14[10C25%[1;14H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[35m#include[m[31m<stdio.h>[m[20;131H[K[20;131H7,17[10C21%[1;17H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H6,0-1[9C17%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[34m//workshop 3, at home[m[20;131H[K[20;131H5,21[10C14%[1;21H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[34m//IPC144 [m[20;131H[K[20;131H4,9[11C10%[1;9H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[34m//jsherry1@myseneca.ca[m[20;131H[K[20;131H3,22[11C7%[1;22H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[34m//141056176[m[20;131H[K[20;131H2,11[11C3%[1;11H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[34m//jayson sherry[m[20;131H[K[20;131H1,15[10CTop[1;15H[?12l[?25h[?25l[20;131H2,11[2;11H[?12l[?25h[?25l[20;131H3,22[3;22H[?12l[?25h[?25l[20;131H4,9 [4;9H[?12l[?25h[?25l[20;131H5,21[5;21H[?12l[?25h[?25l[20;131H6,0-1[6;1H[?12l[?25h[?25l[20;131H7,17 [7;17H[?12l[?25h[?25l[20;131H8,14[8;14H[?12l[?25h[?25l[20;131H9,0-1[9;1H[?12l[?25h[?25l[20;131H10,15[10;15H[?12l[?25h[?25l[20;132H1,6 [11;6H[?12l[?25h[?25l[20;132H2,17[12;17H[?12l[?25h[?25l[20;132H3,2[13;27H[?12l[?25h[?25l[20;132H4,31[14;31H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H14,31[9CTop[14;31H[?12l[?25h[?25l[20;135H2[14;32H[?12l[?25h[?25l[15;19r[15;1H[L[1;20r[20;131H[K[20;131H15,1[10CTop[15;1H[?12l[?25h[?25li[20;134H2[15;2H[?12l[?25h[?25in[20;134H3[15;3H[?12l[?25h[?25l[32mint[m[20;134H4[15;4H[?12l[?25h[?25l[20;134H5[15;5H[?12l[?25h[?25 h[20;134H6[15;6H[?12l[?25h[?25hi[20;134H7[15;7H[?12l[?25h[?25ig[20;134H8[15;8H[?12l[?25h[?25gh[20;134H9[15;9H[?12l[?25h[?25he[20;134H10[15;10H[?12l[?25h[?25es[20;135H1[15;11H[?12l[?25h[?25st[20;135H2[15;12H[?12l[?25h[?25tT[20;135H3[15;13H[?12l[?25h[?25Te[20;135H4[15;14H[?12l[?25h[?25em[20;135H5[15;15H[?12l[?25h[?25mp[20;135H6[15;16H[?12l[?25h[?25pd[20;135H7[15;17H[?12l[?25h[?25da[20;135H8[15;18H[?12l[?25h[?25ay[20;135H9[15;19H[?12l[?25h[?25l[15;18H[K[20;135H8[15;18H[?12l[?25h[?25l[15;17H[K[20;135H7[15;17H[?12l[?25h[?25l[15;16H[K[20;135H6[15;16H[?12l[?25h[?25pD[20;135H7[15;17H[?12l[?25h[?25Da[20;135H8[15;18H[?12l[?25h[?25ay[20;135H9[15;19H[?12l[?25h[?25y;[20;134H20[15;20H[?12l[?25h[?25l[15;19H[K[20;134H19[15;19H[?12l[?25h[?25y=[20;134H20[15;20H[?12l[?25h[?25=[31m0[m[20;135H1[15;21H[?12l[?25h[?25[31m0[m;[20;135H2[15;22H[?12l[?25h[?25l[16;19r[16;1H[L[1;20r[20;131H[K[20;131H16,1[10CTop[16;1H[?12l[?25h[?25li[20;134H2[16;2H[?12l[?25h[?25in[20;134H3[16;3H[?12l[?25h[?25l[32mint[m[20;134H4[16;4H[?12l[?25h[?25l[20;134H5[16;5H[?12l[?25h[?25 l[20;134H6[16;6H[?12l[?25h[?25lo[20;134H7[16;7H[?12l[?25h[?25ow[20;134H8[16;8H[?12l[?25h[?25we[20;134H9[16;9H[?12l[?25h[?25es[20;134H10[16;10H[?12l[?25h[?25st[20;135H1[16;11H[?12l[?25h[?25tT[20;135H2[16;12H[?12l[?25h[?25Te[20;135H3[16;13H[?12l[?25h[?25em[20;135H4[16;14H[?12l[?25h[?25mp[20;135H5[16;15H[?12l[?25h[?25pD[20;135H6[16;16H[?12l[?25h[?25Da[20;135H7[16;17H[?12l[?25h[?25ay[20;135H8[16;18H[?12l[?25h[?25y=[20;135H9[16;19H[?12l[?25h[?25=[31m0[m[20;134H20[16;20H[?12l[?25h[?25[31m0[m;[20;135H1[16;21H[?12l[?25h[?25l[20;132H7,20[17;20H[?12l[?25h[?25l[20;132H8,1 [18;1H[?12l[?25h[?25l[20;132H9[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"---=== IPC Temperature Analyzer ===---"[m);[20;131H[K[20;131H20,21[10C3%[19;21H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H21,2-9[9C6%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i){[20;131H[K[20;131H22,14-21      10%[19;21H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;17H [38;5;130mdo[m{[19;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H24,3-17[7C16%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H25,3-17[7C20%[19;17H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[19;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[20;131H[K[20;131H27,3-17[7C26%[19;17H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[19;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H29,3-17[7C33%[19;17H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;24H [38;5;130mif[m (high>highestTemp){[19;32H highestTemp = high;[20;131H[K[20;131H31,3-17[7C40%[19;17H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;24H }[19;24H [38;5;130mif[m (low<lowestTemp){[20;131H[K[20;131H33,3-17[7C46%[19;17H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;32H lowestTemp = low;[19;24H }[20;131H[K[20;131H35,3-17[7C53%[19;17H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H37,3-17[7C60%[19;17H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;24H totalLow = totalLow + low;[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H39,7-21[7C66%[19;21H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;16H }[20;131H[K[20;131H41,1[10C73%[19;1H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[20;131H[K[20;131H43,1[10C80%[19;1H[?12l[?25h[?25l[1;19r[1;1H[2M[1;20r[18;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);
+printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp);[20;131H[K[20;131H45,21[9C86%[19;21H[?12l[?25h[?25l[1;19r[1;1H[3M[1;20r[17;1Hprintf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp);
+[38;5;130mreturn[m [31m0[m;
+}[20;131H[K[20;131H48,2[10C96%[19;2H[1;19r[19;1H
+[1;20r[20;131H[K[20;131H49,1[10CBot[19;1H[?12l[?25h[?25l[20;132H8,2[18;2H[?12l[?25h[?25l[20;132H7,10[17;10H[?12l[?25h[?25l[20;132H6,21[16;21H[?12l[?25h[?25l[20;132H5[15;21H[?12l[?25h[?25l[20;132H4[14;21H[?12l[?25h[?25l[20;132H3,1 [13;1H[?12l[?25h[?25l[20;132H4,21[14;21H[?12l[?25h[?25l[20;135H2[14;22H[?12l[?25h[?25l[1C[31m[106m([4C)[m[20;135H3[14;23H[?12l[?25h[?25l[20;135H4[14;24H[?12l[?25h[?25[31m(mean)[m[20;135H5[14;25H[?12l[?25h[?25l[20;135H6[14;26H[?12l[?25h[?25l[20;135H7[14;27H[?12l[?25h[[31m[106m([4C)[m[20;135H8[14;28H[?12l[?25h[?25l[20;135H9[14;29H[?12l[?25h[31m(mean)[m[20;134H30[14;30H[?12l[?25h[?25l[20;135H1[14;31H[?12l[?25h[?25l[20;135H2[14;32H[?12l[?25h[?25l[20;135H3[14;33H[?12l[?25h[?25l[20;135H4[14;34H[?12l[?25h[?25l[20;135H5[14;35H[?12l[?25h[?25l[20;135H6[14;36H[?12l[?25h[?25l[20;135H7[14;37H[?12l[?25h[?25l[20;135H8[14;38H[?12l[?25h[?25l[20;135H9[14;39H[?12l[?25h[?25l[20;134H40[14;40H[?12l[?25h[?25l[20;135H1[14;41H[?12l[?25h[?25l[20;135H2[14;42H[?12l[?25h[?25l[20;135H3[14;43H[?12l[?25h[?25l[20;135H4[14;44H[?12l[?25h[?25l[20;135H5[14;45H[?12l[?25h[?25l[20;135H6[14;46H[?12l[?25h[?25l[20;135H7[14;47H[?12l[?25h[?25l[20;135H8[14;48H[?12l[?25h[?25l[20;135H9[14;49H[?12l[?25h[?25l[20;134H50[14;50H[?12l[?25h[?25l[20;135H1[14;51H[?12l[?25h[?25l[20;135H2[14;52H[?12l[?25h[?25l[20;135H3[14;53H[?12l[?25h[?25l[20;135H4[14;54H[?12l[?25h[?25l[20;135H5[14;55H[?12l[?25h[?25l[20;135H6[14;56H[?12l[?25h[?25l[20;135H7[14;57H[?12l[?25h[?25l[20;135H8[14;58H[?12l[?25h[?25l[20;135H9[14;59H[?12l[?25h[?25l[20;134H60[14;60H[?12l[?25h[?25l[20;135H1[14;61H[?12l[?25h[?25l[20;135H2[14;62H[?12l[?25h[?25l[20;135H3[14;63H[?12l[?25h[?25l[20;135H4[14;64H[?12l[?25h[?25l[20;135H5[14;65H[?12l[?25h[?25l[20;135H6[14;66H[?12l[?25h[?25l[20;135H7[14;67H[?12l[?25h[?25l[14;7H[106m([60C)[m[20;135H8[14;68H[?12l[?25h[?25s[106m,[,[106m)[m[20;135H9[14;69H[?12l[?25h[?25,[106ml[l[106m)[m[20;134H70[14;70H[?12l[?25h[?25l[106mo[o[106m)[m[20;135H1[14;71H[?12l[?25h[?25o[106mw[w[106m)[m[20;135H2[14;72H[?12l[?25h[?25w[106me[e[106m)[m[20;135H3[14;73H[?12l[?25h[?25e[106m        [m);[14;73H        [106m)[m[20;135H4-81[14;81H[?12l[?25h[?25l[14;72He)[106m;[m[14;81H[K[14;73H[106m)[m;[20;135H3   [14;73H[?12l[?25h[?25e[106ms[s[106m)[m[20;135H4[14;74H[?12l[?25h[?25s[106mt[t[106m)[m[20;135H5[14;75H[?12l[?25h[?25t[106mT[T[106m)[m[20;135H6[14;76H[?12l[?25h[?25T[106me[e[106m)[m[20;135H7[14;77H[?12l[?25h[?25e[106mm[m[106m)[m[20;135H8[14;78H[?12l[?25h[?25m[106mp[p[106m)[m[20;135H9[14;79H[?12l[?25h[?25p[106mD[D[106m)[m[20;134H80[14;80H[?12l[?25h[?25D[106ma[a[106m)[m[20;135H1[14;81H[?12l[?25h[?25a[106my[y[106m)[m[20;135H2[14;82H[?12l[?25h[?2a)[106m;[m[14;83H[K[14;81H[106m)[m;[20;135H1[14;81H[?12l[?25h[?2D)[106m;[m[14;82H[K[14;80H[106m)[m;[20;135H0[14;80H[?12l[?25h[?2p)[106m;[m[14;81H[K[14;79H[106m)[m;[20;134H79[14;79H[?12l[?25h[?2m)[106m;[m[14;80H[K[14;78H[106m)[m;[20;135H8[14;78H[?12l[?25h[?2e)[106m;[m[14;79H[K[14;77H[106m)[m;[20;135H7[14;77H[?12l[?25h[?2T)[106m;[m[14;78H[K[14;76H[106m)[m;[20;135H6[14;76H[?12l[?25h[?2t)[106m;[m[14;77H[K[14;75H[106m)[m;[20;135H5[14;75H[?12l[?25h[?2s)[106m;[m[14;76H[K[14;74H[106m)[m;[20;135H4[14;74H[?12l[?25h[?2e)[106m;[m[14;75H[K[14;73H[106m)[m;[20;135H3[14;73H[?12l[?25h[?2w)[106m;[m[14;74H[K[14;72H[106m)[m;[20;135H2[14;72H[?12l[?25h[?2o)[106m;[m[14;73H[K[14;71H[106m)[m;[20;135H1[14;71H[?12l[?25h[?2l)[106m;[m[14;72H[K[14;70H[106m)[m;[20;135H0[14;70H[?12l[?25h[?2,)[106m;[m[14;71H[K[14;69H[106m)[m;[20;134H69[14;69H[?12l[?25h[?2s)[106m;[m[14;70H[K[14;68H[106m)[m;[20;135H8[14;68H[?12l[?25h[?25l[14;7H([60C)[20;132H5,67[15;67H[?12l[?25h[?25l[15;7H[106m([57C)[m[20;135H6[15;66H[?12l[?25h[?25l[20;135H5[15;65H[?12l[?25h[?25p[106m,[,[106m)[m[20;135H6[15;66H[?12l[?25h[?25,[106ml[l[106m)[m[20;135H7[15;67H[?12l[?25h[?25l[106mo[o[106m)[m[20;135H8[15;68H[?12l[?25h[?25o[106mw[w[106m)[m[20;135H9[15;69H[?12l[?25h[?25w[106me[e[106m)[m[20;134H70[15;70H[?12l[?25h[?25e[106ms[s[106m)[m[20;135H1[15;71H[?12l[?25h[?25s[106mt[t[106m)[m[20;135H2[15;72H[?12l[?25h[?25t[106mT[T[106m)[m[20;135H3[15;73H[?12l[?25h[?25T[106me[e[106m)[m[20;135H4[15;74H[?12l[?25h[?25e[106mm[m[106m)[m[20;135H5[15;75H[?12l[?25h[?25m[106mp[p[106m)[m[20;135H6[15;76H[?12l[?25h[?25p[106mD[D[106m)[m[20;135H7[15;77H[?12l[?25h[?25D[106ma[a[106m)[m[20;135H8[15;78H[?12l[?25h[?25a[106my[y[106m)[m[20;135H9[15;79H[?12l[?25h[?25l[15;7H([71C)[20;132H6,64[16;64H[?12l[?25h[?25l[16;7H[106m([54C)[m[20;135H3[16;63H[?12l[?25h[?25l[20;135H2[16;62H[?12l[?25h[?25p[106m,[,[106m)[m[20;135H3[16;63H[?12l[?25h[?25,[106ml[l[106m)[m[20;135H4[16;64H[?12l[?25h[?25l[106mo[o[106m)[m[20;135H5[16;65H[?12l[?25h[?25o[106mw[w[106m)[m[20;135H6[16;66H[?12l[?25h[?25w[106me[e[106m)[m[20;135H7[16;67H[?12l[?25h[?25e[106ms[s[106m)[m[20;135H8[16;68H[?12l[?25h[?25s[106mt[t[106m)[m[20;135H9[16;69H[?12l[?25h[?25t[106mT[T[106m)[m[20;134H70[16;70H[?12l[?25h[?25T[106me[e[106m)[m[20;135H1[16;71H[?12l[?25h[?25e[106mm[m[106m)[m[20;135H2[16;72H[?12l[?25h[?25m[106mp[p[106m)[m[20;135H3[16;73H[?12l[?25h[?25p[106mD[D[106m)[m[20;135H4[16;74H[?12l[?25h[?25D[106ma[a[106m)[m[20;135H5[16;75H[?12l[?25h[?25a[106my[y[106m)[m[20;135H6[16;76H[?12l[?25h[?25l[16;7H([68C)[20;132H5[15;76H[?12l[?25h[?25l[20;135H5[15;75H[?12l[?25h[?25l[20;135H4[15;74H[?12l[?25h[?25l[20;135H3[15;73H[?12l[?25h[?25l[20;135H2[15;72H[?12l[?25h[?2sTempDay);[15;80H[K[20;135H1[15;71H[?12l[?25h[?2eTempDay);[15;79H[K[20;135H0[15;70H[?12l[?25h[?2wTempDay);[15;78H[K[20;134H69[15;69H[?12l[?25h[?2oTempDay);[15;77H[K[20;135H8[15;68H[?12l[?25h[?2lTempDay);[15;76H[K[20;135H7[15;67H[?12l[?25h[?2,TempDay);[15;75H[K[20;135H6[15;66H[?12l[?25h[?25,hTempDay);[20;135H7[15;67H[?12l[?25h[?25hiTempDay);[20;135H8[15;68H[?12l[?25h[?25igTempDay);[20;135H9[15;69H[?12l[?25h[?25ghTempDay);[20;134H70[15;70H[?12l[?25h[?25heTempDay);[20;135H1[15;71H[?12l[?25h[?25esTempDay);[20;135H2[15;72H[?12l[?25h[?25stTempDay);[20;135H3[15;73H[?12l[?25h[?25lTTempDay);[20;135H4[15;74H[?12l[?25h[?25TeTempDay);[20;135H5[15;75H[?12l[?25h[?25emTempDay);[20;135H6[15;76H[?12l[?25h[?25mpTempDay);[20;135H7[15;77H[?12l[?25h[?25pdTempDay);[20;135H8[15;78H[?12l[?25h[?2pTempDay);[15;86H[K[20;135H7[15;77H[?12l[?25h[?25pDTempDay);[20;135H8[15;78H[?12l[?25h[?25DaTempDay);[20;135H9[15;79H[?12l[?25h[?25ayTempDay);[20;134H80[15;80H[?12l[?25h[20;1H[K[15;79H[?25l[20;131H45,79[9CBot[15;79H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 49L, 1223C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> w3gcc temps.c -o w3
+temps.c: In function ‘main’:
+temps.c:45:66: error: ‘highestTempDayTempDay’ undeclared (first use in this function)
+temps.c:45:66: note: each undeclared identifier is reported only once for each function it appears in
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 49L, 1223C[>c[1;32H highestTemp = high;[2;24H }[3;24H [38;5;130mif[m (low<lowestTemp){[4;32H lowestTemp = low;[5;24H }[6;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[7;24H totalHigh = totalHigh + high;[8;24H totalLow = totalLow + low;[9;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[10;16H }[14;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);
+printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp,highestTempDayTempDay);
+printf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp,lowestTempDay);
+[38;5;130mreturn[m [31m0[m;
+}[20;131H45,79[9CBot[15;79H[?12l[?25h[?25l[20;132H4,6[14;69H[?12l[?25h[?25l[20;132H3,0-1[13;1H[?12l[?25h[?25l[20;132H2,1-8[12;8H[?12l[?25h[?25l[20;132H1,0-1[11;1H[?12l[?25h[?25l[20;132H0,3-17[10;17H[?12l[?25h[?25l[20;131H39,55-69[9;69H[?12l[?25h[?25l[20;132H8,29-50[8;50H[?12l[?25h[?25l[20;132H7,32-53[7;53H[?12l[?25h[?25l[20;132H6,49-6[6;63H[?12l[?25h[?25l[3;44H[106m{[5;25H}[m[20;132H5,4-25 [5;25H[?12l[?25h[?25l[3;44H{[5;25H}[20;132H4,21-49[4;49H[?12l[?25h[?25l[3;44H[106m{[5;25H}[m[20;132H3,23-44[3;44H[?12l[?25h[?25l{[5;25H}[20;132H2,4-25 [2;25H[?12l[?25h[?25l[20;132H1,23-51[1;51H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high>highestTemp)[106m{[3;25H}[m[20;1H[K[20;131H30,26-46      96%[1;46H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[2;46H{[4;25H}[20;131H[K[20;131H29,48-69      93%[1;69H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m [106m([mhigh < low || low < -[31m40[m || high > [31m40[m[106m)[m[20;131H[K[20;131H28,44-65      90%[1;65H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[2;28H([36C)[20;131H[K[20;131H27,20-41      86%[1;41H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H26,48-69      83%[1;69H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H25,21-42      80%[1;42H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H24,48-69      76%[1;69H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;17H [38;5;130mdo[m{[20;131H[K[20;131H23,9-24[7C73%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i)[106m{[19;17H}[m[20;131H[K[20;131H22,22-29      70%[1;29H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[2;29H{[20;131H[K[20;131H21,1-8[8C66%[1;8H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1Hprintf([31m"---=== IPC Temperature Analyzer ===---"[m);[20;131H[K[20;131H20,49[9C63%[1;49H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H19,0-1[8C60%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[20;131H[K[20;131H18,0-1[8C56%[1;1H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mfloat[m averageTemps;[20;131H[K[20;131H17,19[9C53%[1;19H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m lowestTempDay=[31m0[m;[20;131H[K[20;131H16,20[9C50%[1;20H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m highestTempDay=[31m0[m;[20;131H[K[20;131H15,21[9C46%[1;21H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m highestTemp=[31m0[m,lowestTemp=[31m0[m;[20;131H[K[20;131H14,31[9C43%[1;31H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m totalHigh=[31m0[m,totalLow=[31m0[m;[20;131H[K[20;131H13,27[9C40%[1;27H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m high=[31m0[m,low=[31m0[m;[20;131H[K[20;131H12,17[9C36%[1;17H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m i;[20;131H[K[20;131H11,6[10C33%[1;6H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1H[32mint[m main([32mvoid[m){[20;131H[K[20;131H10,15[9C30%[1;15H[?12l[?25h[?25l[20;132H1,6 [2;6H[?12l[?25h[?25l[20;132H2,17[3;17H[?12l[?25h[?25l[20;132H3,2[4;27H[?12l[?25h[?25l[20;132H4,31[5;31H[?12l[?25h[?25l[20;132H5,2[6;21H[?12l[?25h[?25l[20;132H6,20[7;20H[?12l[?25h[?25l[20;132H7,19[8;19H[?12l[?25h[?25l[20;132H8,0-1[9;1H[?12l[?25h[?25l[20;132H9[10;1H[?12l[?25h[?25l[20;131H20,49 [11;49H[?12l[?25h[?25l[20;132H1,1-8[12;8H[?12l[?25h[?25l[20;132H2,22-29[13;29H[?12l[?25h[?25l[20;132H3,9-24 [14;24H[?12l[?25h[?25l[20;132H4,48-69[15;69H[?12l[?25h[?25l[20;132H5,21-42[16;42H[?12l[?25h[?25l[20;132H6,48-69[17;69H[?12l[?25h[?25l[20;132H7,20-41[18;41H[?12l[?25h[?25l[19;28H[106m([36C)[m[20;132H8,44-65[19;65H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[18;28H([36C)[19;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[20;131H[K[20;131H29,48-69      33%[19;69H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H [38;5;130mif[m (high>highestTemp){[20;131H[K[20;131H30,26-46      36%[19;46H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;32H highestTemp = high;[20;131H[K[20;131H31,23-51      40%[19;51H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[17;46H[106m{[m[19;24H [106m}[m[20;131H[K[20;131H32,4-25[7C43%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[16;46H{[18;25H}[19;24H [38;5;130mif[m (low<lowestTemp){[20;131H[K[20;131H33,23-44      46%[19;44H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;32H lowestTemp = low;[20;131H[K[20;131H34,21-49      50%[19;49H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[17;44H[106m{[m[19;24H [106m}[m[20;131H[K[20;131H35,4-25[7C53%[19;25H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[16;44H{[18;25H}[19;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[20;131H[K[20;131H36,49-63      56%[19;63H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalHigh = totalHigh + high;[20;131H[K[20;131H37,32-53      60%[19;53H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;24H totalLow = totalLow + low;[20;131H[K[20;131H38,29-50      63%[19;50H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[20;131H[K[20;131H39,55-69      66%[19;69H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[1;29H[106m{[m[19;16H [106m}[m[20;131H[K[20;131H40,3-17[7C70%[19;17H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[18;17H}[20;131H[K[20;131H41,0-1[8C73%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H42,1-8[8C76%[19;8H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H43,0-1[8C80%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);[20;131H[K[20;131H44,69[9C83%[19;69H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp,highestTempDayTempDay);[20;131H[K[20;131H45,69[9C86%[19;69H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1Hprintf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp,lowestTempDay);[20;131H[K[20;131H46,69[9C90%[19;69H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H[38;5;130mreturn[m [31m0[m;[20;131H[K[20;131H47,9[10C93%[19;9H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[19;1H}[20;131H[K[20;131H48,1[10C96%[19;1H[?12l[?25h[?25l[1;19r[19;1H
+[1;20r[20;131H[K[20;131H49,0-1[8CBot[19;1H[?12l[?25h[?25l[20;132H8,1  [18;1H[?12l[?25h[?25l[20;132H7,9[17;9H[?12l[?25h[?25l[20;132H6,69[16;69H[?12l[?25h[?25l[20;132H5[15;69H[?12l[?25h[?25l[20;134H70[15;70H[?12l[?25h[?25l[20;135H1[15;71H[?12l[?25h[?25l[20;135H2[15;72H[?12l[?25h[?25l[20;135H3[15;73H[?12l[?25h[?25l[20;135H4[15;74H[?12l[?25h[?25l[20;135H5[15;75H[?12l[?25h[?25l[20;135H6[15;76H[?12l[?25h[?25l[20;135H7[15;77H[?12l[?25h[?25l[20;135H8[15;78H[?12l[?25h[?25l[20;135H9[15;79H[?12l[?25h[?25l[20;134H80[15;80H[?12l[?25h[?25l[20;135H1[15;81H[?12l[?25h[?25l[20;135H2[15;82H[?12l[?25h[?25l[20;135H3[15;83H[?12l[?25h[?25l[20;135H4[15;84H[?12l[?25h[?25l[20;135H5[15;85H[?12l[?25h[?25l[20;135H6[15;86H[?12l[?25h[?25l[15;7H[106m([79C)[m[20;135H7[15;87H[?12l[?25h[?25l[15;7H([79C)[20;135H6[15;86H[?12l[?25h[?25l[20;135H5[15;85H[?12l[?25h[?25l[20;135H4[15;84H[?12l[?25h[?25l[20;135H3[15;83H[?12l[?25h[?25l[20;135H2[15;82H[?12l[?25h[?25l[20;135H1[15;81H[?12l[?25h[?25l[20;135H2[15;82H[?12l[?25h[?25l[20;135H3[15;83H[?12l[?25h[?25l[20;135H4[15;84H[?12l[?25h[?25l[20;135H5[15;85H[?12l[?25h[?25l[20;135H6[15;86H[?12l[?25h[?25l[15;7H[106m([79C)[m[20;135H7[15;87H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H45,87[9CBot[15;87H[?12l[?25h[?2a)[106m;[m[15;88H[K[15;86H[106m)[m;[20;135H6[15;86H[?12l[?25h[?2D)[106m;[m[15;87H[K[15;85H[106m)[m;[20;135H5[15;85H[?12l[?25h[?2p)[106m;[m[15;86H[K[15;84H[106m)[m;[20;135H4[15;84H[?12l[?25h[?2m)[106m;[m[15;85H[K[15;83H[106m)[m;[20;135H3[15;83H[?12l[?25h[?2e)[106m;[m[15;84H[K[15;82H[106m)[m;[20;135H2[15;82H[?12l[?25h[?2T)[106m;[m[15;83H[K[15;81H[106m)[m;[20;135H1[15;81H[?12l[?25h[?2y)[106m;[m[15;82H[K[15;80H[106m)[m;[20;135H0[15;80H[?12l[?25h[20;1H[K[15;79H[?25l[15;7H([72C)[20;131H45,79[9CBot[15;79H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 49L, 1216C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> [H[2Jjsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 40
+
+Enter the low value for day 1: -40
+
+Enter the high value for day 2: 23
+
+Enter the low value for day 2: 12
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 23
+
+Enter the low value for day 4: 12
+
+The average (mean) temperature was: 13.12
+The highest temperature was 40, on day 0
+The lowest temprature was -40, on day 0
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 49L, 1216C[>c[1;32H highestTemp = high;[2;24H }[3;24H [38;5;130mif[m (low<lowestTemp){[4;32H lowestTemp = low;[5;24H }[6;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[7;24H totalHigh = totalHigh + high;[8;24H totalLow = totalLow + low;[9;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[10;16H }[14;1Hprintf([31m"[m[35m\n[m[31mThe average (mean) temperature was: [m[35m%2.2f\n[m[31m"[m,averageTemps);
+printf([31m"The highest temperature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,highestTemp,highestTempDay);
+printf([31m"The lowest temprature was [m[35m%d[m[31m, on day [m[35m%d\n[m[31m"[m,lowestTemp,lowestTempDay);
+[38;5;130mreturn[m [31m0[m;
+}[20;131H45,79[9CBot[15;79H[?12l[?25h[?25l[20;132H4,6[14;69H[?12l[?25h[?25l[20;132H3,0-1[13;1H[?12l[?25h[?25l[20;132H2,1-8[12;8H[?12l[?25h[?25l[20;132H1,0-1[11;1H[?12l[?25h[?25l[20;132H0,3-17[10;17H[?12l[?25h[?25l[20;131H39,55-69[9;69H[?12l[?25h[?25l[20;132H8,29-50[8;50H[?12l[?25h[?25l[20;132H7,32-53[7;53H[?12l[?25h[?25l[20;132H6,49-6[6;63H[?12l[?25h[?25l[3;44H[106m{[5;25H}[m[20;132H5,4-25 [5;25H[?12l[?25h[?25l[3;44H{[5;25H}[20;132H4,21-49[4;49H[?12l[?25h[?25l[3;44H[106m{[5;25H}[m[20;132H3,23-44[3;44H[?12l[?25h[?25l{[5;25H}[20;132H2,4-25 [2;25H[?12l[?25h[?25l[20;132H1,23-51[1;51H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m (high>highestTemp)[106m{[3;25H}[m[20;1H[K[20;131H30,26-46      96%[1;46H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[2;46H{[4;25H}[20;131H[K[20;131H29,48-69      93%[1;69H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H [38;5;130mif[m [106m([mhigh < low || low < -[31m40[m || high > [31m40[m[106m)[m[20;131H[K[20;131H28,44-65      90%[1;65H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[2;28H([36C)[20;131H[K[20;131H27,20-41      86%[1;41H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the low value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H26,48-69      83%[1;69H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H scanf([31m"[m[35m%d[m[31m"[m,&high);[20;131H[K[20;131H25,21-42      80%[1;42H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;24H printf([31m"[m[35m\n[m[31mEnter the high value for day [m[35m%d[m[31m: "[m,i+[31m1[m);[20;131H[K[20;131H24,48-69      76%[1;69H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;17H [38;5;130mdo[m{[20;131H[K[20;131H23,9-24[7C73%[1;24H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;8H [38;5;130mfor[m (i=[31m0[m;i<NUMS;++i)[106m{[19;17H}[m[20;131H[K[20;131H22,22-29      70%[1;29H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[2;29H{[20;131H[K[20;131H21,1-8[8C66%[1;8H[?12l[?25h[?25l[1;19r[1;1H[L[1;20r[1;1Hprintf([31m"---=== IPC Temperature Analyzer ===---"[m);[20;131H[K[20;131H20,49[9C63%[1;49H[?12l[?25h[?25l[20;132H1,1-8[2;8H[?12l[?25h[?25l[20;132H2,22-29[3;29H[?12l[?25h[?25l[20;132H3,9-24 [4;24H[?12l[?25h[?25l[20;132H4,48-69[5;69H[?12l[?25h[?25l[20;132H5,21-42[6;42H[?12l[?25h[?25l[20;132H6,48-69[7;69H[?12l[?25h[?25l[20;132H7,20-41[8;41H[?12l[?25h[?25l[9;28H[106m([36C)[m[20;132H8,44-65[9;65H[?12l[?25h[?25l[9;28H([36C)[20;132H9,48-69[10;69H[?12l[?25h[?25l[11;46H[106m{[13;25H}[m[20;131H30,26-46[11;46H[?12l[?25h[?25l{[13;25H}[20;132H1,23-51[12;51H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;131H[K[20;131H31,23-51      63%[12;51H[?12l[?25h[?25l[20;135H4-52[12;52H[?12l[?25h[?25l[13;19r[13;1H[L[1;20r[20;131H[K[20;131H32,5-33[7C61%[13;33H[?12l[?25h[?25 h[20;134H6-34[13;34H[?12l[?25h[?25hi[20;134H7-35[13;35H[?12l[?25h[?25ig[20;134H8-36[13;36H[?12l[?25h[?25gh[20;134H9-37[13;37H[?12l[?25h[?25he[20;134H10-38[13;38H[?12l[?25h[?25es[20;135H1-39[13;39H[?12l[?25h[?25st[20;135H2-40[13;40H[?12l[?25h[?25tT[20;135H3-41[13;41H[?12l[?25h[?25Te[20;135H4-42[13;42H[?12l[?25h[?25em[20;135H5-43[13;43H[?12l[?25h[?25mp[20;135H6-44[13;44H[?12l[?25h[?25pD[20;135H7-45[13;45H[?12l[?25h[?25Da[20;135H8-46[13;46H[?12l[?25h[?25ay[20;135H9-47[13;47H[?12l[?25h[?25l[20;134H20-48[13;48H[?12l[?25h[?25 =[20;135H1-49[13;49H[?12l[?25h[?25l[20;135H2-50[13;50H[?12l[?25h[?25 [31m1[m[20;135H3-51[13;51H[?12l[?25h[?25l[13;50H[K[20;135H2-50[13;50H[?12l[?25h[?25 i[20;135H3-51[13;51H[?12l[?25h[?25i;[20;135H4-52[13;52H[?12l[?25h[?25l[11;46H[106m{[14;25H}[m[20;132H3,5-26 [14;26H[?12l[?25h[?25l[11;46H{[14;25H}[15;44H[106m{[17;25H}[m[20;132H4,24-45[15;45H[?12l[?25h[?25{[17;25H}[20;132H5,22-50[16;50H[?12l[?25h[?25l[17;19r[17;1H[L[1;20r[20;131H[K[20;131H36,5-33[7C59%[17;33H[?12l[?25h[?25 l[20;134H6-34[17;34H[?12l[?25h[?25lo[20;134H7-35[17;35H[?12l[?25h[?25ow[20;134H8-36[17;36H[?12l[?25h[?25we[20;134H9-37[17;37H[?12l[?25h[?25es[20;134H10-38[17;38H[?12l[?25h[?25st[20;135H1-39[17;39H[?12l[?25h[?25tT[20;135H2-40[17;40H[?12l[?25h[?25Te[20;135H3-41[17;41H[?12l[?25h[?25em[20;135H4-42[17;42H[?12l[?25h[?25mp[20;135H5-43[17;43H[?12l[?25h[?25pD[20;135H6-44[17;44H[?12l[?25h[?25Da[20;135H7-45[17;45H[?12l[?25h[?25ay[20;135H8-46[17;46H[?12l[?25h[?25l[20;135H9-47[17;47H[?12l[?25h[?25 =[20;134H20-48[17;48H[?12l[?25h[?25l[20;135H1-49[17;49H[?12l[?25h[?25 i[20;135H2-50[17;50H[?12l[?25h[?25i;[20;135H3-51[17;51H[?12l[?25h[20;1H[K[17;50H[?25l[20;131H36,22-50      59%[17;50H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 51L, 1263C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> [H[2Jjsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 40
+
+Enter the low value for day 1: -40
+
+Enter the high value for day 2: 23
+
+Enter the low value for day 2: 12
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 23
+
+Enter the low value for day 4: 12
+
+The average (mean) temperature was: 13.12
+The highest temperature was 40, on day 0
+The lowest temprature was -40, on day 0
+jsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 23
+
+Enter the low value for day 1: 12
+
+Enter the high value for day 2: 23
+
+Enter the low value for day 2: 12
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 40
+
+Enter the low value for day 4: -40
+
+The average (mean) temperature was: 13.12
+The highest temperature was 40, on day 3
+The lowest temprature was -40, on day 3
+jsherry1@matrix:~/IPC144/w3/at_home> [6Pvi temps.c 
+[?1049h[?1h=[1;20r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[20;1H"temps.c" 51L, 1263C[>c[1;24H scanf([31m"[m[35m%d[m[31m"[m,&low);[2;24H [38;5;130mif[m (high < low || low < -[31m40[m || high > [31m40[m)[3;24H printf([31m"[m[35m\n[m[31mIncorrect values, temperatures must be in the range -40 to 40, high must be greater than low.[m[35m\n[m[31m"[m);[4;24H [38;5;130mif[m (high>highestTemp){[5;32H highestTemp = high;[6;32H highestTempDay = i;[7;24H }[8;24H [38;5;130mif[m (low<lowestTemp){[9;32H lowestTemp = low;[10;32H lowestTempDay = i;[11;24H }[12;17H }[38;5;130mwhile[m (high < low || low < -[31m40[m || high > [31m40[m);[13;24H totalHigh = totalHigh + high;[14;24H totalLow = totalLow + low;[15;23H averageTemps = ([32mfloat[m)(totalHigh + totalLow) / (NUMS * [31m2[m);[16;16H }[20;131H36,22-50      81%[10;50H[?12l[?25h[?25l[20;132H5,21-49[9;49H[?12l[?25h[?25l[8;44H[106m{[11;25H}[m[20;132H4,23-44[8;44H[?12l[?25h[?25l[4;46H[106m{[7;25H}[m[8;44H{[11;25H}[20;132H3,4-25 [7;25H[?12l[?25h[?25l[4;46H{[7;25H}[20;132H2,21-49[6;49H[?12l[?25h[?25l[20;135H2-50[6;50H[?12l[?25h[?25l[20;135H3-51[6;51H[?12l[?25h[?25l[20;1H[1m-- INSERT --[m[20;13H[K[20;131H32,23-51      81%[6;51H[?12l[?25h[?25i=;[20;135H4-52[6;52H[?12l[?25h[?2i;[6;52H[K[20;135H3-51[6;51H[?12l[?25h[?25i+;[20;135H4-52[6;52H[?12l[?25h[?25+[31m1[m;[20;135H5-53[6;53H[?12l[?25h[?25l[4;46H[106m{[7;25H}[m[20;132H3,5-26 [7;26H[?12l[?25h[?25l[4;46H{[7;25H}[8;44H[106m{[11;25H}[m[20;132H4,24-45[8;45H[?12l[?25h[?25{[11;25H}[20;132H5,22-50[9;50H[?12l[?25h[?25l[20;132H6,23-51[10;51H[?12l[?25h[?25l[20;135H2-50[10;50H[?12l[?25h[?25i+;[20;135H3-51[10;51H[?12l[?25h[?25+[31m1[m;[20;135H4-52[10;52H[?12l[?25h[20;1H[K[10;51H[?25l[20;131H36,23-51      81%[10;51H[?12l[?25h[?25l[20;131H[K[20;1H:[?12l[?25hx[?25l[?12l[?25h[?25l"temps.c" 51L, 1267C written
+[?1l>[?12l[?25h[?1049ljsherry1@matrix:~/IPC144/w3/at_home> w3gcc temps.c -o w3
+jsherry1@matrix:~/IPC144/w3/at_home> [H[2Jjsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 40
+
+Enter the low value for day 1: -40
+
+Enter the high value for day 2: 23
+
+Enter the low value for day 2: 12
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 23
+
+Enter the low value for day 4: 12
+
+The average (mean) temperature was: 13.12
+The highest temperature was 40, on day 1
+The lowest temprature was -40, on day 1
+jsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 23
+
+Enter the low value for day 1: 12
+
+Enter the high value for day 2: 23
+
+Enter the low value for day 2: 12
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 38
+
+Enter the low value for day 4: -20
+
+The average (mean) temperature was: 15.38
+The highest temperature was 38, on day 4
+The lowest temprature was -20, on day 4
+jsherry1@matrix:~/IPC144/w3/at_home> w3
+---=== IPC Temperature Analyzer ===---
+Enter the high value for day 1: 40
+
+Enter the low value for day 1: -35
+
+Enter the high value for day 2: 30
+
+Enter the low value for day 2: -37
+
+Enter the high value for day 3: 23
+
+Enter the low value for day 3: 12
+
+Enter the high value for day 4: 23
+
+Enter the low value for day 4: 12
+
+The average (mean) temperature was: 8.50
+The highest temperature was 40, on day 1
+The lowest temprature was -37, on day 2
+jsherry1@matrix:~/IPC144/w3/at_home> exit
+exit
+
+Script done on Tue 06 Feb 2018 01:08:06 PM EST

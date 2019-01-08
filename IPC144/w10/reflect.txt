@@ -1,0 +1,5 @@
+1) a function is section of a written program, written to perform a specific task, those functions can be called
+when ever they are needed.
+
+2) i think they were not part of the same module becasue they can be used for other programs, we can add the
+library to other progrmas that may need to use the same functions. this way your code dosent need to be written over and over.

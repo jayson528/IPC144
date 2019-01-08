@@ -1,0 +1,10 @@
+
+In line number 27 of your output:
+The output should be:
+Enter Employee Salary: 65000
+But your output is: 
+Enter Employee Salary: 6500
+                           ^
+---------------------------|
+Professor's character ASCII code: hex(30), dec(48)
+un-matched character ASCII code: hex(d), dec(13)

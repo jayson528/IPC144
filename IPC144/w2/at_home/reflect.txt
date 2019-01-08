@@ -1,0 +1,16 @@
+1: I think the most important thing i learned from this workshop is how to 
+perform calculations and how to store values in variables. i also learned how
+to use the printf function.
+
+2: we must add the .005 value in our equation for calculating the GST, because 
+in the C compiler the numbers that we input will not get rounded correctly and
+will give us incorrect calculations, in order to compansate for this we add the .005 so when the calculations are complete the final resut will be what we 
+intended.
+
+3: the result of the casting operation, if we use 8.68 as the input amount, will be 9.8134. but that amount displays to the user as 9.81 because we used the 
+"%.2" in the code.
+
+3: i belive we are supposed to use the MOD operator in order to learn how to use it,
+it can also make your code more efficiant.
+
+ 

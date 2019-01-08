@@ -1,0 +1,14 @@
+Jayson Sherry
+141065176
+jsherry1@myseneca.ca
+
+
+
+1)In 3 or 4 sentences describe in your own words what you have learned in completing this work shop.
+
+While i was working on the in lab and at home workshops, i have become more firmilar with using some of the
+commands in linux, such as using the compiler command and other day to day use commands such as moving, creating,
+renaming files and directories. i have also leanred how to use the #include and printf functions in the C 
+language. through trial and error i have find the correct syntex to be able to complete the at home workshop
+with out the need to have 3 seperate print functions, i have leanred to to use \n function to my advantage, hopefully
+making my code easier to read to humans and possabily faster for the computer to execute.

@@ -1,0 +1,11 @@
+1)
+i belive that findContactIndex and getTenDigitPhone helped clean up the code
+alot. instead of having to print and scan every time we need to recive a 
+number from the user we were able to just call that function and garrantee that
+we are reciving a 10 digit number. and instead of having multiple loops inside
+differant fuctions we can utilize the find index function to quickly find a
+contact within the array.
+
+2)
+i learned how to call functions and pass parameters to those functions. 
+also how to call functions inside other functions to perform various tasks.

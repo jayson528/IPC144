@@ -1,0 +1,6 @@
+1:
+we use structs to store data of the same related data because it it easier to 
+store that data all togther rather then initilizing idividual arrays and variables to store the data. all related data is kept toghther and can be accesed easier through a struct rather than callling for multiple arrays and variables.
+
+2:
+the preferred method of declaring a struct data type is in the header file because once the file is compiled the header will get duplicated for other .c files, and can be reused in other places that may need the same struct type. 
